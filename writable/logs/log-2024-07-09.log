@@ -1,0 +1,362 @@
+INFO - 2024-07-09 00:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-09 00:00:17 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/add_antenatals.php"
+[Method: GET, Route: add-antenatals/IBU001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/add_antenatals.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/add_antenatals', [], true)
+ 3 APPPATH\Controllers\Menu.php(170): view('page/content/form/add_antenatals', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->add_antenatals('IBU001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-09 00:00:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-09 00:00:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/add_antenatals.php"
+[Method: GET, Route: add-antenatals/IBU001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/add_antenatals.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/add_antenatals', [], true)
+ 3 APPPATH\Controllers\Menu.php(170): view('page/content/form/add_antenatals', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->add_antenatals('IBU001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-09 00:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 00:02:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 00:05:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 00:05:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 00:06:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 00:06:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 00:06:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 00:06:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 00:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 00:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 00:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:10:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:11:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:11:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:11:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:11:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:11:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:11:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:11:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:11:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:29:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:29:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-09 11:29:37 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/edit_antenatals.php"
+[Method: GET, Route: edit-antenatals/ANT002]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/edit_antenatals.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_antenatals', [], true)
+ 3 APPPATH\Controllers\Menu.php(183): view('page/content/form/edit_antenatals', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_antenatals('ANT002')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-09 11:35:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:38:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:38:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:39:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:39:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:39:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:39:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:39:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:39:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:40:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:41:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:41:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:46:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:46:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:47:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:47:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:47:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:47:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:48:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:48:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:48:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:48:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:50:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:50:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:53:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:54:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 11:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-09 11:59:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "cetak_antenatal.php"
+[Method: GET, Route: print-card-antenatal/ANT001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('cetak_antenatal.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('cetak_antenatal', [], true)
+ 3 APPPATH\Controllers\Cetak.php(20): view('cetak_antenatal', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cetak->antenatal('ANT001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cetak))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-09 12:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:01:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:01:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:01:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:01:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:02:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:03:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:03:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:08:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-09 12:08:39 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: print-card-riwayats/RWY001]
+in APPPATH\Controllers\Cetak.php on line 19.
+ 1 APPPATH\Controllers\Cetak.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'E:\\Project\\klinik-bersalin\\app\\Controllers\\Cetak.php', 19)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Cetak->antenatal('RWY001')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Cetak))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-09 12:09:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:10:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:10:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:10:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:10:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:10:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:10:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:10:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:47:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:48:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:49:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-09 12:49:33 --> ErrorException: Undefined property: App\Controllers\Menu::$persalinanModel
+[Method: GET, Route: persalinan-ibus/IBU003]
+in APPPATH\Controllers\Menu.php on line 206.
+ 1 APPPATH\Controllers\Menu.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Menu::$persalinanModel', 'E:\\Project\\klinik-bersalin\\app\\Controllers\\Menu.php', 206)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->persalinan_ibus('IBU003')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-09 12:50:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-09 12:50:21 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/persalinans.php"
+[Method: GET, Route: persalinan-ibus/IBU003]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/persalinans.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/persalinans', [], true)
+ 3 APPPATH\Controllers\Menu.php(210): view('page/content/persalinans', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->persalinan_ibus('IBU003')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-09 12:53:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-09 12:53:19 --> ErrorException: Undefined variable $persalinan
+[Method: GET, Route: persalinan-ibus/IBU003]
+in APPPATH\Views\page\content\persalinans.php on line 55.
+ 1 APPPATH\Views\page\content\persalinans.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $persalinan', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\persalinans.php', 55)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\persalinans.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/persalinans', [], true)
+ 5 APPPATH\Controllers\Menu.php(210): view('page/content/persalinans', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->persalinan_ibus('IBU003')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-09 12:54:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:54:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:54:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:54:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:55:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:58:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:58:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 12:58:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-09 12:58:54 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/add_persalinans.php"
+[Method: GET, Route: add-persalinans/IBU001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/add_persalinans.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/add_persalinans', [], true)
+ 3 APPPATH\Controllers\Menu.php(220): view('page/content/form/add_persalinans', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->add_persalinans('IBU001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-09 13:01:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:30:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-09 14:30:33 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'klinikbersalin', 3306, '', 0)
+#1 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 E:\Project\klinik-bersalin\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Project\klinik-bersalin\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Project\klinik-bersalin\system\BaseModel.php(610): CodeIgniter\Model->doFind(true, 'IBU001')
+#6 E:\Project\klinik-bersalin\app\Controllers\Menu.php(219): CodeIgniter\BaseModel->find('IBU001')
+#7 E:\Project\klinik-bersalin\system\CodeIgniter.php(933): App\Controllers\Menu->add_persalinans('IBU001')
+#8 E:\Project\klinik-bersalin\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#9 E:\Project\klinik-bersalin\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\Project\klinik-bersalin\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 E:\Project\klinik-bersalin\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\Project\klinik-bersalin\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\Project\klinik-bersalin\system\rewrite.php(44): require_once('E:\\Project\\klin...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 E:\Project\klinik-bersalin\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 E:\Project\klinik-bersalin\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 E:\Project\klinik-bersalin\system\BaseModel.php(610): CodeIgniter\Model->doFind(true, 'IBU001')
+#5 E:\Project\klinik-bersalin\app\Controllers\Menu.php(219): CodeIgniter\BaseModel->find('IBU001')
+#6 E:\Project\klinik-bersalin\system\CodeIgniter.php(933): App\Controllers\Menu->add_persalinans('IBU001')
+#7 E:\Project\klinik-bersalin\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#8 E:\Project\klinik-bersalin\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 E:\Project\klinik-bersalin\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 E:\Project\klinik-bersalin\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 E:\Project\klinik-bersalin\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 E:\Project\klinik-bersalin\system\rewrite.php(44): require_once('E:\\Project\\klin...')
+#13 {main}
+CRITICAL - 2024-07-09 14:30:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: add-persalinans/IBU001]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `ibu`
+WHERE `ibu`.`ibuID` = :ibu.ibuID:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(610): CodeIgniter\Model->doFind(true, 'IBU001')
+ 5 APPPATH\Controllers\Menu.php(219): CodeIgniter\BaseModel->find('IBU001')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->add_persalinans('IBU001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-09 14:31:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:33:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:41:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:42:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:42:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:43:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:44:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:45:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:45:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:45:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:45:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 14:55:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 15:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 15:20:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-09 15:20:28 --> mysqli_sql_exception: Column 'kondisiPlasenta' cannot be null in E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pe...', 0)
+#1 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 E:\Project\klinik-bersalin\system\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 E:\Project\klinik-bersalin\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\Project\klinik-bersalin\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 E:\Project\klinik-bersalin\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\Project\klinik-bersalin\app\Models\PersalinanModel.php(56): CodeIgniter\Model->insert(Array)
+#8 E:\Project\klinik-bersalin\app\Controllers\Save.php(161): App\Models\PersalinanModel->savePersalinan(Array)
+#9 E:\Project\klinik-bersalin\system\CodeIgniter.php(933): App\Controllers\Save->store_persalinans()
+#10 E:\Project\klinik-bersalin\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Save))
+#11 E:\Project\klinik-bersalin\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 E:\Project\klinik-bersalin\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 E:\Project\klinik-bersalin\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 E:\Project\klinik-bersalin\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 E:\Project\klinik-bersalin\system\rewrite.php(44): require_once('E:\\Project\\klin...')
+#16 {main}
+CRITICAL - 2024-07-09 15:20:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'kondisiPlasenta' cannot be null
+[Method: POST, Route: add-persalinans]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `persalinan` (`ibuID`, `tanggalPersalinan`, `jamPersalinan`, `caraPersalinan`, `petugasPersalinan`, `tekananDarah`, `nadi`, `temperature`, `tinggiFundusUteri`, `kontraksiUterus`, `kandunganKemih`, `pendarahan`, `keadaanIbu`, `keadaanBayi`, `presentasi`, `tanggalKala1`, `jamKala1`, `tanggalKala2`, `jamKala2`, `tanggalLahirBayi`, `tanggalPlasentaLahir`, `kondisiPlasenta`, `manajemenKala3`, `kondisiKala4`, `persalinanID`) VALUES (:ibuID:, :tanggalPersalinan:, :jamPersalinan:, :caraPersalinan:, :petugasPersalinan:, :tekananDarah:, :nadi:, :temperature:, :tinggiFundusUteri:, :kontraksiUterus:, :kandunganKemih:, :pendarahan:, :keadaanIbu:, :keadaanBayi:, :presentasi:, :tanggalKala1:, :jamKala1:, :tanggalKala2:, :jamKala2:, :tanggalLahirBayi:, :tanggalPlasentaLahir:, :kondisiPlasenta:, :manajemenKala3:, :kondisiKala4:, :persalinanID:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\PersalinanModel.php(56): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Save.php(161): App\Models\PersalinanModel->savePersalinan([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Save->store_persalinans()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Save))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+CRITICAL - 2024-07-09 15:20:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'kondisiPlasenta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `persalinan` (`ibuID`, `tanggalPersalinan`, `jamPersalinan`, `caraPersalinan`, `petugasPersalinan`, `tekananDarah`, `nadi`, `temperature`, `tinggiFundusUteri`, `kontraksiUterus`, `kandunganKemih`, `pendarahan`, `keadaanIbu`, `keadaanBayi`, `presentasi`, `tanggalKala1`, `jamKala1`, `tanggalKala2`, `jamKala2`, `tanggalLahirBayi`, `tanggalPlasentaLahir`, `kondisiPlasenta`, `manajemenKala3`, `kondisiKala4`, `persalinanID`) VALUES (\'IBU001\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'PRS003\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `persalinan` (`ibuID`, `tanggalPersalinan`, `jamPersalinan`, `caraPersalinan`, `petugasPersalinan`, `tekananDarah`, `nadi`, `temperature`, `tinggiFundusUteri`, `kontraksiUterus`, `kandunganKemih`, `pendarahan`, `keadaanIbu`, `keadaanBayi`, `presentasi`, `tanggalKala1`, `jamKala1`, `tanggalKala2`, `jamKala2`, `tanggalLahirBayi`, `tanggalPlasentaLahir`, `kondisiPlasenta`, `manajemenKala3`, `kondisiKala4`, `persalinanID`) VALUES (\'IBU001\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'PRS003\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `persalinan` (`ibuID`, `tanggalPersalinan`, `jamPersalinan`, `caraPersalinan`, `petugasPersalinan`, `tekananDarah`, `nadi`, `temperature`, `tinggiFundusUteri`, `kontraksiUterus`, `kandunganKemih`, `pendarahan`, `keadaanIbu`, `keadaanBayi`, `presentasi`, `tanggalKala1`, `jamKala1`, `tanggalKala2`, `jamKala2`, `tanggalLahirBayi`, `tanggalPlasentaLahir`, `kondisiPlasenta`, `manajemenKala3`, `kondisiKala4`, `persalinanID`) VALUES (:ibuID:, :tanggalPersalinan:, :jamPersalinan:, :caraPersalinan:, :petugasPersalinan:, :tekananDarah:, :nadi:, :temperature:, :tinggiFundusUteri:, :kontraksiUterus:, :kandunganKemih:, :pendarahan:, :keadaanIbu:, :keadaanBayi:, :presentasi:, :tanggalKala1:, :jamKala1:, :tanggalKala2:, :jamKala2:, :tanggalLahirBayi:, :tanggalPlasentaLahir:, :kondisiPlasenta:, :manajemenKala3:, :kondisiKala4:, :persalinanID:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\PersalinanModel.php(56): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Save.php(161): App\Models\PersalinanModel->savePersalinan([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Save->store_persalinans()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Save))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+CRITICAL - 2024-07-09 15:20:28 --> [Caused by] mysqli_sql_exception: Column 'kondisiPlasenta' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `persalinan` (`ibuID`, `tanggalPersalinan`, `jamPersalinan`, `caraPersalinan`, `petugasPersalinan`, `tekananDarah`, `nadi`, `temperature`, `tinggiFundusUteri`, `kontraksiUterus`, `kandunganKemih`, `pendarahan`, `keadaanIbu`, `keadaanBayi`, `presentasi`, `tanggalKala1`, `jamKala1`, `tanggalKala2`, `jamKala2`, `tanggalLahirBayi`, `tanggalPlasentaLahir`, `kondisiPlasenta`, `manajemenKala3`, `kondisiKala4`, `persalinanID`) VALUES (\'IBU001\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'PRS003\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `persalinan` (`ibuID`, `tanggalPersalinan`, `jamPersalinan`, `caraPersalinan`, `petugasPersalinan`, `tekananDarah`, `nadi`, `temperature`, `tinggiFundusUteri`, `kontraksiUterus`, `kandunganKemih`, `pendarahan`, `keadaanIbu`, `keadaanBayi`, `presentasi`, `tanggalKala1`, `jamKala1`, `tanggalKala2`, `jamKala2`, `tanggalLahirBayi`, `tanggalPlasentaLahir`, `kondisiPlasenta`, `manajemenKala3`, `kondisiKala4`, `persalinanID`) VALUES (\'IBU001\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'PRS003\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `persalinan` (`ibuID`, `tanggalPersalinan`, `jamPersalinan`, `caraPersalinan`, `petugasPersalinan`, `tekananDarah`, `nadi`, `temperature`, `tinggiFundusUteri`, `kontraksiUterus`, `kandunganKemih`, `pendarahan`, `keadaanIbu`, `keadaanBayi`, `presentasi`, `tanggalKala1`, `jamKala1`, `tanggalKala2`, `jamKala2`, `tanggalLahirBayi`, `tanggalPlasentaLahir`, `kondisiPlasenta`, `manajemenKala3`, `kondisiKala4`, `persalinanID`) VALUES (\'IBU001\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', \'\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'PRS003\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `persalinan` (`ibuID`, `tanggalPersalinan`, `jamPersalinan`, `caraPersalinan`, `petugasPersalinan`, `tekananDarah`, `nadi`, `temperature`, `tinggiFundusUteri`, `kontraksiUterus`, `kandunganKemih`, `pendarahan`, `keadaanIbu`, `keadaanBayi`, `presentasi`, `tanggalKala1`, `jamKala1`, `tanggalKala2`, `jamKala2`, `tanggalLahirBayi`, `tanggalPlasentaLahir`, `kondisiPlasenta`, `manajemenKala3`, `kondisiKala4`, `persalinanID`) VALUES (:ibuID:, :tanggalPersalinan:, :jamPersalinan:, :caraPersalinan:, :petugasPersalinan:, :tekananDarah:, :nadi:, :temperature:, :tinggiFundusUteri:, :kontraksiUterus:, :kandunganKemih:, :pendarahan:, :keadaanIbu:, :keadaanBayi:, :presentasi:, :tanggalKala1:, :jamKala1:, :tanggalKala2:, :jamKala2:, :tanggalLahirBayi:, :tanggalPlasentaLahir:, :kondisiPlasenta:, :manajemenKala3:, :kondisiKala4:, :persalinanID:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\PersalinanModel.php(56): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Save.php(161): App\Models\PersalinanModel->savePersalinan([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Save->store_persalinans()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Save))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-09 15:20:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 15:32:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 16:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-09 16:29:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

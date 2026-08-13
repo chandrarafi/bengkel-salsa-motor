@@ -1,0 +1,1125 @@
+INFO - 2024-07-26 03:30:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 03:30:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 03:30:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 03:30:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 03:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 03:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 03:31:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 03:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 03:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 03:48:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 03:48:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:06:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 04:06:48 --> Error: Call to a member function join() on null
+[Method: GET, Route: riwayat-bayis/BYI001]
+in APPPATH\Controllers\Menu.php on line 446.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->riwayat_bayis('BYI001')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 04:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:07:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:07:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 04:07:27 --> Error: Call to a member function join() on null
+[Method: GET, Route: riwayat-bayis/BYI001]
+in APPPATH\Controllers\Menu.php on line 446.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->riwayat_bayis('BYI001')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 04:08:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 04:08:02 --> ErrorException: Undefined variable $rujukans
+[Method: GET, Route: riwayat-bayis/BYI001]
+in APPPATH\Views\page\content\riwayat_bayi.php on line 56.
+ 1 APPPATH\Views\page\content\riwayat_bayi.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rujukans', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\riwayat_bayi.php', 56)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(448): view('page/content/riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->riwayat_bayis('BYI001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 04:08:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 04:08:21 --> ErrorException: Undefined variable $rujukans
+[Method: GET, Route: riwayat-bayis/BYI001]
+in APPPATH\Views\page\content\riwayat_bayi.php on line 56.
+ 1 APPPATH\Views\page\content\riwayat_bayi.php(56): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rujukans', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\riwayat_bayi.php', 56)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(448): view('page/content/riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->riwayat_bayis('BYI001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 04:13:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:14:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:14:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:14:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:14:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:15:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:15:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 04:15:13 --> ErrorException: Undefined variable $bayi
+[Method: GET, Route: riwayat-bayis/BYI001]
+in APPPATH\Views\page\content\riwayat_bayi.php on line 24.
+ 1 APPPATH\Views\page\content\riwayat_bayi.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\riwayat_bayi.php', 24)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(448): view('page/content/riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->riwayat_bayis('BYI001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 04:27:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:27:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 04:27:56 --> ErrorException: Undefined variable $bayi
+[Method: GET, Route: riwayat-bayis/BYI001]
+in APPPATH\Views\page\content\riwayat_bayi.php on line 24.
+ 1 APPPATH\Views\page\content\riwayat_bayi.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\riwayat_bayi.php', 24)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(448): view('page/content/riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->riwayat_bayis('BYI001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 04:30:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:30:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:31:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:31:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:31:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 04:33:10 --> ArgumentCountError: Too few arguments to function App\Controllers\Menu::add_riwayat_bayi(), 0 passed in E:\Project\klinik-bersalin\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: GET, Route: add-riwayat-bayi]
+in APPPATH\Controllers\Menu.php on line 452.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->add_riwayat_bayi()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 04:33:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 04:34:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 04:34:02 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/add_riwayat_bayi.php"
+[Method: GET, Route: add-riwayat-bayi/BYI001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/add_riwayat_bayi.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/add_riwayat_bayi', [], true)
+ 3 APPPATH\Controllers\Menu.php(459): view('page/content/form/add_riwayat_bayi', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->add_riwayat_bayi('BYI001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 05:57:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 05:57:52 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/add_riwayat_bayi.php"
+[Method: GET, Route: add-riwayat-bayi/BYI001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/add_riwayat_bayi.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/add_riwayat_bayi', [], true)
+ 3 APPPATH\Controllers\Menu.php(459): view('page/content/form/add_riwayat_bayi', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->add_riwayat_bayi('BYI001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 06:14:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:22:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:23:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:23:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:24:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:25:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:25:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:26:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:26:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:27:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:28:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:29:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:29:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:29:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:30:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:30:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:30:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:41:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 06:41:18 --> ArgumentCountError: Too few arguments to function App\Controllers\Menu::add_riwayat_bayi(), 0 passed in E:\Project\klinik-bersalin\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: POST, Route: add-riwayat-bayi]
+in APPPATH\Controllers\Menu.php on line 452.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->add_riwayat_bayi()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 06:41:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:42:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:44:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:44:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:45:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:45:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:45:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:46:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:46:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:46:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:46:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:47:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:48:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:48:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:48:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:48:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:50:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:50:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:51:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:53:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:53:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:53:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:54:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:54:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:55:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 06:58:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 06:58:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/view_riwayat_bayi.php"
+[Method: GET, Route: view-riwayat-bayi/RWY001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/view_riwayat_bayi.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_riwayat_bayi', [], true)
+ 3 APPPATH\Controllers\Menu.php(469): view('page/content/form/view_riwayat_bayi', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_riwayat_bayi('RWY001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 07:00:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 07:00:01 --> ErrorException: Undefined variable $bayi
+[Method: GET, Route: view-riwayat-bayi/RWY001]
+in APPPATH\Views\page\content\form\view_riwayat_bayi.php on line 22.
+ 1 APPPATH\Views\page\content\form\view_riwayat_bayi.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php', 22)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(469): view('page/content/form/view_riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_riwayat_bayi('RWY001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 07:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 07:40:37 --> ErrorException: Undefined variable $bayi
+[Method: GET, Route: view-riwayat-bayi/RWY001]
+in APPPATH\Views\page\content\form\view_riwayat_bayi.php on line 24.
+ 1 APPPATH\Views\page\content\form\view_riwayat_bayi.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php', 24)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(469): view('page/content/form/view_riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_riwayat_bayi('RWY001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 07:42:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 07:42:47 --> ErrorException: Undefined variable $riwayat_bayi
+[Method: GET, Route: view-riwayat-bayi/RWY001]
+in APPPATH\Views\page\content\form\view_riwayat_bayi.php on line 38.
+ 1 APPPATH\Views\page\content\form\view_riwayat_bayi.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $riwayat_bayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(471): view('page/content/form/view_riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_riwayat_bayi('RWY001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 07:43:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 07:43:10 --> ErrorException: Undefined variable $riwayat_bayi
+[Method: GET, Route: view-riwayat-bayi/RWY001]
+in APPPATH\Views\page\content\form\view_riwayat_bayi.php on line 38.
+ 1 APPPATH\Views\page\content\form\view_riwayat_bayi.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $riwayat_bayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(471): view('page/content/form/view_riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_riwayat_bayi('RWY001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 07:43:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 07:43:16 --> ErrorException: Undefined variable $riwayat_bayi
+[Method: GET, Route: view-riwayat-bayi/RWY001]
+in APPPATH\Views\page\content\form\view_riwayat_bayi.php on line 48.
+ 1 APPPATH\Views\page\content\form\view_riwayat_bayi.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $riwayat_bayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php', 48)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(471): view('page/content/form/view_riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_riwayat_bayi('RWY001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 07:43:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 07:43:25 --> ErrorException: Undefined variable $riwayat_bayi
+[Method: GET, Route: view-riwayat-bayi/RWY001]
+in APPPATH\Views\page\content\form\view_riwayat_bayi.php on line 38.
+ 1 APPPATH\Views\page\content\form\view_riwayat_bayi.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $riwayat_bayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(471): view('page/content/form/view_riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_riwayat_bayi('RWY001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 07:43:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 07:43:42 --> ErrorException: Undefined variable $riwayat_bayi
+[Method: GET, Route: view-riwayat-bayi/RWY001]
+in APPPATH\Views\page\content\form\view_riwayat_bayi.php on line 47.
+ 1 APPPATH\Views\page\content\form\view_riwayat_bayi.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $riwayat_bayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php', 47)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(471): view('page/content/form/view_riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_riwayat_bayi('RWY001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 07:43:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 07:43:57 --> ErrorException: Undefined variable $riwayat_bayi
+[Method: GET, Route: view-riwayat-bayi/RWY001]
+in APPPATH\Views\page\content\form\view_riwayat_bayi.php on line 51.
+ 1 APPPATH\Views\page\content\form\view_riwayat_bayi.php(51): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $riwayat_bayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php', 51)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(471): view('page/content/form/view_riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_riwayat_bayi('RWY001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 07:44:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 07:44:08 --> ErrorException: Undefined variable $riwayat_bayi
+[Method: GET, Route: view-riwayat-bayi/RWY001]
+in APPPATH\Views\page\content\form\view_riwayat_bayi.php on line 38.
+ 1 APPPATH\Views\page\content\form\view_riwayat_bayi.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $riwayat_bayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(471): view('page/content/form/view_riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_riwayat_bayi('RWY001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 07:44:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 07:44:35 --> ErrorException: Undefined variable $riwayat_bayi
+[Method: GET, Route: view-riwayat-bayi/RWY001]
+in APPPATH\Views\page\content\form\view_riwayat_bayi.php on line 38.
+ 1 APPPATH\Views\page\content\form\view_riwayat_bayi.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $riwayat_bayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(471): view('page/content/form/view_riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_riwayat_bayi('RWY001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 08:09:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 08:09:03 --> ErrorException: Undefined array key "riwayatBayi"
+[Method: GET, Route: view-riwayat-bayi/RWY001]
+in APPPATH\Controllers\Menu.php on line 469.
+ 1 APPPATH\Controllers\Menu.php(469): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "riwayatBayi"', 'E:\\Project\\klinik-bersalin\\app\\Controllers\\Menu.php', 469)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_riwayat_bayi('RWY001')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 08:09:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:09:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:09:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:10:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:10:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 08:11:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/edit_riwayat_bayi.php"
+[Method: GET, Route: edit-riwayat-bayi/RWY001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/edit_riwayat_bayi.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_riwayat_bayi', [], true)
+ 3 APPPATH\Controllers\Menu.php(482): view('page/content/form/edit_riwayat_bayi', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_riwayat_bayi('RWY001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 08:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 08:14:29 --> ErrorException: Undefined variable $rujukanBayi
+[Method: GET, Route: edit-riwayat-bayi/RWY001]
+in APPPATH\Views\page\content\form\edit_riwayat_bayi.php on line 79.
+ 1 APPPATH\Views\page\content\form\edit_riwayat_bayi.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $rujukanBayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_riwayat_bayi.php', 79)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(482): view('page/content/form/edit_riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_riwayat_bayi('RWY001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 08:14:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 08:14:48 --> ErrorException: Undefined variable $bayi
+[Method: GET, Route: edit-riwayat-bayi/RWY001]
+in APPPATH\Views\page\content\form\edit_riwayat_bayi.php on line 22.
+ 1 APPPATH\Views\page\content\form\edit_riwayat_bayi.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bayi', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_riwayat_bayi.php', 22)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(482): view('page/content/form/edit_riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_riwayat_bayi('RWY001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 08:15:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 08:15:27 --> ErrorException: Undefined array key "riwayat_bayi"
+[Method: GET, Route: edit-riwayat-bayi/RWY001]
+in APPPATH\Controllers\Menu.php on line 482.
+ 1 APPPATH\Controllers\Menu.php(482): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "riwayat_bayi"', 'E:\\Project\\klinik-bersalin\\app\\Controllers\\Menu.php', 482)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_riwayat_bayi('RWY001')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 08:15:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 08:15:37 --> ErrorException: Undefined array key "riwayatID"
+[Method: GET, Route: edit-riwayat-bayi/RWY001]
+in APPPATH\Views\page\content\form\edit_riwayat_bayi.php on line 38.
+ 1 APPPATH\Views\page\content\form\edit_riwayat_bayi.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "riwayatID"', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_riwayat_bayi.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_riwayat_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_riwayat_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(484): view('page/content/form/edit_riwayat_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_riwayat_bayi('RWY001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 08:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:26:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:26:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:27:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:27:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:27:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:27:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:27:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:27:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:27:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:28:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:31:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:32:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:32:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:33:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 08:39:11 --> ErrorException: Undefined property: App\Controllers\Menu::$pemeriksaanBayiModel
+[Method: GET, Route: pemeriksaan-bayis/BYI001]
+in APPPATH\Controllers\Menu.php on line 494.
+ 1 APPPATH\Controllers\Menu.php(494): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Menu::$pemeriksaanBayiModel', 'E:\\Project\\klinik-bersalin\\app\\Controllers\\Menu.php', 494)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pemeriksaan_bayis('BYI001')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 08:41:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 08:41:33 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/pemeriksaan_bayi.php"
+[Method: GET, Route: pemeriksaan-bayis/BYI001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/pemeriksaan_bayi.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/pemeriksaan_bayi', [], true)
+ 3 APPPATH\Controllers\Menu.php(498): view('page/content/pemeriksaan_bayi', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pemeriksaan_bayis('BYI001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 08:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 08:42:06 --> ErrorException: Undefined array key "namaBayi"
+[Method: GET, Route: pemeriksaan-bayis/BYI001]
+in APPPATH\Views\page\content\pemeriksaan_bayi.php on line 40.
+ 1 APPPATH\Views\page\content\pemeriksaan_bayi.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "namaBayi"', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\pemeriksaan_bayi.php', 40)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\pemeriksaan_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/pemeriksaan_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(498): view('page/content/pemeriksaan_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pemeriksaan_bayis('BYI001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 08:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 08:42:32 --> ErrorException: Undefined variable $pemeriksaanBayis
+[Method: GET, Route: pemeriksaan-bayis/BYI001]
+in APPPATH\Views\page\content\pemeriksaan_bayi.php on line 70.
+ 1 APPPATH\Views\page\content\pemeriksaan_bayi.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pemeriksaanBayis', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\pemeriksaan_bayi.php', 70)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\pemeriksaan_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/pemeriksaan_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(498): view('page/content/pemeriksaan_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pemeriksaan_bayis('BYI001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 08:43:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:43:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 08:44:20 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/add_pemeriksaan_bayi.php"
+[Method: GET, Route: add-pemeriksaan-bayi/BYI001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/add_pemeriksaan_bayi.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/add_pemeriksaan_bayi', [], true)
+ 3 APPPATH\Controllers\Menu.php(508): view('page/content/form/add_pemeriksaan_bayi', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->add_pemeriksaan_bayi('BYI001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 08:46:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 08:50:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:28:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:28:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:28:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:28:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:28:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:28:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:28:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:29:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:29:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:29:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:29:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:30:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:30:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:31:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 12:31:21 --> ErrorException: Undefined array key "tanggalPemeriksaan"
+[Method: GET, Route: pemeriksaan-bayis/BYI001]
+in APPPATH\Views\page\content\pemeriksaan_bayi.php on line 80.
+ 1 APPPATH\Views\page\content\pemeriksaan_bayi.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tanggalPemeriksaan"', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\pemeriksaan_bayi.php', 80)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\pemeriksaan_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/pemeriksaan_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(498): view('page/content/pemeriksaan_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pemeriksaan_bayis('BYI001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 12:31:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:31:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:31:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 12:31:51 --> ErrorException: Undefined array key "tanggalPemeriksaan"
+[Method: GET, Route: pemeriksaan-bayis/BYI001]
+in APPPATH\Views\page\content\pemeriksaan_bayi.php on line 80.
+ 1 APPPATH\Views\page\content\pemeriksaan_bayi.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "tanggalPemeriksaan"', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\pemeriksaan_bayi.php', 80)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\pemeriksaan_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/pemeriksaan_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(498): view('page/content/pemeriksaan_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pemeriksaan_bayis('BYI001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 12:32:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:32:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:37:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 12:37:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/view_pemeriksaan_bayi.php"
+[Method: GET, Route: view-pemeriksaan-bayi/PMR001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/view_pemeriksaan_bayi.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_pemeriksaan_bayi', [], true)
+ 3 APPPATH\Controllers\Menu.php(520): view('page/content/form/view_pemeriksaan_bayi', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pemeriksaan_bayi('PMR001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 12:39:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 12:39:11 --> ErrorException: Undefined variable $ibu
+[Method: GET, Route: view-pemeriksaan-bayi/PMR001]
+in APPPATH\Views\page\content\form\view_pemeriksaan_bayi.php on line 22.
+ 1 APPPATH\Views\page\content\form\view_pemeriksaan_bayi.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ibu', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pemeriksaan_bayi.php', 22)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pemeriksaan_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_pemeriksaan_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(520): view('page/content/form/view_pemeriksaan_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pemeriksaan_bayi('PMR001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 12:49:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:56:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:56:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:56:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:56:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:56:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 12:57:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 12:57:34 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/edit_pemeriksaan_bayi.php"
+[Method: GET, Route: edit-pemeriksaan-bayi/PMR001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/edit_pemeriksaan_bayi.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_pemeriksaan_bayi', [], true)
+ 3 APPPATH\Controllers\Menu.php(533): view('page/content/form/edit_pemeriksaan_bayi', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_pemeriksaan_bayi('PMR001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 13:00:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:20:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:21:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:30:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:30:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:31:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:31:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:31:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:32:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:32:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:35:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:35:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:35:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:36:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:36:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-26 13:36:45 --> mysqli_sql_exception: Unknown column 'petugasPemeriksaanBayi' in 'field list' in E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pe...', 0)
+#1 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 E:\Project\klinik-bersalin\system\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 E:\Project\klinik-bersalin\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 E:\Project\klinik-bersalin\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 E:\Project\klinik-bersalin\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 E:\Project\klinik-bersalin\app\Models\PemeriksaanBayiModel.php(39): CodeIgniter\Model->insert(Array)
+#8 E:\Project\klinik-bersalin\app\Controllers\Save.php(391): App\Models\PemeriksaanBayiModel->savePemeriksaanBayi(Array)
+#9 E:\Project\klinik-bersalin\system\CodeIgniter.php(933): App\Controllers\Save->store_pemeriksaan_bayi()
+#10 E:\Project\klinik-bersalin\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Save))
+#11 E:\Project\klinik-bersalin\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 E:\Project\klinik-bersalin\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 E:\Project\klinik-bersalin\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 E:\Project\klinik-bersalin\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 E:\Project\klinik-bersalin\system\rewrite.php(44): require_once('E:\\Project\\klin...')
+#16 {main}
+CRITICAL - 2024-07-26 13:36:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'petugasPemeriksaanBayi' in 'field list'
+[Method: POST, Route: add-pemeriksaan-bayi]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pemeriksaan_bayi` (`bayiID`, `asi`, `mpAsi`, `sdiDtk`, `bbPemeriksaanBayi`, `tbPemeriksaanBayi`, `status`, `vitA`, `imunisasiBayi`, `keteranganBayi`, `petugasPemeriksaanBayi`, `umurBayi`, `pemeriksaanBayiID`) VALUES (:bayiID:, :asi:, :mpAsi:, :sdiDtk:, :bbPemeriksaanBayi:, :tbPemeriksaanBayi:, :status:, :vitA:, :imunisasiBayi:, :keteranganBayi:, :petugasPemeriksaanBayi:, :umurBayi:, :pemeriksaanBayiID:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\PemeriksaanBayiModel.php(39): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Save.php(391): App\Models\PemeriksaanBayiModel->savePemeriksaanBayi([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Save->store_pemeriksaan_bayi()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Save))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+CRITICAL - 2024-07-26 13:36:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'petugasPemeriksaanBayi' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pemeriksaan_bayi` (`bayiID`, `asi`, `mpAsi`, `sdiDtk`, `bbPemeriksaanBayi`, `tbPemeriksaanBayi`, `status`, `vitA`, `imunisasiBayi`, `keteranganBayi`, `petugasPemeriksaanBayi`, `umurBayi`, `pemeriksaanBayiID`) VALUES (\'BYI001\', \'Ya\', \'Ya\', \'Ya\', \'1\', \'1\', \'Sehat\', \'Diberikan\', \'12\', \'12\', NULL, \'12\', \'PMR001\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pemeriksaan_bayi` (`bayiID`, `asi`, `mpAsi`, `sdiDtk`, `bbPemeriksaanBayi`, `tbPemeriksaanBayi`, `status`, `vitA`, `imunisasiBayi`, `keteranganBayi`, `petugasPemeriksaanBayi`, `umurBayi`, `pemeriksaanBayiID`) VALUES (\'BYI001\', \'Ya\', \'Ya\', \'Ya\', \'1\', \'1\', \'Sehat\', \'Diberikan\', \'12\', \'12\', NULL, \'12\', \'PMR001\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pemeriksaan_bayi` (`bayiID`, `asi`, `mpAsi`, `sdiDtk`, `bbPemeriksaanBayi`, `tbPemeriksaanBayi`, `status`, `vitA`, `imunisasiBayi`, `keteranganBayi`, `petugasPemeriksaanBayi`, `umurBayi`, `pemeriksaanBayiID`) VALUES (:bayiID:, :asi:, :mpAsi:, :sdiDtk:, :bbPemeriksaanBayi:, :tbPemeriksaanBayi:, :status:, :vitA:, :imunisasiBayi:, :keteranganBayi:, :petugasPemeriksaanBayi:, :umurBayi:, :pemeriksaanBayiID:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\PemeriksaanBayiModel.php(39): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Save.php(391): App\Models\PemeriksaanBayiModel->savePemeriksaanBayi([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Save->store_pemeriksaan_bayi()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Save))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+CRITICAL - 2024-07-26 13:36:45 --> [Caused by] mysqli_sql_exception: Unknown column 'petugasPemeriksaanBayi' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `pemeriksaan_bayi` (`bayiID`, `asi`, `mpAsi`, `sdiDtk`, `bbPemeriksaanBayi`, `tbPemeriksaanBayi`, `status`, `vitA`, `imunisasiBayi`, `keteranganBayi`, `petugasPemeriksaanBayi`, `umurBayi`, `pemeriksaanBayiID`) VALUES (\'BYI001\', \'Ya\', \'Ya\', \'Ya\', \'1\', \'1\', \'Sehat\', \'Diberikan\', \'12\', \'12\', NULL, \'12\', \'PMR001\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pemeriksaan_bayi` (`bayiID`, `asi`, `mpAsi`, `sdiDtk`, `bbPemeriksaanBayi`, `tbPemeriksaanBayi`, `status`, `vitA`, `imunisasiBayi`, `keteranganBayi`, `petugasPemeriksaanBayi`, `umurBayi`, `pemeriksaanBayiID`) VALUES (\'BYI001\', \'Ya\', \'Ya\', \'Ya\', \'1\', \'1\', \'Sehat\', \'Diberikan\', \'12\', \'12\', NULL, \'12\', \'PMR001\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pemeriksaan_bayi` (`bayiID`, `asi`, `mpAsi`, `sdiDtk`, `bbPemeriksaanBayi`, `tbPemeriksaanBayi`, `status`, `vitA`, `imunisasiBayi`, `keteranganBayi`, `petugasPemeriksaanBayi`, `umurBayi`, `pemeriksaanBayiID`) VALUES (\'BYI001\', \'Ya\', \'Ya\', \'Ya\', \'1\', \'1\', \'Sehat\', \'Diberikan\', \'12\', \'12\', NULL, \'12\', \'PMR001\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2332): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pemeriksaan_bayi` (`bayiID`, `asi`, `mpAsi`, `sdiDtk`, `bbPemeriksaanBayi`, `tbPemeriksaanBayi`, `status`, `vitA`, `imunisasiBayi`, `keteranganBayi`, `petugasPemeriksaanBayi`, `umurBayi`, `pemeriksaanBayiID`) VALUES (:bayiID:, :asi:, :mpAsi:, :sdiDtk:, :bbPemeriksaanBayi:, :tbPemeriksaanBayi:, :status:, :vitA:, :imunisasiBayi:, :keteranganBayi:, :petugasPemeriksaanBayi:, :umurBayi:, :pemeriksaanBayiID:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\PemeriksaanBayiModel.php(39): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Save.php(391): App\Models\PemeriksaanBayiModel->savePemeriksaanBayi([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Save->store_pemeriksaan_bayi()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Save))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+16 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 13:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:37:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 13:37:18 --> ErrorException: Undefined array key "petugasPemeriksaanBayi"
+[Method: GET, Route: view-pemeriksaan-bayi/PMR001]
+in APPPATH\Views\page\content\form\view_pemeriksaan_bayi.php on line 162.
+ 1 APPPATH\Views\page\content\form\view_pemeriksaan_bayi.php(162): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "petugasPemeriksaanBayi"', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pemeriksaan_bayi.php', 162)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pemeriksaan_bayi.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_pemeriksaan_bayi', [], true)
+ 5 APPPATH\Controllers\Menu.php(520): view('page/content/form/view_pemeriksaan_bayi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pemeriksaan_bayi('PMR001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 13:37:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:38:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:38:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:40:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:40:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:40:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:41:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:42:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:43:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:44:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:44:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:46:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 13:46:05 --> ParseError: syntax error, unexpected single-quoted string "kapasitas", expecting "]"
+[Method: POST, Route: update-kamars]
+in APPPATH\Controllers\Update.php on line 95.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('E:\\Project\\klinik-bersalin\\app\\Controllers\\Update.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Update')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Update')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\Update', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 13:46:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:46:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:46:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:46:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:47:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:48:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:56:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 13:58:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:01:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:03:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:05:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:08:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:08:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:08:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:09:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:09:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:09:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:09:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:11:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:11:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:13:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:13:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:15:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 14:15:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-26 14:18:20 --> mysqli_sql_exception: Can't create table `klinikbersalin`.`pasca_persalinan` (errno: 150 "Foreign key constraint is incorrectly formed") in E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php(312): mysqli->query('CREATE TABLE `p...', 0)
+#1 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `p...')
+#2 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `p...')
+#3 E:\Project\klinik-bersalin\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `p...')
+#4 E:\Project\klinik-bersalin\app\Database\Migrations\2024-07-26-141652_PascaPersalinan.php(99): CodeIgniter\Database\Forge->createTable('pasca_persalina...')
+#5 E:\Project\klinik-bersalin\system\Database\MigrationRunner.php(867): App\Database\Migrations\PascaPersalinan->up()
+#6 E:\Project\klinik-bersalin\system\Database\MigrationRunner.php(183): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 E:\Project\klinik-bersalin\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 E:\Project\klinik-bersalin\system\CLI\Commands.php(70): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 E:\Project\klinik-bersalin\system\CLI\Console.php(48): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 E:\Project\klinik-bersalin\system\Boot.php(351): CodeIgniter\CLI\Console->run()
+#11 E:\Project\klinik-bersalin\system\Boot.php(104): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 E:\Project\klinik-bersalin\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+INFO - 2024-07-26 14:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 15:48:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 15:48:47 --> ErrorException: Undefined variable $pascaPersalinans
+[Method: GET, Route: persalinan-ibus/IBU001]
+in APPPATH\Views\page\content\persalinans.php on line 90.
+ 1 APPPATH\Views\page\content\persalinans.php(90): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pascaPersalinans', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\persalinans.php', 90)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\persalinans.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/persalinans', [], true)
+ 5 APPPATH\Controllers\Menu.php(321): view('page/content/persalinans', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->persalinan_ibus('IBU001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 15:49:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 15:49:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 15:49:11 --> ErrorException: Undefined variable $pascaPersalinans
+[Method: GET, Route: persalinan-ibus/IBU001]
+in APPPATH\Views\page\content\persalinans.php on line 90.
+ 1 APPPATH\Views\page\content\persalinans.php(90): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pascaPersalinans', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\persalinans.php', 90)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\persalinans.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/persalinans', [], true)
+ 5 APPPATH\Controllers\Menu.php(321): view('page/content/persalinans', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->persalinan_ibus('IBU001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 15:49:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 15:50:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 15:50:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 15:50:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 15:53:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 15:53:26 --> ErrorException: Undefined property: App\Controllers\Menu::$pModel
+[Method: GET, Route: pasca-persalinan-ibus/IBU001]
+in APPPATH\Controllers\Menu.php on line 678.
+ 1 APPPATH\Controllers\Menu.php(678): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Menu::$pModel', 'E:\\Project\\klinik-bersalin\\app\\Controllers\\Menu.php', 678)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pasca_persalinan_ibus('IBU001')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 15:54:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-26 15:54:11 --> mysqli_sql_exception: Column 'ibuID' in where clause is ambiguous in E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\Project\klinik-bersalin\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Project\klinik-bersalin\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Project\klinik-bersalin\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 E:\Project\klinik-bersalin\app\Controllers\Menu.php(678): CodeIgniter\BaseModel->findAll()
+#7 E:\Project\klinik-bersalin\system\CodeIgniter.php(933): App\Controllers\Menu->pasca_persalinan_ibus('IBU001')
+#8 E:\Project\klinik-bersalin\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#9 E:\Project\klinik-bersalin\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\Project\klinik-bersalin\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 E:\Project\klinik-bersalin\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\Project\klinik-bersalin\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\Project\klinik-bersalin\system\rewrite.php(44): require_once('E:\\Project\\klin...')
+#14 {main}
+CRITICAL - 2024-07-26 15:54:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'ibuID' in where clause is ambiguous
+[Method: GET, Route: pasca-persalinan-ibus/IBU001]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pasca_persalinan`.`ibuID`
+WHERE `ibuID` = :ibuID:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Menu.php(678): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pasca_persalinan_ibus('IBU001')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+CRITICAL - 2024-07-26 15:54:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'ibuID' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pasca_persalinan`.`ibuID`
+WHERE `ibuID` = \'IBU001\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pasca_persalinan`.`ibuID`
+WHERE `ibuID` = \'IBU001\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pasca_persalinan`.`ibuID`
+WHERE `ibuID` = :ibuID:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Menu.php(678): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pasca_persalinan_ibus('IBU001')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+CRITICAL - 2024-07-26 15:54:11 --> [Caused by] mysqli_sql_exception: Column 'ibuID' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pasca_persalinan`.`ibuID`
+WHERE `ibuID` = \'IBU001\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pasca_persalinan`.`ibuID`
+WHERE `ibuID` = \'IBU001\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pasca_persalinan`.`ibuID`
+WHERE `ibuID` = \'IBU001\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pasca_persalinan`.`ibuID`
+WHERE `ibuID` = :ibuID:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Menu.php(678): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pasca_persalinan_ibus('IBU001')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 15:54:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 15:54:28 --> ErrorException: Undefined variable $ibu
+[Method: GET, Route: pasca-persalinan-ibus/IBU001]
+in APPPATH\Views\page\content\persalinans.php on line 22.
+ 1 APPPATH\Views\page\content\persalinans.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ibu', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\persalinans.php', 22)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\persalinans.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/persalinans', [], true)
+ 5 APPPATH\Controllers\Menu.php(679): view('page/content/persalinans', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pasca_persalinan_ibus('IBU001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 15:54:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 15:54:41 --> ErrorException: Undefined variable $persalinans
+[Method: GET, Route: pasca-persalinan-ibus/IBU001]
+in APPPATH\Views\page\content\persalinans.php on line 76.
+ 1 APPPATH\Views\page\content\persalinans.php(76): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $persalinans', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\persalinans.php', 76)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\persalinans.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/persalinans', [], true)
+ 5 APPPATH\Controllers\Menu.php(680): view('page/content/persalinans', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pasca_persalinan_ibus('IBU001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 15:55:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 15:55:13 --> ErrorException: Undefined variable $pascaPersalinans
+[Method: GET, Route: pasca-persalinan-ibus/IBU001]
+in APPPATH\Views\page\content\pasca_persalinan.php on line 90.
+ 1 APPPATH\Views\page\content\pasca_persalinan.php(90): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pascaPersalinans', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\pasca_persalinan.php', 90)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\pasca_persalinan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/pasca_persalinan', [], true)
+ 5 APPPATH\Controllers\Menu.php(680): view('page/content/pasca_persalinan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pasca_persalinan_ibus('IBU001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 15:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 15:55:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/pascaPersalinans.php"
+[Method: GET, Route: pasca-persalinan-ibus/IBU001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/pascaPersalinans.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/pascaPersalinans', [], true)
+ 3 APPPATH\Controllers\Menu.php(680): view('page/content/pascaPersalinans', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->pasca_persalinan_ibus('IBU001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 15:55:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 15:56:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 15:56:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:06:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 16:06:34 --> ErrorException: Undefined variable $ibu
+[Method: GET, Route: add-pasca-persalinan/IBU001]
+in APPPATH\Views\page\content\form\add_pasca_persalinan.php on line 22.
+ 1 APPPATH\Views\page\content\form\add_pasca_persalinan.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ibu', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\add_pasca_persalinan.php', 22)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\add_pasca_persalinan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/add_pasca_persalinan', [], true)
+ 5 APPPATH\Controllers\Menu.php(691): view('page/content/form/add_pasca_persalinan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->add_pasca_persalinan('IBU001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 16:07:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-26 16:07:04 --> ErrorException: Undefined variable $users
+[Method: GET, Route: add-pasca-persalinan/IBU001]
+in APPPATH\Views\page\content\form\add_pasca_persalinan.php on line 72.
+ 1 APPPATH\Views\page\content\form\add_pasca_persalinan.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\add_pasca_persalinan.php', 72)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\add_pasca_persalinan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/add_pasca_persalinan', [], true)
+ 5 APPPATH\Controllers\Menu.php(691): view('page/content/form/add_pasca_persalinan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->add_pasca_persalinan('IBU001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-26 16:07:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:09:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:09:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:09:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:14:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:15:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:31:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:46:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:46:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:46:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:48:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:49:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-26 16:49:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

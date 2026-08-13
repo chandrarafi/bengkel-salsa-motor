@@ -1,0 +1,723 @@
+INFO - 2024-07-27 01:58:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 01:58:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 01:59:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 01:59:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 01:59:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 01:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 01:59:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 01:59:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 01:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-27 01:59:23 --> mysqli_sql_exception: Unknown column 'pascaPersalinanID' in 'where clause' in E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\Project\klinik-bersalin\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Project\klinik-bersalin\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Project\klinik-bersalin\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 E:\Project\klinik-bersalin\app\Controllers\Menu.php(700): CodeIgniter\BaseModel->first()
+#7 E:\Project\klinik-bersalin\system\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+#8 E:\Project\klinik-bersalin\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#9 E:\Project\klinik-bersalin\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\Project\klinik-bersalin\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 E:\Project\klinik-bersalin\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\Project\klinik-bersalin\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\Project\klinik-bersalin\system\rewrite.php(44): require_once('E:\\Project\\klin...')
+#14 {main}
+CRITICAL - 2024-07-27 01:59:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pascaPersalinanID' in 'where clause'
+[Method: GET, Route: view-pasca-persalinan/PRT001]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasca_persalinan`
+WHERE `pascaPersalinanID` = :pascaPersalinanID:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\Menu.php(700): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+CRITICAL - 2024-07-27 01:59:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pascaPersalinanID' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pasca_persalinan`
+WHERE `pascaPersalinanID` = \'PRT001\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pasca_persalinan`
+WHERE `pascaPersalinanID` = \'PRT001\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasca_persalinan`
+WHERE `pascaPersalinanID` = :pascaPersalinanID:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\Menu.php(700): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+CRITICAL - 2024-07-27 01:59:23 --> [Caused by] mysqli_sql_exception: Unknown column 'pascaPersalinanID' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `pasca_persalinan`
+WHERE `pascaPersalinanID` = \'PRT001\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pasca_persalinan`
+WHERE `pascaPersalinanID` = \'PRT001\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pasca_persalinan`
+WHERE `pascaPersalinanID` = \'PRT001\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasca_persalinan`
+WHERE `pascaPersalinanID` = :pascaPersalinanID:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\Menu.php(700): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 01:59:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 01:59:54 --> ErrorException: Undefined variable $persalinanID
+[Method: GET, Route: view-pasca-persalinan/PRT001]
+in APPPATH\Controllers\Menu.php on line 702.
+ 1 APPPATH\Controllers\Menu.php(702): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $persalinanID', 'E:\\Project\\klinik-bersalin\\app\\Controllers\\Menu.php', 702)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 02:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-27 02:00:49 --> mysqli_sql_exception: Unknown column 'pascaPersalinan.petugasPascaPersalinan' in 'on clause' in E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\Project\klinik-bersalin\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Project\klinik-bersalin\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Project\klinik-bersalin\system\BaseModel.php(610): CodeIgniter\Model->doFind(true, 'PRT001')
+#6 E:\Project\klinik-bersalin\app\Controllers\Menu.php(702): CodeIgniter\BaseModel->find('PRT001')
+#7 E:\Project\klinik-bersalin\system\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+#8 E:\Project\klinik-bersalin\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#9 E:\Project\klinik-bersalin\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\Project\klinik-bersalin\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 E:\Project\klinik-bersalin\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\Project\klinik-bersalin\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\Project\klinik-bersalin\system\rewrite.php(44): require_once('E:\\Project\\klin...')
+#14 {main}
+CRITICAL - 2024-07-27 02:00:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pascaPersalinan.petugasPascaPersalinan' in 'on clause'
+[Method: GET, Route: view-pasca-persalinan/PRT001]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasca_persalinan`
+JOIN `users` ON `users`.`userID`=`pascaPersalinan`.`petugasPascaPersalinan`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = :pasca_persalinan.pemeriksaanRutinID:', [...], false)
+ 2 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(610): CodeIgniter\Model->doFind(true, 'PRT001')
+ 4 APPPATH\Controllers\Menu.php(702): CodeIgniter\BaseModel->find('PRT001')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+CRITICAL - 2024-07-27 02:00:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pascaPersalinan.petugasPascaPersalinan' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pasca_persalinan`
+JOIN `users` ON `users`.`userID`=`pascaPersalinan`.`petugasPascaPersalinan`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = \'PRT001\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pasca_persalinan`
+JOIN `users` ON `users`.`userID`=`pascaPersalinan`.`petugasPascaPersalinan`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = \'PRT001\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasca_persalinan`
+JOIN `users` ON `users`.`userID`=`pascaPersalinan`.`petugasPascaPersalinan`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = :pasca_persalinan.pemeriksaanRutinID:', [...], false)
+ 4 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(610): CodeIgniter\Model->doFind(true, 'PRT001')
+ 6 APPPATH\Controllers\Menu.php(702): CodeIgniter\BaseModel->find('PRT001')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+CRITICAL - 2024-07-27 02:00:49 --> [Caused by] mysqli_sql_exception: Unknown column 'pascaPersalinan.petugasPascaPersalinan' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `pasca_persalinan`
+JOIN `users` ON `users`.`userID`=`pascaPersalinan`.`petugasPascaPersalinan`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = \'PRT001\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pasca_persalinan`
+JOIN `users` ON `users`.`userID`=`pascaPersalinan`.`petugasPascaPersalinan`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = \'PRT001\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pasca_persalinan`
+JOIN `users` ON `users`.`userID`=`pascaPersalinan`.`petugasPascaPersalinan`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = \'PRT001\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasca_persalinan`
+JOIN `users` ON `users`.`userID`=`pascaPersalinan`.`petugasPascaPersalinan`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = :pasca_persalinan.pemeriksaanRutinID:', [...], false)
+ 5 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(610): CodeIgniter\Model->doFind(true, 'PRT001')
+ 7 APPPATH\Controllers\Menu.php(702): CodeIgniter\BaseModel->find('PRT001')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 02:01:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-07-27 02:01:13 --> mysqli_sql_exception: Unknown column 'pascaPersalinan.ibuID' in 'on clause' in E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 E:\Project\klinik-bersalin\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *\nFROM `...', 0)
+#1 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 E:\Project\klinik-bersalin\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 E:\Project\klinik-bersalin\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 E:\Project\klinik-bersalin\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 E:\Project\klinik-bersalin\system\BaseModel.php(610): CodeIgniter\Model->doFind(true, 'PRT001')
+#6 E:\Project\klinik-bersalin\app\Controllers\Menu.php(702): CodeIgniter\BaseModel->find('PRT001')
+#7 E:\Project\klinik-bersalin\system\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+#8 E:\Project\klinik-bersalin\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+#9 E:\Project\klinik-bersalin\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 E:\Project\klinik-bersalin\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 E:\Project\klinik-bersalin\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 E:\Project\klinik-bersalin\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 E:\Project\klinik-bersalin\system\rewrite.php(44): require_once('E:\\Project\\klin...')
+#14 {main}
+CRITICAL - 2024-07-27 02:01:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pascaPersalinan.ibuID' in 'on clause'
+[Method: GET, Route: view-pasca-persalinan/PRT001]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pascaPersalinan`.`ibuID`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = :pasca_persalinan.pemeriksaanRutinID:', [...], false)
+ 2 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(610): CodeIgniter\Model->doFind(true, 'PRT001')
+ 4 APPPATH\Controllers\Menu.php(702): CodeIgniter\BaseModel->find('PRT001')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+CRITICAL - 2024-07-27 02:01:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pascaPersalinan.ibuID' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pascaPersalinan`.`ibuID`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = \'PRT001\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pascaPersalinan`.`ibuID`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = \'PRT001\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pascaPersalinan`.`ibuID`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = :pasca_persalinan.pemeriksaanRutinID:', [...], false)
+ 4 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(610): CodeIgniter\Model->doFind(true, 'PRT001')
+ 6 APPPATH\Controllers\Menu.php(702): CodeIgniter\BaseModel->find('PRT001')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+CRITICAL - 2024-07-27 02:01:13 --> [Caused by] mysqli_sql_exception: Unknown column 'pascaPersalinan.ibuID' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pascaPersalinan`.`ibuID`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = \'PRT001\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pascaPersalinan`.`ibuID`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = \'PRT001\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pascaPersalinan`.`ibuID`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = \'PRT001\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pasca_persalinan`
+JOIN `ibu` ON `ibu`.`ibuID`=`pascaPersalinan`.`ibuID`
+WHERE `pasca_persalinan`.`pemeriksaanRutinID` = :pasca_persalinan.pemeriksaanRutinID:', [...], false)
+ 5 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(610): CodeIgniter\Model->doFind(true, 'PRT001')
+ 7 APPPATH\Controllers\Menu.php(702): CodeIgniter\BaseModel->find('PRT001')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 02:01:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 02:01:35 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/view_pasca_persalinan.php"
+[Method: GET, Route: view-pasca-persalinan/PRT001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/view_pasca_persalinan.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_pasca_persalinan', [], true)
+ 3 APPPATH\Controllers\Menu.php(704): view('page/content/form/view_pasca_persalinan', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 02:02:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 02:02:58 --> ErrorException: Undefined variable $persalinan
+[Method: GET, Route: view-pasca-persalinan/PRT001]
+in APPPATH\Views\page\content\form\view_pasca_persalinan.php on line 38.
+ 1 APPPATH\Views\page\content\form\view_pasca_persalinan.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $persalinan', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_pasca_persalinan', [], true)
+ 5 APPPATH\Controllers\Menu.php(704): view('page/content/form/view_pasca_persalinan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 02:03:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 02:03:35 --> ErrorException: Undefined variable $persalinan
+[Method: GET, Route: view-pasca-persalinan/PRT001]
+in APPPATH\Views\page\content\form\view_pasca_persalinan.php on line 41.
+ 1 APPPATH\Views\page\content\form\view_pasca_persalinan.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $persalinan', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php', 41)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_pasca_persalinan', [], true)
+ 5 APPPATH\Controllers\Menu.php(704): view('page/content/form/view_pasca_persalinan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 02:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 02:04:11 --> ErrorException: Undefined variable $pasca_persalinan
+[Method: GET, Route: view-pasca-persalinan/PRT001]
+in APPPATH\Views\page\content\form\view_pasca_persalinan.php on line 52.
+ 1 APPPATH\Views\page\content\form\view_pasca_persalinan.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pasca_persalinan', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php', 52)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_pasca_persalinan', [], true)
+ 5 APPPATH\Controllers\Menu.php(704): view('page/content/form/view_pasca_persalinan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 02:04:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 02:05:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 02:05:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 02:05:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 02:05:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 02:10:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 02:11:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 02:11:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 02:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 02:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 02:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 02:11:27 --> ErrorException: Undefined variable $persalinan
+[Method: GET, Route: view-pasca-persalinan/PRT001]
+in APPPATH\Views\page\content\form\view_pasca_persalinan.php on line 38.
+ 1 APPPATH\Views\page\content\form\view_pasca_persalinan.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $persalinan', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_pasca_persalinan', [], true)
+ 5 APPPATH\Controllers\Menu.php(704): view('page/content/form/view_pasca_persalinan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 12:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 12:45:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 12:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 12:45:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 12:45:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 12:45:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 12:45:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 12:45:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 12:45:45 --> ErrorException: Undefined array key "pascaPersalinanID"
+[Method: GET, Route: view-pasca-persalinan/PRT001]
+in APPPATH\Views\page\content\form\view_pasca_persalinan.php on line 38.
+ 1 APPPATH\Views\page\content\form\view_pasca_persalinan.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "pascaPersalinanID"', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_pasca_persalinan', [], true)
+ 5 APPPATH\Controllers\Menu.php(704): view('page/content/form/view_pasca_persalinan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 12:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 12:46:12 --> ErrorException: Undefined array key "userNama"
+[Method: GET, Route: view-pasca-persalinan/PRT001]
+in APPPATH\Views\page\content\form\view_pasca_persalinan.php on line 83.
+ 1 APPPATH\Views\page\content\form\view_pasca_persalinan.php(83): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "userNama"', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php', 83)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_pasca_persalinan', [], true)
+ 5 APPPATH\Controllers\Menu.php(704): view('page/content/form/view_pasca_persalinan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 12:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 12:46:33 --> ErrorException: Undefined array key "temperature"
+[Method: GET, Route: view-pasca-persalinan/PRT001]
+in APPPATH\Views\page\content\form\view_pasca_persalinan.php on line 107.
+ 1 APPPATH\Views\page\content\form\view_pasca_persalinan.php(107): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "temperature"', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php', 107)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_pasca_persalinan', [], true)
+ 5 APPPATH\Controllers\Menu.php(704): view('page/content/form/view_pasca_persalinan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 12:59:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 12:59:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 12:59:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 13:00:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 14:50:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 14:51:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 14:55:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 14:55:35 --> ErrorException: Undefined variable $persalinan
+[Method: GET, Route: view-pasca-persalinan/PRT001]
+in APPPATH\Views\page\content\form\view_pasca_persalinan.php on line 297.
+ 1 APPPATH\Views\page\content\form\view_pasca_persalinan.php(297): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $persalinan', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php', 297)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_pasca_persalinan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_pasca_persalinan', [], true)
+ 5 APPPATH\Controllers\Menu.php(704): view('page/content/form/view_pasca_persalinan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_pasca_persalinan('PRT001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 14:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 14:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 14:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 14:57:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 14:58:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 14:58:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 14:58:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:12:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 15:12:02 --> ErrorException: Undefined variable $pemeriksaanRutinID
+[Method: GET, Route: edit-pasca-persalinan/PRT001]
+in APPPATH\Controllers\Menu.php on line 713.
+ 1 APPPATH\Controllers\Menu.php(713): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pemeriksaanRutinID', 'E:\\Project\\klinik-bersalin\\app\\Controllers\\Menu.php', 713)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_pasca_persalinan('PRT001')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 15:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 15:12:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/edit_pasca_persalinan.php"
+[Method: GET, Route: edit-pasca-persalinan/PRT001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/edit_pasca_persalinan.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_pasca_persalinan', [], true)
+ 3 APPPATH\Controllers\Menu.php(718): view('page/content/form/edit_pasca_persalinan', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_pasca_persalinan('PRT001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 15:13:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 15:13:20 --> ErrorException: Undefined variable $persalinan
+[Method: GET, Route: edit-pasca-persalinan/PRT001]
+in APPPATH\Views\page\content\form\edit_pasca_persalinan.php on line 38.
+ 1 APPPATH\Views\page\content\form\edit_pasca_persalinan.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $persalinan', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_pasca_persalinan.php', 38)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_pasca_persalinan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_pasca_persalinan', [], true)
+ 5 APPPATH\Controllers\Menu.php(718): view('page/content/form/edit_pasca_persalinan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_pasca_persalinan('PRT001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 15:13:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:14:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 15:14:01 --> ErrorException: Undefined variable $persalinan
+[Method: GET, Route: edit-pasca-persalinan/PRT001]
+in APPPATH\Views\page\content\form\edit_pasca_persalinan.php on line 303.
+ 1 APPPATH\Views\page\content\form\edit_pasca_persalinan.php(303): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $persalinan', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_pasca_persalinan.php', 303)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_pasca_persalinan.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_pasca_persalinan', [], true)
+ 5 APPPATH\Controllers\Menu.php(718): view('page/content/form/edit_pasca_persalinan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_pasca_persalinan('PRT001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 15:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:14:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:14:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:14:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:14:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:20:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 15:20:06 --> ErrorException: Cannot redeclare App\Controllers\Update::update_persalinans()
+[Method: POST, Route: update-pasca-persalinans]
+in APPPATH\Controllers\Update.php on line 442.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2024-07-27 15:20:21 --> ErrorException: Cannot redeclare App\Controllers\Update::update_persalinans()
+[Method: POST, Route: update-pasca-persalinans]
+in APPPATH\Controllers\Update.php on line 442.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-07-27 15:33:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 15:35:49 --> ErrorException: Cannot redeclare App\Controllers\Update::update_persalinans()
+[Method: POST, Route: update-pasca-persalinans]
+in APPPATH\Controllers\Update.php on line 442.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-07-27 15:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:36:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:37:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:39:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:39:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:39:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:40:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:40:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:42:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:42:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:42:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 15:42:15 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: POST, Route: update-pasca-persalinans]
+in SYSTEMPATH\BaseModel.php on line 1833.
+ 1 SYSTEMPATH\BaseModel.php(1833): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\BaseModel.php(997): CodeIgniter\BaseModel->transformDataToArray(null, 'update')
+ 3 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], null)
+ 4 APPPATH\Controllers\Update.php(473): CodeIgniter\Model->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Update->update_pasca_persalinan()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Update))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 15:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:42:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:42:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:50:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:50:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:50:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:53:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:53:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:57:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 15:59:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 15:59:29 --> ErrorException: Undefined variable $pasca_persalinan
+[Method: GET, Route: view-penggunaan-obat/POI001]
+in APPPATH\Views\page\content\form\view_penggunaan_obat.php on line 121.
+ 1 APPPATH\Views\page\content\form\view_penggunaan_obat.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pasca_persalinan', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_penggunaan_obat.php', 121)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\view_penggunaan_obat.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/view_penggunaan_obat', [], true)
+ 5 APPPATH\Controllers\Menu.php(669): view('page/content/form/view_penggunaan_obat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->view_penggunaan_obat('POI001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 16:00:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:00:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:06:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 16:06:51 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: edit-pasca-persalinan/POI001]
+in APPPATH\Controllers\Menu.php on line 714.
+ 1 APPPATH\Controllers\Menu.php(714): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'E:\\Project\\klinik-bersalin\\app\\Controllers\\Menu.php', 714)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_pasca_persalinan('POI001')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 16:06:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:09:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 16:09:45 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: edit-pasca-persalinan/POI001]
+in APPPATH\Controllers\Menu.php on line 714.
+ 1 APPPATH\Controllers\Menu.php(714): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'E:\\Project\\klinik-bersalin\\app\\Controllers\\Menu.php', 714)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_pasca_persalinan('POI001')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 16:10:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:10:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:10:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 16:11:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "page/content/form/edit_penggunaan_obat.php"
+[Method: GET, Route: edit-penggunaan-obat/POI001]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('page/content/form/edit_penggunaan_obat.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_penggunaan_obat', [], true)
+ 3 APPPATH\Controllers\Menu.php(669): view('page/content/form/edit_penggunaan_obat', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_penggunaan_obat('POI001')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 16:11:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 16:11:48 --> ErrorException: Undefined variable $ibus
+[Method: GET, Route: edit-penggunaan-obat/POI001]
+in APPPATH\Views\page\content\form\edit_penggunaan_obat.php on line 45.
+ 1 APPPATH\Views\page\content\form\edit_penggunaan_obat.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $ibus', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_penggunaan_obat.php', 45)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_penggunaan_obat.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_penggunaan_obat', [], true)
+ 5 APPPATH\Controllers\Menu.php(669): view('page/content/form/edit_penggunaan_obat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_penggunaan_obat('POI001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 16:13:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:14:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:14:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:14:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:15:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:15:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:16:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:16:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:18:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:19:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 16:19:51 --> ErrorException: Undefined array key "obatValue"
+[Method: GET, Route: edit-penggunaan-obat/POI001]
+in APPPATH\Views\page\content\form\edit_penggunaan_obat.php on line 135.
+ 1 APPPATH\Views\page\content\form\edit_penggunaan_obat.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "obatValue"', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_penggunaan_obat.php', 135)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_penggunaan_obat.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_penggunaan_obat', [], true)
+ 5 APPPATH\Controllers\Menu.php(671): view('page/content/form/edit_penggunaan_obat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_penggunaan_obat('POI001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 16:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 16:20:04 --> ErrorException: Undefined array key "obatQty"
+[Method: GET, Route: edit-penggunaan-obat/POI001]
+in APPPATH\Views\page\content\form\edit_penggunaan_obat.php on line 135.
+ 1 APPPATH\Views\page\content\form\edit_penggunaan_obat.php(135): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "obatQty"', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_penggunaan_obat.php', 135)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_penggunaan_obat.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_penggunaan_obat', [], true)
+ 5 APPPATH\Controllers\Menu.php(671): view('page/content/form/edit_penggunaan_obat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_penggunaan_obat('POI001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 16:20:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-07-27 16:20:22 --> ErrorException: Undefined array key "obatSubtotal"
+[Method: GET, Route: edit-penggunaan-obat/POI001]
+in APPPATH\Views\page\content\form\edit_penggunaan_obat.php on line 136.
+ 1 APPPATH\Views\page\content\form\edit_penggunaan_obat.php(136): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "obatSubtotal"', 'E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_penggunaan_obat.php', 136)
+ 2 SYSTEMPATH\View\View.php(234): include('E:\\Project\\klinik-bersalin\\app\\Views\\page\\content\\form\\edit_penggunaan_obat.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('page/content/form/edit_penggunaan_obat', [], true)
+ 5 APPPATH\Controllers\Menu.php(671): view('page/content/form/edit_penggunaan_obat', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Menu->edit_penggunaan_obat('POI001')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menu))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('E:\\Project\\klinik-bersalin\\public\\index.php')
+INFO - 2024-07-27 16:20:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:21:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:22:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:22:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-07-27 16:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
