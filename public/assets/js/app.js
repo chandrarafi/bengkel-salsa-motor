@@ -60,6 +60,7 @@ function calculateSettingAsThemeString({ localStorageTheme }) {
 * Utility function to update the button text and aria-label.
 */
 function updateButton({ buttonEl, isDark }) {
+  if (!buttonEl) return;
   const newCta = isDark ? "dark" : "light";
   // use an aria-label if you are omitting text on the button
   // and using a sun/moon icon, for example
@@ -71,7 +72,10 @@ function updateButton({ buttonEl, isDark }) {
 * Utility function to update the theme setting on the html tag
 */
 function updateThemeOnHtmlEl({ theme }) {
-  document.querySelector("html").setAttribute("data-theme", theme);
+  const htmlEl = document.querySelector("html");
+  if (htmlEl) {
+    htmlEl.setAttribute("data-theme", theme);
+  }
 }
 
 /**
@@ -88,21 +92,25 @@ let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme });
 /**
 * 3. Update the theme setting and button text accoridng to current settings
 */
-updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
+if (button) {
+  updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
+}
 updateThemeOnHtmlEl({ theme: currentThemeSetting });
 
 /**
 * 4. Add an event listener to toggle the theme
 */
-button.addEventListener("click", (event) => {
-  const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+if (button) {
+  button.addEventListener("click", (event) => {
+    const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 
-  localStorage.setItem("theme", newTheme);
-  updateButton({ buttonEl: button, isDark: newTheme === "dark" });
-  updateThemeOnHtmlEl({ theme: newTheme });
+    localStorage.setItem("theme", newTheme);
+    updateButton({ buttonEl: button, isDark: newTheme === "dark" });
+    updateThemeOnHtmlEl({ theme: newTheme });
 
-  currentThemeSetting = newTheme;
-}); 
+    currentThemeSetting = newTheme;
+  }); 
+} 
 
 // =========================== Table Header Checkbox checked all js Start ================================
 $('#selectAll').on('change', function () {

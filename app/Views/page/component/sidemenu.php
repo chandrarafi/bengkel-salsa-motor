@@ -55,12 +55,26 @@ $isServisActive = !$isTransaksiServisActive && (
   url_is('servis*')
 );
 
+$isBookingActive = (
+  strpos($currentUri, 'admin/booking') !== false ||
+  strpos($requestUri, 'admin/booking') !== false ||
+  url_is('admin/booking*')
+);
+
 $isPenjualanActive = (
   strpos($currentUri, 'penjualan') !== false ||
   strpos($requestUri, 'penjualan') !== false ||
   url_is('admin/penjualan*') ||
   url_is('penjualan*')
 );
+
+$pendingBookingCount = 0;
+try {
+  $bookingModelForBadge = new \App\Models\BookingModel();
+  $pendingBookingCount = $bookingModelForBadge->countPendingApproval();
+} catch (\Throwable $e) {
+  $pendingBookingCount = 0;
+}
 
 $isDashboardActive = (
   !$isUsersActive &&
@@ -138,6 +152,19 @@ $isAdminOrPimpinan = in_array($role, ['admin', 'pimpinan']) || session()->get('i
       <a href="<?= site_url('admin/penjualan') ?>" class="<?= $isPenjualanActive ? 'active-page' : '' ?>">
         <iconify-icon icon="solar:bag-smile-bold-duotone" class="menu-icon"></iconify-icon>
         <span>Penjualan Barang</span>
+      </a>
+    </li>
+
+    <!-- Booking Servis Online -->
+    <li class="mb-10 <?= $isBookingActive ? 'active active-page' : '' ?>">
+      <a href="<?= site_url('admin/booking') ?>" class="<?= $isBookingActive ? 'active-page' : '' ?> d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-2">
+          <iconify-icon icon="solar:calendar-mark-bold-duotone" class="menu-icon"></iconify-icon>
+          <span>Booking Servis</span>
+        </div>
+        <?php if ($pendingBookingCount > 0): ?>
+          <span class="badge bg-warning-500 text-white text-xxs fw-bold px-6 py-2 radius-4 me-2"><?= $pendingBookingCount ?></span>
+        <?php endif; ?>
       </a>
     </li>
 

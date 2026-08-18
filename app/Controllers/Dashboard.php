@@ -4,8 +4,12 @@ namespace App\Controllers;
 
 class Dashboard extends BaseController
 {
-    public function index(): string
+    public function index()
     {
+        $role = strtolower(session()->get('userRole') ?? '');
+        if ($role === 'pelanggan') {
+            return redirect()->to('/riwayat-servis');
+        }
         $data = [
             'title' => 'Dashboard Bengkel Motor',
             'stats' => [

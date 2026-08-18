@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Auth::login');
+$routes->get('/', 'Landing::index');
 
 // Auth routes
 $routes->get('login', 'Auth::login');
@@ -14,8 +14,36 @@ $routes->get('register', 'Auth::register');
 $routes->post('register', 'Auth::processRegister');
 $routes->get('logout', 'Auth::logout');
 
-// Dashboard protected route
+// Dashboard protected route (Admin & Pimpinan)
 $routes->get('dashboard', 'Dashboard::index', ['filter' => 'auth']);
+
+// Customer Area (Pelanggan) Routes
+$routes->group('pelanggan', ['filter' => 'auth'], static function ($routes) {
+    $routes->get('profil', 'Pelanggan::profil');
+    $routes->post('profil/update', 'Pelanggan::updateProfil');
+    $routes->post('profil/password', 'Pelanggan::updatePassword');
+    $routes->get('riwayat', 'Pelanggan::riwayat');
+    $routes->get('riwayat/detail/(:segment)', 'Pelanggan::detailServis/$1');
+    $routes->get('riwayat/cetak/(:segment)', 'Pelanggan::cetakNota/$1');
+
+    // Booking Servis
+    $routes->get('booking', 'Pelanggan::booking');
+    $routes->post('booking/simpan', 'Pelanggan::simpanBooking');
+    $routes->get('riwayat-booking', 'Pelanggan::riwayatBooking');
+    $routes->post('booking/upload-ulang', 'Pelanggan::uploadUlangBukti');
+    $routes->get('booking/batal/(:num)', 'Pelanggan::batalBooking/$1');
+});
+
+$routes->get('profil', 'Pelanggan::profil', ['filter' => 'auth']);
+$routes->post('profil/update', 'Pelanggan::updateProfil', ['filter' => 'auth']);
+$routes->post('profil/password', 'Pelanggan::updatePassword', ['filter' => 'auth']);
+$routes->get('riwayat-servis', 'Pelanggan::riwayat', ['filter' => 'auth']);
+$routes->get('riwayat-servis/detail/(:segment)', 'Pelanggan::detailServis/$1', ['filter' => 'auth']);
+$routes->get('riwayat-servis/cetak/(:segment)', 'Pelanggan::cetakNota/$1', ['filter' => 'auth']);
+
+$routes->get('booking', 'Pelanggan::booking', ['filter' => 'auth']);
+$routes->post('booking/simpan', 'Pelanggan::simpanBooking', ['filter' => 'auth']);
+$routes->get('riwayat-booking', 'Pelanggan::riwayatBooking', ['filter' => 'auth']);
 
 // Admin Route Group (Admin only)
 $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
@@ -124,5 +152,16 @@ $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
         $routes->post('updateStatus', 'TransaksiServis::updateStatus');
         $routes->get('delete/(:segment)', 'TransaksiServis::delete/$1');
         $routes->post('delete/(:segment)', 'TransaksiServis::delete/$1');
+    });
+
+    // Kelola Booking Servis Online & Approval Pembayaran
+    $routes->group('booking', static function ($routes) {
+        $routes->get('/', 'Booking::index');
+        $routes->get('detail/(:num)', 'Booking::detail/$1');
+        $routes->get('approve/(:num)', 'Booking::approvePembayaran/$1');
+        $routes->post('approve/(:num)', 'Booking::approvePembayaran/$1');
+        $routes->post('tolak/(:num)', 'Booking::tolakPembayaran/$1');
+        $routes->post('update-status/(:num)', 'Booking::updateStatus/$1');
+        $routes->get('hapus/(:num)', 'Booking::hapus/$1');
     });
 });

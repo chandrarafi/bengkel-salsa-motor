@@ -9,7 +9,11 @@ class Auth extends BaseController
     public function login()
     {
         if (session()->get('isLoggedIn')) {
-            return redirect()->to('/dashboard');
+            $role = strtolower(session()->get('userRole') ?? '');
+            if (in_array($role, ['admin', 'pimpinan'])) {
+                return redirect()->to('/dashboard');
+            }
+            return redirect()->to('/');
         }
 
         return view('auth/login');
@@ -32,17 +36,32 @@ class Auth extends BaseController
 
         if ($user) {
             if (password_verify($password, $user['password'])) {
+                $role = strtolower($user['level'] ?? 'pelanggan');
+
                 $sessionData = [
                     'user_id'    => $user['id'],
                     'userNama'   => $user['nama'],
                     'userEmail'  => $user['email'],
-                    'userRole'   => $user['level'],
+                    'userRole'   => $role,
                     'isLoggedIn' => true,
                 ];
                 $session->set($sessionData);
                 $session->setFlashdata('success', 'Selamat datang kembali, ' . $user['nama'] . '!');
 
-                return redirect()->to('/dashboard');
+                // Jika admin atau pimpinan, arahkan ke dashboard
+                if (in_array($role, ['admin', 'pimpinan'])) {
+                    return redirect()->to('/dashboard');
+                }
+
+                // Jika pelanggan, periksa apakah ada halaman terakhir yang ingin diakses sebelumnya
+                $redirectUrl = $session->get('redirect_url');
+                if (!empty($redirectUrl)) {
+                    $session->remove('redirect_url');
+                    return redirect()->to($redirectUrl);
+                }
+
+                // Default pelanggan diarahkan ke Landing Page
+                return redirect()->to('/');
             } else {
                 $session->setFlashdata('msg', 'Kata sandi yang Anda masukkan salah.');
                 return redirect()->to('/login')->withInput();
@@ -56,7 +75,11 @@ class Auth extends BaseController
     public function register()
     {
         if (session()->get('isLoggedIn')) {
-            return redirect()->to('/dashboard');
+            $role = strtolower(session()->get('userRole') ?? '');
+            if (in_array($role, ['admin', 'pimpinan'])) {
+                return redirect()->to('/dashboard');
+            }
+            return redirect()->to('/');
         }
 
         return view('auth/register');
