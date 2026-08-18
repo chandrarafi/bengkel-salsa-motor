@@ -85,6 +85,17 @@
         box-shadow: 0 4px 10px rgba(255, 85, 0, 0.28);
     }
 
+    .time-slot-btn:disabled, .time-slot-btn.disabled-slot {
+        background-color: #f1f5f9 !important;
+        border-color: #e2e8f0 !important;
+        color: #94a3b8 !important;
+        cursor: not-allowed !important;
+        opacity: 0.5;
+        box-shadow: none !important;
+        text-decoration: line-through;
+        pointer-events: none;
+    }
+
     /* Selected Service Item */
     .selected-service-item {
         background: #f8fafc;
@@ -105,15 +116,17 @@
 
     /* Modal Service Item */
     .modal-service-row {
-        padding: 14px 16px;
-        border: 1px solid #e2e8f0;
-        border-radius: 10px;
-        margin-bottom: 10px;
+        padding: 16px;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 12px;
+        margin-bottom: 12px;
         cursor: pointer;
         transition: all 0.2s ease;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        gap: 16px;
+        background: #ffffff;
     }
 
     .modal-service-row:hover {
@@ -122,8 +135,20 @@
     }
 
     .modal-service-row.checked-row {
-        border-color: #ff5500;
-        background-color: rgba(255, 85, 0, 0.06);
+        border: 2px solid #ff5500 !important;
+        background-color: rgba(255, 85, 0, 0.04) !important;
+        box-shadow: 0 2px 8px rgba(255, 85, 0, 0.08);
+    }
+
+    .modal-service-row .badge-kode {
+        background: #f1f5f9;
+        color: #334155;
+        border: 1px solid #cbd5e1;
+        font-size: 0.7rem;
+        font-weight: 700;
+        padding: 3px 8px;
+        border-radius: 4px;
+        letter-spacing: 0.02em;
     }
 </style>
 
@@ -224,7 +249,7 @@
                                     <small class="text-muted fw-normal ms-1">(Bisa pilih lebih dari 1)</small>
                                 </label>
                                 <button type="button" class="btn btn-outline-neutral-700 bg-white text-dark btn-sm radius-6 px-12 py-4 text-xxs fw-bold d-inline-flex align-items-center gap-1 border" data-bs-toggle="modal" data-bs-target="#modalPilihServis">
-                                    <iconify-icon icon="solar:magnifer-bold-duotone" style="color: #ff5500;"></iconify-icon>
+                                    <iconify-icon icon="solar:magnifer-linear" style="color: #ff5500;" class="text-sm"></iconify-icon>
                                     Cari & Pilih Layanan
                                 </button>
                             </div>
@@ -252,7 +277,7 @@
                         <!-- Tanggal Servis -->
                         <div class="col-12 mt-3">
                             <label class="form-label text-xs fw-bold text-dark mb-1">Tanggal Rencana Servis <span class="text-danger">*</span></label>
-                            <input type="date" class="form-control radius-8 text-sm <?= isset($errors['tgl_booking']) ? 'is-invalid' : '' ?>" name="tgl_booking" min="<?= date('Y-m-d') ?>" value="<?= old('tgl_booking', date('Y-m-d')) ?>" required>
+                            <input type="date" class="form-control radius-8 text-sm <?= isset($errors['tgl_booking']) ? 'is-invalid' : '' ?>" name="tgl_booking" id="inputTglBooking" min="<?= date('Y-m-d') ?>" value="<?= old('tgl_booking', date('Y-m-d')) ?>" required>
                             <?php if (isset($errors['tgl_booking'])): ?>
                                 <div class="invalid-feedback"><?= $errors['tgl_booking'] ?></div>
                             <?php endif; ?>
@@ -355,14 +380,14 @@
                     </h6>
                 </div>
                 <div class="card-body-custom">
-                    <!-- Total Biaya Summary -->
+                    <!-- Total DP Estimasi Booking Summary -->
                     <div class="p-16 radius-10 mb-20 text-white" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);">
                         <div class="d-flex align-items-center justify-content-between mb-1">
-                            <span class="text-xxs text-neutral-400 text-uppercase fw-bold">Estimasi Total Biaya:</span>
+                            <span class="text-xxs text-neutral-400 text-uppercase fw-bold">DP Estimasi Booking:</span>
                             <span class="badge bg-secondary-700 text-neutral-300 text-xxs" id="selectedServicesCountBadge">0 Layanan</span>
                         </div>
                         <h3 class="fw-bold mb-0" id="displayTotalBiaya" style="color: #ff5500;">Rp 0</h3>
-                        <small class="text-xxs text-neutral-400 d-block mt-1">*Suku cadang/sparepart tambahan disesuaikan saat pengerjaan di bengkel.</small>
+                        <small class="text-xxs text-neutral-400 d-block mt-1">*Pembayaran online ini adalah DP estimasi booking. Total biaya servis & sparepart sebenarnya dihitung di bengkel setelah pengerjaan selesai.</small>
                     </div>
 
                     <!-- Pilihan Metode Pembayaran -->
@@ -402,42 +427,25 @@
                         </label>
                     </div>
 
-                    <!-- WOWDASH UPLOAD BUKTI PEMBAYARAN -->
-                    <label class="form-label text-xs fw-bold text-dark mb-2">Unggah Bukti Transfer / Pembayaran</label>
-                    <div class="upload-image-wrapper">
-                        <div class="d-flex align-items-center gap-3 mb-2">
-                            <!-- Preview Box -->
-                            <div class="uploaded-img d-none position-relative d-flex align-items-center justify-content-center">
-                                <button type="button" class="uploaded-img__remove position-absolute top-0 end-0 z-1 p-0 me-6 mt-6 d-flex border-0 bg-white rounded-circle shadow-sm cursor-pointer" title="Hapus foto" style="width: 24px; height: 24px; align-items: center; justify-content: center;">
-                                    <iconify-icon icon="radix-icons:cross-2" class="text-sm text-danger-600"></iconify-icon>
-                                </button>
-                                <img id="uploaded-img__preview" class="w-100 h-100 object-fit-cover" src="" alt="Bukti Transfer">
-                            </div>
-
-                            <!-- Upload Button Box -->
-                            <label class="upload-file d-flex align-items-center flex-column justify-content-center gap-1 cursor-pointer mb-0" for="upload-bukti">
-                                <iconify-icon icon="solar:camera-bold-duotone" class="text-2xl text-secondary-light"></iconify-icon>
-                                <span class="text-xxs fw-bold text-secondary-light">Pilih Struk</span>
-                                <input id="upload-bukti" name="bukti_pembayaran" type="file" hidden accept="image/png, image/jpeg, image/jpg, image/webp">
-                            </label>
-
-                            <div class="flex-grow-1">
-                                <span class="text-xs fw-bold text-dark d-block">Upload Struk / Bukti</span>
-                                <small class="text-xxs text-secondary-light d-block mt-1">Format: JPG, PNG, WEBP (Maks 3MB).</small>
-                                <small class="text-xxs text-secondary-light d-block">Admin akan memvalidasi bukti Anda.</small>
+                    <!-- Info Pembayaran Selanjutnya -->
+                    <div class="p-14 radius-10 mb-20 bg-warning-50 border border-warning-200">
+                        <div class="d-flex align-items-start gap-2">
+                            <iconify-icon icon="solar:clock-circle-bold-duotone" class="text-xl text-warning-600 flex-shrink-0 mt-1"></iconify-icon>
+                            <div>
+                                <span class="fw-bold text-warning-700 text-xs d-block mb-1">Batas Waktu Transfer DP 5 Menit</span>
+                                <small class="text-xxs text-neutral-600 d-block" style="line-height: 1.4;">
+                                    Setelah data disimpan, Anda diberikan waktu <b>5 menit</b> untuk mentransfer DP & mengunggah bukti pembayaran sebelum booking kadaluarsa secara otomatis.
+                                </small>
                             </div>
                         </div>
                     </div>
-                    <?php if (isset($errors['bukti_pembayaran'])): ?>
-                        <div class="text-danger text-xxs mt-2 fw-semibold d-block"><?= $errors['bukti_pembayaran'] ?></div>
-                    <?php endif; ?>
 
                     <hr class="my-20 border-neutral-200">
 
                     <!-- Submit Button -->
                     <button type="submit" class="btn btn-brand w-100 radius-8 py-12 text-sm fw-bold d-flex align-items-center justify-content-center gap-2 shadow-sm">
-                        <iconify-icon icon="solar:check-circle-bold" class="text-lg"></iconify-icon>
-                        <span>Kirim & Ajukan Booking Servis</span>
+                        <iconify-icon icon="solar:wallet-money-bold" class="text-lg"></iconify-icon>
+                        <span>Simpan & Lanjutkan Pembayaran</span>
                     </button>
                 </div>
             </div>
@@ -449,22 +457,24 @@
 <div class="modal fade" id="modalPilihServis" tabindex="-1" aria-labelledby="modalPilihServisLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
         <div class="modal-content radius-16 border-0 shadow-lg">
-            <div class="modal-header border-bottom px-24 py-16">
+            <div class="modal-header border-bottom px-24 py-16 d-flex align-items-center justify-content-between">
                 <div>
-                    <h5 class="modal-title fw-bold text-dark text-base mb-1" id="modalPilihServisLabel">
-                        <iconify-icon icon="solar:settings-minimalistic-bold-duotone" style="color: #ff5500;" class="me-1"></iconify-icon>
-                        Pilih Paket Layanan Servis
-                    </h5>
-                    <p class="text-xxs text-secondary-light mb-0">Centang satu atau beberapa layanan yang diinginkan untuk motor Anda.</p>
+                    <h6 class="modal-title fw-bold mb-1 d-flex align-items-center gap-2" id="modalPilihServisLabel" style="color: #0f172a !important; font-size: 16px !important;">
+                        <iconify-icon icon="solar:wrench-bold-duotone" style="color: #ff5500; font-size: 20px;"></iconify-icon>
+                        <span>Pilih Paket Layanan Servis</span>
+                    </h6>
+                    <p class="text-xs text-secondary-light mb-0">Centang satu atau beberapa layanan yang diinginkan untuk motor Anda.</p>
                 </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <!-- Search Bar in Modal -->
-            <div class="px-24 pt-16 pb-8 bg-light border-bottom">
-                <div class="icon-field">
-                    <span class="icon"><iconify-icon icon="solar:magnifer-bold-duotone"></iconify-icon></span>
-                    <input type="text" class="form-control radius-8 text-xs" id="searchServisInput" placeholder="Cari nama layanan, kode (contoh: Injeksi, Ganti Oli, Rem)...">
+            <div class="px-24 py-12 bg-light border-bottom">
+                <div class="position-relative">
+                    <span class="position-absolute top-50 start-0 translate-middle-y ms-12 text-secondary-light d-flex align-items-center">
+                        <iconify-icon icon="solar:magnifer-linear" style="font-size: 18px;"></iconify-icon>
+                    </span>
+                    <input type="text" class="form-control radius-8 text-xs ps-36 py-8" id="searchServisInput" placeholder="Cari nama atau kode layanan (contoh: Injeksi, Ganti Oli, Rem)...">
                 </div>
             </div>
 
@@ -479,22 +489,22 @@
                             $desc = $s['keterangan'] ?? 'Pemeriksaan dan perawatan standar bengkel.';
                         ?>
                             <div class="modal-service-row" data-kode="<?= esc($kode) ?>" data-nama="<?= esc($nama) ?>" data-biaya="<?= $biaya ?>" data-waktu="<?= esc($waktu) ?>" data-search="<?= strtolower($kode . ' ' . $nama . ' ' . $desc) ?>">
-                                <div class="d-flex align-items-center gap-3">
-                                    <input class="form-check-input mt-0 modal-servis-checkbox" type="checkbox" value="<?= esc($kode) ?>" id="chk_<?= esc($kode) ?>" style="cursor: pointer; width: 20px; height: 20px;">
+                                <div class="d-flex align-items-start gap-3 flex-grow-1">
+                                    <input class="form-check-input mt-1 modal-servis-checkbox flex-shrink-0" type="checkbox" value="<?= esc($kode) ?>" id="chk_<?= esc($kode) ?>" style="cursor: pointer; width: 20px; height: 20px;">
                                     <div>
-                                        <div class="d-flex align-items-center gap-2 mb-1">
-                                            <span class="badge bg-secondary-100 text-secondary-700 text-xxs fw-bold"><?= esc($kode) ?></span>
-                                            <h6 class="text-xs fw-bold text-dark mb-0"><?= esc($nama) ?></h6>
+                                        <div class="d-flex align-items-center gap-2 mb-1 flex-wrap">
+                                            <span class="badge px-8 py-3 text-xxs fw-bold radius-4 me-1" style="background-color: #e2e8f0; color: #1e293b !important; border: 1px solid #cbd5e1;"><?= esc($kode) ?></span>
+                                            <h6 class="text-sm fw-bold text-dark mb-0"><?= esc($nama) ?></h6>
                                         </div>
-                                        <p class="text-xxs text-secondary-light mb-0"><?= esc($desc) ?></p>
+                                        <p class="text-xs text-secondary-light mb-0" style="line-height: 1.4;"><?= esc($desc) ?></p>
                                     </div>
                                 </div>
-                                <div class="text-end ps-3">
-                                    <span class="badge radius-4 px-6 py-2 text-xxs fw-bold mb-1 d-inline-block" style="background: rgba(255, 85, 0, 0.1); color: #ff5500;">
-                                        <iconify-icon icon="solar:clock-circle-bold-duotone" class="me-1"></iconify-icon>
+                                <div class="text-end flex-shrink-0 ps-2" style="min-width: 110px;">
+                                    <span class="badge radius-6 px-8 py-3 text-xxs fw-bold mb-2 d-inline-flex align-items-center gap-1" style="background: rgba(255, 85, 0, 0.08); color: #ff5500;">
+                                        <iconify-icon icon="solar:clock-circle-bold-duotone" style="font-size: 13px;"></iconify-icon>
                                         <?= esc($waktu) ?> Menit
                                     </span>
-                                    <span class="fw-bold text-dark text-xs d-block">Rp <?= number_format($biaya, 0, ',', '.') ?></span>
+                                    <span class="fw-extrabold text-dark text-sm d-block text-nowrap" style="font-size: 15px; color: #0f172a !important;">Rp <?= number_format($biaya, 0, ',', '.') ?></span>
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -513,8 +523,8 @@
                     <button type="button" class="btn btn-outline-neutral-700 bg-white text-dark btn-sm radius-6 px-16 py-8 text-xs fw-bold border" data-bs-dismiss="modal">
                         Batal
                     </button>
-                    <button type="button" class="btn btn-brand btn-sm radius-6 px-20 py-8 text-xs fw-bold" id="btnApplyModalServices">
-                        <iconify-icon icon="solar:check-circle-bold" class="me-1"></iconify-icon>
+                    <button type="button" class="btn btn-brand btn-sm radius-6 px-20 py-8 text-xs fw-bold d-inline-flex align-items-center gap-1" id="btnApplyModalServices">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-base"></iconify-icon>
                         Terapkan Pilihan
                     </button>
                 </div>
@@ -541,14 +551,11 @@
         // Set of selected service codes
         let selectedServiceCodes = new Set();
 
-        // Initial preselect from query parameter ?kodeservis=... or old inputs
+        // Initial preselect only from query parameter ?kodeservis=...
         const urlParams = new URLSearchParams(window.location.search);
         const preselectCode = urlParams.get('kodeservis');
         if (preselectCode) {
             selectedServiceCodes.add(preselectCode);
-        } else if (allServices.length > 0) {
-            // Default select the first service
-            selectedServiceCodes.add(allServices[0].kode);
         }
 
         const selectedServicesList = document.getElementById("selectedServicesList");
@@ -576,14 +583,14 @@
                         item.className = "selected-service-item";
                         item.innerHTML = `
                             <div class="d-flex align-items-center gap-2 flex-grow-1">
-                                <span class="badge bg-secondary-200 text-secondary-800 text-xxs fw-bold">${s.kode}</span>
+                                <span class="badge px-8 py-3 text-xxs fw-bold radius-4" style="background-color: #e2e8f0; color: #1e293b !important; border: 1px solid #cbd5e1;">${s.kode}</span>
                                 <div>
                                     <span class="text-xs fw-bold text-dark d-block">${s.nama}</span>
                                     <small class="text-xxs text-secondary-light">Estimasi: ${s.waktu} Menit</small>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center gap-3">
-                                <span class="fw-bold text-dark text-xs">Rp ${s.biaya.toLocaleString('id-ID')}</span>
+                                <span class="fw-bold text-dark text-xs text-nowrap" style="color: #0f172a !important;">Rp ${s.biaya.toLocaleString('id-ID')}</span>
                                 <button type="button" class="btn btn-outline-danger btn-sm p-1 rounded-circle d-flex align-items-center justify-content-center btn-remove-service" data-kode="${s.kode}" title="Hapus layanan" style="width: 26px; height: 26px;">
                                     <iconify-icon icon="solar:trash-bin-trash-bold" class="text-xs"></iconify-icon>
                                 </button>
@@ -683,37 +690,102 @@
         renderSelectedServices();
 
         // -------------------------------------------------------------
-        // TIME SLOT BUTTONS SELECTOR
+        // TIME SLOT BUTTONS SELECTOR & DISABLING PAST SLOTS FOR TODAY
         // -------------------------------------------------------------
         const timeSlotBtns = document.querySelectorAll(".time-slot-btn");
         const inputJamBooking = document.getElementById("inputJamBooking");
         const selectedTimeBadge = document.getElementById("selectedTimeBadge");
+        const inputTglBooking = document.getElementById("inputTglBooking");
+
+        function updateAvailableTimeSlots() {
+            if (!inputTglBooking) return;
+
+            const selectedDate = inputTglBooking.value;
+            const now = new Date();
+            
+            // Format YYYY-MM-DD in Asia/Jakarta timezone
+            const todayStr = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Jakarta' }).format(now);
+            // Format HH:mm in Asia/Jakarta timezone
+            const nowTimeStr = new Intl.DateTimeFormat('id-ID', { 
+                timeZone: 'Asia/Jakarta', 
+                hour12: false, 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            }).format(now).replace('.', ':');
+
+            const isToday = (selectedDate === todayStr);
+
+            let firstValidSlot = null;
+
+            timeSlotBtns.forEach(btn => {
+                const jamSlot = btn.getAttribute("data-jam");
+                
+                // If today and slot time is past (<= nowTimeStr), disable it
+                if (isToday && jamSlot <= nowTimeStr) {
+                    btn.disabled = true;
+                    btn.classList.add("disabled-slot");
+                    btn.classList.remove("active");
+                    btn.setAttribute("title", "Jam " + jamSlot + " WIB sudah lewat untuk hari ini");
+                } else {
+                    btn.disabled = false;
+                    btn.classList.remove("disabled-slot");
+                    btn.removeAttribute("title");
+                    if (!firstValidSlot) {
+                        firstValidSlot = btn;
+                    }
+                }
+            });
+
+            // Check if currently selected slot is disabled
+            const currentJam = inputJamBooking.value;
+            const currentActiveBtn = Array.from(timeSlotBtns).find(b => b.getAttribute("data-jam") === currentJam);
+
+            if (!currentActiveBtn || currentActiveBtn.disabled) {
+                if (firstValidSlot) {
+                    timeSlotBtns.forEach(b => b.classList.remove("active"));
+                    firstValidSlot.classList.add("active");
+                    const newJam = firstValidSlot.getAttribute("data-jam");
+                    inputJamBooking.value = newJam;
+                    if (selectedTimeBadge) {
+                        selectedTimeBadge.innerText = newJam + ' WIB';
+                        selectedTimeBadge.className = "badge bg-primary-50 text-primary-600 text-xxs fw-bold";
+                    }
+                } else {
+                    timeSlotBtns.forEach(b => b.classList.remove("active"));
+                    inputJamBooking.value = "";
+                    if (selectedTimeBadge) {
+                        selectedTimeBadge.innerText = "Slot Hari Ini Habis";
+                        selectedTimeBadge.className = "badge bg-danger-50 text-danger-600 text-xxs fw-bold";
+                    }
+                }
+            } else {
+                if (selectedTimeBadge) {
+                    selectedTimeBadge.className = "badge bg-primary-50 text-primary-600 text-xxs fw-bold";
+                }
+            }
+        }
 
         timeSlotBtns.forEach(btn => {
             btn.addEventListener("click", function() {
+                if (this.disabled) return;
                 timeSlotBtns.forEach(b => b.classList.remove("active"));
                 this.classList.add("active");
                 const jam = this.getAttribute("data-jam");
                 inputJamBooking.value = jam;
                 if (selectedTimeBadge) {
                     selectedTimeBadge.innerText = jam + ' WIB';
+                    selectedTimeBadge.className = "badge bg-primary-50 text-primary-600 text-xxs fw-bold";
                 }
             });
         });
 
-        // Set initial active slot based on hidden input value
-        const initialJam = inputJamBooking.value;
-        if (initialJam) {
-            timeSlotBtns.forEach(btn => {
-                if (btn.getAttribute("data-jam") === initialJam) {
-                    timeSlotBtns.forEach(b => b.classList.remove("active"));
-                    btn.classList.add("active");
-                    if (selectedTimeBadge) {
-                        selectedTimeBadge.innerText = initialJam + ' WIB';
-                    }
-                }
-            });
+        if (inputTglBooking) {
+            inputTglBooking.addEventListener("change", updateAvailableTimeSlots);
+            inputTglBooking.addEventListener("input", updateAvailableTimeSlots);
         }
+
+        // Run initial check
+        updateAvailableTimeSlots();
 
         // -------------------------------------------------------------
         // PAYMENT METHOD CARDS

@@ -32,7 +32,7 @@
                             <th class="ps-24 py-12">Kode Booking</th>
                             <th class="py-12">Jadwal Servis</th>
                             <th class="py-12">Kendaraan</th>
-                            <th class="py-12">Paket Servis & Biaya</th>
+                            <th class="py-12">Paket & DP Estimasi</th>
                             <th class="py-12">Status Bayar</th>
                             <th class="py-12">Status Booking</th>
                             <th class="text-center pe-24 py-12">Aksi</th>
@@ -40,8 +40,19 @@
                     </thead>
                     <tbody>
                         <?php foreach ($daftarBooking as $row): 
+                            $stBayar   = strtolower($row['status_pembayaran'] ?? 'menunggu_konfirmasi');
+                            $stBooking = strtolower($row['status_booking'] ?? 'menunggu_konfirmasi');
+                            
+                            $createdAt = strtotime($row['created_at'] ?? 'now');
+                            $elapsed   = time() - $createdAt;
+                            $remSecs   = (5 * 60) - $elapsed;
+                            $isExpired = ($stBayar === 'menunggu_pembayaran' && $remSecs <= 0 && $stBooking !== 'dibatalkan');
+
+                            if ($isExpired) {
+                                $stBooking = 'dibatalkan';
+                            }
+
                             // Status Pembayaran Badge
-                            $stBayar = strtolower($row['status_pembayaran'] ?? 'menunggu_konfirmasi');
                             $badgeBayar = 'bg-warning-50 text-warning-700';
                             $textBayar  = 'Menunggu Approval';
 
@@ -52,12 +63,16 @@
                                 $badgeBayar = 'bg-danger-50 text-danger-700';
                                 $textBayar  = 'Pembayaran Ditolak';
                             } elseif ($stBayar === 'menunggu_pembayaran') {
-                                $badgeBayar = 'bg-neutral-100 text-secondary-light';
-                                $textBayar  = 'Belum Bayar';
+                                if ($remSecs > 0) {
+                                    $badgeBayar = 'bg-warning-50 text-warning-700';
+                                    $textBayar  = 'Belum Bayar DP (5 Menit)';
+                                } else {
+                                    $badgeBayar = 'bg-neutral-100 text-secondary-light';
+                                    $textBayar  = 'Kadaluarsa';
+                                }
                             }
 
                             // Status Booking Badge
-                            $stBooking = strtolower($row['status_booking'] ?? 'menunggu_konfirmasi');
                             $badgeBooking = 'bg-warning-50 text-warning-700';
                             $textBooking  = 'Menunggu Konfirmasi';
 
@@ -72,7 +87,7 @@
                                 $textBooking  = 'Servis Selesai';
                             } elseif ($stBooking === 'dibatalkan') {
                                 $badgeBooking = 'bg-danger-50 text-danger-700';
-                                $textBooking  = 'Dibatalkan';
+                                $textBooking  = 'Dibatalkan / Kadaluarsa';
                             }
 
                             $hasBukti = !empty($row['bukti_pembayaran']) && file_exists(ROOTPATH . 'public/uploads/bukti_pembayaran/' . $row['bukti_pembayaran']);
@@ -93,7 +108,7 @@
                                 </td>
                                 <td>
                                     <span class="fw-bold text-dark d-block"><?= esc($row['jenis_servis']) ?></span>
-                                    <span class="text-xxs fw-bold" style="color: #ff5500;">Rp <?= number_format($row['biaya'], 0, ',', '.') ?></span>
+                                    <span class="text-xxs fw-bold" style="color: #ff5500;">Rp <?= number_format($row['biaya'], 0, ',', '.') ?> <small class="text-secondary-light fw-semibold">(DP)</small></span>
                                 </td>
                                 <td>
                                     <span class="badge <?= $badgeBayar ?> radius-4 px-8 py-4 text-xxs fw-bold d-inline-block">
@@ -101,7 +116,7 @@
                                     </span>
                                     <?php if (!empty($row['catatan_admin'])): ?>
                                         <small class="text-xxs text-danger-main d-block mt-1 fw-semibold" title="Alasan: <?= esc($row['catatan_admin']) ?>">
-                                            Alasan: <?= esc(character_limiter($row['catatan_admin'], 30)) ?>
+                                            <?= esc(strlen($row['catatan_admin']) > 35 ? substr($row['catatan_admin'], 0, 35) . '...' : $row['catatan_admin']) ?>
                                         </small>
                                     <?php endif; ?>
                                 </td>
@@ -112,6 +127,13 @@
                                 </td>
                                 <td class="text-center pe-24">
                                     <div class="d-flex align-items-center justify-content-center gap-1">
+                                        <!-- Tombol Bayar Sekarang jika belum bayar dan belum kadaluarsa -->
+                                        <?php if ($stBayar === 'menunggu_pembayaran' && $remSecs > 0 && $stBooking !== 'dibatalkan'): ?>
+                                            <a href="<?= site_url('pelanggan/booking/pembayaran/' . $row['id_booking']) ?>" class="btn btn-brand text-white btn-sm radius-6 px-10 py-6 text-xxs fw-bold d-inline-flex align-items-center gap-1 shadow-sm" title="Selesaikan Pembayaran (5 Menit)">
+                                                <iconify-icon icon="solar:wallet-money-bold"></iconify-icon> Bayar Sekarang
+                                            </a>
+                                        <?php endif; ?>
+
                                         <!-- Tombol Lihat Detail / Bukti -->
                                         <?php if ($hasBukti): ?>
                                             <button type="button" class="btn btn-outline-neutral-700 btn-sm radius-6 px-8 py-4 text-xxs fw-bold btn-view-bukti" 
@@ -124,8 +146,8 @@
                                             </button>
                                         <?php endif; ?>
 
-                                        <!-- Tombol Re-Upload Bukti jika Ditolak atau Belum Bayar -->
-                                        <?php if (in_array($stBayar, ['ditolak', 'menunggu_pembayaran']) && $stBooking !== 'dibatalkan'): ?>
+                                        <!-- Tombol Re-Upload Bukti jika Ditolak -->
+                                        <?php if ($stBayar === 'ditolak' && $stBooking !== 'dibatalkan'): ?>
                                             <button type="button" class="btn btn-warning-main text-white btn-sm radius-6 px-8 py-4 text-xxs fw-bold btn-reupload-bukti" 
                                                     data-id="<?= $row['id_booking'] ?>" 
                                                     data-kode="<?= esc($row['kode_booking']) ?>"
@@ -135,7 +157,7 @@
                                         <?php endif; ?>
 
                                         <!-- Tombol Batalkan jika masih menunggu -->
-                                        <?php if ($stBooking === 'menunggu_konfirmasi'): ?>
+                                        <?php if ($stBooking === 'menunggu_konfirmasi' && $remSecs > 0): ?>
                                             <a href="<?= site_url('pelanggan/booking/batal/' . $row['id_booking']) ?>" class="btn btn-outline-danger btn-sm radius-6 px-8 py-4 text-xxs" onclick="return confirm('Apakah Anda yakin ingin membatalkan pengajuan booking servis ini?')" title="Batalkan Booking">
                                                 <iconify-icon icon="solar:close-circle-bold"></iconify-icon>
                                             </a>

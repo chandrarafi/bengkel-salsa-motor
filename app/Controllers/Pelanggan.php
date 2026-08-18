@@ -354,6 +354,18 @@ class Pelanggan extends BaseController
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
+        // Validasi jam kedatangan jika memilih tanggal hari ini
+        $tglBooking = $this->request->getPost('tgl_booking');
+        $jamBooking = $this->request->getPost('jam_booking');
+        $todayStr   = date('Y-m-d');
+        $nowTimeStr = date('H:i');
+
+        if ($tglBooking === $todayStr && $jamBooking <= $nowTimeStr) {
+            return redirect()->back()->withInput()->with('errors', [
+                'jam_booking' => 'Jam kedatangan (' . $jamBooking . ' WIB) sudah lewat untuk hari ini. Silakan pilih jam lain yang belum lewat atau pilih tanggal besok.'
+            ]);
+        }
+
         // Ambil data paket servis (mendukung multi-select array atau string)
         $kodeServisPost = $this->request->getPost('kodeservis');
         if (is_array($kodeServisPost)) {
@@ -388,22 +400,8 @@ class Pelanggan extends BaseController
         $kodeServisFinal  = implode(', ', $kodeServisClean);
         $jenisServisFinal = implode(' + ', $jenisServisArray);
 
-        // Upload bukti pembayaran
-        $namaBukti = null;
-        $fileBukti = $this->request->getFile('bukti_pembayaran');
-        if ($fileBukti && $fileBukti->isValid() && !$fileBukti->hasMoved()) {
-            $uploadPath = ROOTPATH . 'public/uploads/bukti_pembayaran';
-            if (!is_dir($uploadPath)) {
-                @mkdir($uploadPath, 0777, true);
-            }
-            $namaBukti = $fileBukti->getRandomName();
-            $fileBukti->move($uploadPath, $namaBukti);
-        }
-
         $userId = session()->get('user_id');
         $kodeBooking = $this->bookingModel->generateKodeBooking();
-
-        $statusPembayaran = !empty($namaBukti) ? 'menunggu_konfirmasi' : 'menunggu_pembayaran';
 
         $dataInsert = [
             'kode_booking'      => $kodeBooking,
@@ -419,15 +417,144 @@ class Pelanggan extends BaseController
             'jam_booking'       => $this->request->getPost('jam_booking'),
             'keluhan'           => $this->request->getPost('keluhan'),
             'metode_pembayaran' => $this->request->getPost('metode_pembayaran'),
-            'bukti_pembayaran'  => $namaBukti,
-            'status_pembayaran' => $statusPembayaran,
+            'bukti_pembayaran'  => null,
+            'status_pembayaran' => 'menunggu_pembayaran',
             'status_booking'    => 'menunggu_konfirmasi',
         ];
 
         $this->bookingModel->insert($dataInsert);
+        $idBooking = $this->bookingModel->getInsertID();
 
-        session()->setFlashdata('success', "Booking servis berhasil diajukan dengan Kode: <b>{$kodeBooking}</b>. Pembayaran Anda akan segera diverifikasi oleh admin bengkel.");
-        return redirect()->to('/riwayat-booking');
+        session()->setFlashdata('success', "Pengajuan booking disimpan! Silakan lakukan transfer & unggah bukti pembayaran dalam <b>5 menit</b>.");
+        return redirect()->to('/pelanggan/booking/pembayaran/' . $idBooking);
+    }
+
+    /**
+     * Halaman Pembayaran Booking (Hitung Mundur 5 Menit)
+     */
+    public function pembayaranBooking($idBooking = null)
+    {
+        $booking = $this->bookingModel->find($idBooking);
+
+        if (!$booking) {
+            session()->setFlashdata('error', 'Data booking tidak ditemukan.');
+            return redirect()->to('/riwayat-booking');
+        }
+
+        $userId = session()->get('user_id');
+        if ($userId && !empty($booking['id_pelanggan']) && (int)$booking['id_pelanggan'] !== (int)$userId) {
+            session()->setFlashdata('error', 'Anda tidak memiliki akses ke data booking ini.');
+            return redirect()->to('/riwayat-booking');
+        }
+
+        // Hitung sisa waktu 5 menit (300 detik)
+        $createdAt = strtotime($booking['created_at'] ?? 'now');
+        $now       = time();
+        $elapsed   = $now - $createdAt;
+        $maxTime   = 5 * 60; // 300 detik
+        $remaining = $maxTime - $elapsed;
+
+        if ($booking['status_pembayaran'] === 'menunggu_pembayaran' && $remaining <= 0 && $booking['status_booking'] !== 'dibatalkan') {
+            $this->bookingModel->update($idBooking, [
+                'status_booking' => 'dibatalkan',
+                'catatan_admin'  => 'Batas waktu pembayaran 5 menit telah habis (Kadaluarsa).'
+            ]);
+            $booking['status_booking'] = 'dibatalkan';
+            $remaining = 0;
+        }
+
+        $data = [
+            'title'            => 'Pembayaran Booking Servis #' . $booking['kode_booking'],
+            'booking'          => $booking,
+            'remainingSeconds' => max(0, $remaining),
+            'errors'           => session()->getFlashdata('errors') ?? [],
+        ];
+
+        return view('page/pelanggan/pembayaran_booking', $data);
+    }
+
+    /**
+     * Proses Upload Bukti Pembayaran dari Halaman Pembayaran
+     */
+    public function prosesPembayaranBooking()
+    {
+        $idBooking = $this->request->getPost('id_booking');
+        $booking   = $this->bookingModel->find($idBooking);
+
+        if (!$booking) {
+            session()->setFlashdata('error', 'Data booking tidak ditemukan.');
+            return redirect()->to('/riwayat-booking');
+        }
+
+        // Cek apakah sisa waktu masih ada
+        $createdAt = strtotime($booking['created_at'] ?? 'now');
+        $now       = time();
+        $elapsed   = $now - $createdAt;
+        if ($elapsed > (5 * 60) && $booking['status_pembayaran'] === 'menunggu_pembayaran') {
+            $this->bookingModel->update($idBooking, [
+                'status_booking' => 'dibatalkan',
+                'catatan_admin'  => 'Batas waktu pembayaran 5 menit telah habis (Kadaluarsa).'
+            ]);
+            session()->setFlashdata('error', 'Waktu pembayaran 5 menit telah habis. Booking Anda otomatis dibatalkan.');
+            return redirect()->to('/riwayat-booking');
+        }
+
+        $rules = [
+            'bukti_pembayaran' => 'uploaded[bukti_pembayaran]|is_image[bukti_pembayaran]|mime_in[bukti_pembayaran,image/jpg,image/jpeg,image/png,image/webp]|max_size[bukti_pembayaran,3072]',
+        ];
+
+        $messages = [
+            'bukti_pembayaran' => [
+                'uploaded' => 'File struk / bukti transfer wajib diunggah.',
+                'is_image' => 'File bukti pembayaran harus berupa gambar.',
+                'mime_in'  => 'Format gambar harus JPG, JPEG, PNG, atau WEBP.',
+                'max_size' => 'Ukuran file maksimal 3MB.',
+            ],
+        ];
+
+        if (!$this->validate($rules, $messages)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        $fileBukti = $this->request->getFile('bukti_pembayaran');
+        if ($fileBukti && $fileBukti->isValid() && !$fileBukti->hasMoved()) {
+            $uploadPath = ROOTPATH . 'public/uploads/bukti_pembayaran';
+            if (!is_dir($uploadPath)) {
+                @mkdir($uploadPath, 0777, true);
+            }
+            $namaBukti = $fileBukti->getRandomName();
+            $fileBukti->move($uploadPath, $namaBukti);
+
+            $this->bookingModel->update($idBooking, [
+                'bukti_pembayaran'  => $namaBukti,
+                'status_pembayaran' => 'menunggu_konfirmasi',
+            ]);
+
+            session()->setFlashdata('success', 'Bukti pembayaran berhasil diunggah! Admin akan memverifikasi pembayaran Anda.');
+            return redirect()->to('/riwayat-booking');
+        }
+
+        session()->setFlashdata('error', 'Gagal mengunggah bukti pembayaran.');
+        return redirect()->back();
+    }
+
+    /**
+     * Endpoint AJAX untuk membatalkan booking jika timer 5 menit habis
+     */
+    public function expirateBooking()
+    {
+        $idBooking = $this->request->getPost('id_booking');
+        $booking   = $this->bookingModel->find($idBooking);
+
+        if ($booking && $booking['status_pembayaran'] === 'menunggu_pembayaran') {
+            $this->bookingModel->update($idBooking, [
+                'status_booking' => 'dibatalkan',
+                'catatan_admin'  => 'Batas waktu pembayaran 5 menit telah habis (Kadaluarsa).'
+            ]);
+            return $this->response->setJSON(['status' => true, 'message' => 'Booking kadaluarsa.']);
+        }
+
+        return $this->response->setJSON(['status' => false]);
     }
 
     /**

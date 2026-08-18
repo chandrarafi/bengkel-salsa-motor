@@ -2,152 +2,133 @@
 
 <?= $this->section('content') ?>
 
-<div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-24">
-    <div>
-        <h6 class="fw-semibold mb-0">Kelola Booking Servis Pelanggan</h6>
-        <p class="text-xs text-secondary-light mb-0">Verifikasi bukti transfer pembayaran, konfirmasi antrean, dan pantau progres pengerjaan servis motor.</p>
-    </div>
-    <ul class="d-flex align-items-center gap-2">
+<style>
+    .basic-data-table .dataTables_wrapper .dataTables_length,
+    .basic-data-table .dataTables_wrapper .dataTables_filter {
+        margin-bottom: 16px !important;
+        font-size: 13px !important;
+    }
+    .basic-data-table .dataTables_wrapper .dataTables_length label,
+    .basic-data-table .dataTables_wrapper .dataTables_filter label {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        font-size: 13px !important;
+        color: #4b5563 !important;
+        margin-bottom: 0 !important;
+    }
+    .basic-data-table .dataTables_wrapper .dataTables_length select {
+        padding: 4px 28px 4px 10px !important;
+        font-size: 13px !important;
+        border-radius: 6px !important;
+        height: 34px !important;
+        display: inline-block !important;
+        width: auto !important;
+    }
+    .basic-data-table .dataTables_wrapper .dataTables_filter input {
+        padding: 4px 10px !important;
+        font-size: 13px !important;
+        border-radius: 6px !important;
+        height: 34px !important;
+        display: inline-block !important;
+        width: auto !important;
+        border: 1px solid #d1d5db !important;
+    }
+    .bordered-table th {
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        padding: 10px 12px !important;
+        background-color: #f8fafc !important;
+        color: #374151 !important;
+        white-space: nowrap;
+    }
+    .bordered-table td {
+        font-size: 13px !important;
+        padding: 8px 12px !important;
+        vertical-align: middle !important;
+        color: #4b5563 !important;
+    }
+    .dataTables_info, .dataTables_paginate {
+        margin-top: 16px !important;
+        font-size: 13px !important;
+    }
+    #modalApprovalAdmin .modal-dialog {
+        max-width: 1140px !important;
+        width: 95% !important;
+    }
+</style>
+
+<div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-20">
+    <h6 class="fw-semibold mb-0 text-lg">Kelola Booking Servis Pelanggan</h6>
+    <ul class="d-flex align-items-center gap-2 text-sm">
         <li class="fw-medium">
             <a href="<?= site_url('dashboard') ?>" class="d-flex align-items-center gap-1 hover-text-primary text-secondary-light">
-                <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-lg"></iconify-icon>
+                <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-base"></iconify-icon>
                 Dashboard
             </a>
         </li>
-        <li>-</li>
+        <li class="text-secondary-light">-</li>
         <li class="fw-medium text-secondary-light">Booking Servis</li>
     </ul>
 </div>
 
-<!-- KPI Metric Cards -->
-<div class="row g-3 mb-24">
-    <!-- Stat 1 -->
-    <div class="col-sm-6 col-lg-3">
-        <div class="card shadow-none border radius-12 p-20 bg-white">
-            <div class="d-flex align-items-center justify-content-between">
-                <div>
-                    <span class="text-xxs text-secondary-light text-uppercase fw-bold d-block mb-1">Total Booking</span>
-                    <h4 class="fw-bold text-dark mb-0"><?= esc($totalSemua) ?></h4>
-                    <span class="text-xxs text-secondary-light">Semua pengajuan</span>
-                </div>
-                <div class="w-44-px h-44-px rounded-10 d-flex align-items-center justify-content-center bg-primary-50 text-primary-600">
-                    <iconify-icon icon="solar:calendar-bold-duotone" class="text-2xl"></iconify-icon>
-                </div>
-            </div>
+<!-- Flash Alerts -->
+<?php if (session()->getFlashdata('success')) : ?>
+    <div class="mb-20 alert alert-success bg-success-100 text-success-600 border-success-100 px-16 py-10 radius-8 d-flex align-items-center justify-content-between text-sm" role="alert">
+        <div class="d-flex align-items-center gap-2">
+            <iconify-icon icon="mingcute:check-circle-fill" class="icon text-lg"></iconify-icon>
+            <?= session()->getFlashdata('success') ?>
         </div>
+        <button class="remove-button text-success-600 text-lg line-height-1 border-0 bg-transparent"><iconify-icon icon="iconamoon:sign-times-light"></iconify-icon></button>
     </div>
+<?php endif; ?>
 
-    <!-- Stat 2: Pending Approval -->
-    <div class="col-sm-6 col-lg-3">
-        <div class="card shadow-none border radius-12 p-20 bg-white">
-            <div class="d-flex align-items-center justify-content-between">
-                <div>
-                    <span class="text-xxs text-secondary-light text-uppercase fw-bold d-block mb-1">Butuh Approval</span>
-                    <h4 class="fw-bold text-warning-main mb-0"><?= esc($pendingApproval) ?></h4>
-                    <span class="text-xxs text-warning-600 fw-semibold">Menunggu cek transfer</span>
-                </div>
-                <div class="w-44-px h-44-px rounded-10 d-flex align-items-center justify-content-center bg-warning-50 text-warning-600">
-                    <iconify-icon icon="solar:bill-check-bold-duotone" class="text-2xl"></iconify-icon>
-                </div>
-            </div>
+<?php if (session()->getFlashdata('error')) : ?>
+    <div class="mb-20 alert alert-danger bg-danger-100 text-danger-600 border-danger-100 px-16 py-10 radius-8 d-flex align-items-center justify-content-between text-sm" role="alert">
+        <div class="d-flex align-items-center gap-2">
+            <iconify-icon icon="mingcute:close-circle-fill" class="icon text-lg"></iconify-icon>
+            <?= session()->getFlashdata('error') ?>
         </div>
+        <button class="remove-button text-danger-600 text-lg line-height-1 border-0 bg-transparent"><iconify-icon icon="iconamoon:sign-times-light"></iconify-icon></button>
     </div>
+<?php endif; ?>
 
-    <!-- Stat 3: Total Lunas -->
-    <div class="col-sm-6 col-lg-3">
-        <div class="card shadow-none border radius-12 p-20 bg-white">
-            <div class="d-flex align-items-center justify-content-between">
-                <div>
-                    <span class="text-xxs text-secondary-light text-uppercase fw-bold d-block mb-1">Pembayaran Lunas</span>
-                    <h4 class="fw-bold text-success-main mb-0"><?= esc($totalLunas) ?></h4>
-                    <span class="text-xxs text-success-600 fw-semibold">Transfer terverifikasi</span>
-                </div>
-                <div class="w-44-px h-44-px rounded-10 d-flex align-items-center justify-content-center bg-success-50 text-success-600">
-                    <iconify-icon icon="solar:check-circle-bold-duotone" class="text-2xl"></iconify-icon>
-                </div>
-            </div>
+<?php if (session()->getFlashdata('warning')) : ?>
+    <div class="mb-20 alert alert-warning bg-warning-100 text-warning-700 border-warning-100 px-16 py-10 radius-8 d-flex align-items-center justify-content-between text-sm" role="alert">
+        <div class="d-flex align-items-center gap-2">
+            <iconify-icon icon="mingcute:alert-fill" class="icon text-lg"></iconify-icon>
+            <?= session()->getFlashdata('warning') ?>
         </div>
+        <button class="remove-button text-warning-700 text-lg line-height-1 border-0 bg-transparent"><iconify-icon icon="iconamoon:sign-times-light"></iconify-icon></button>
     </div>
+<?php endif; ?>
 
-    <!-- Stat 4: Servis Selesai -->
-    <div class="col-sm-6 col-lg-3">
-        <div class="card shadow-none border radius-12 p-20 bg-white">
-            <div class="d-flex align-items-center justify-content-between">
-                <div>
-                    <span class="text-xxs text-secondary-light text-uppercase fw-bold d-block mb-1">Servis Selesai</span>
-                    <h4 class="fw-bold text-info-main mb-0"><?= esc($totalSelesai) ?></h4>
-                    <span class="text-xxs text-info-600 fw-semibold">Pengerjaan tuntas</span>
-                </div>
-                <div class="w-44-px h-44-px rounded-10 d-flex align-items-center justify-content-center bg-info-50 text-info-600">
-                    <iconify-icon icon="solar:wrench-bold-duotone" class="text-2xl"></iconify-icon>
-                </div>
-            </div>
-        </div>
+<!-- Main Data Table Card -->
+<div class="card basic-data-table radius-12 border">
+    <div class="card-header d-flex flex-wrap align-items-center justify-content-between gap-2 px-20 py-14 border-bottom border-neutral-200">
+        <h6 class="card-title mb-0 text-base fw-bold">Daftar Pengajuan Booking Servis</h6>
     </div>
-</div>
-
-<!-- Main Table Card -->
-<div class="card h-100 p-0 radius-12">
-    <!-- Filter Header -->
-    <div class="card-header border-bottom bg-base py-16 px-24">
-        <form method="get" action="<?= site_url('admin/booking') ?>" class="row g-2 align-items-center">
-            <!-- Search -->
-            <div class="col-md-4">
-                <div class="icon-field">
-                    <span class="icon"><iconify-icon icon="solar:magnifer-linear"></iconify-icon></span>
-                    <input type="text" name="q" class="form-control form-control-sm radius-8 text-xs" placeholder="Cari Kode, Nama, Plat, No HP..." value="<?= esc($search) ?>">
-                </div>
-            </div>
-
-            <!-- Filter Status Pembayaran -->
-            <div class="col-md-3">
-                <select name="bayar" class="form-select form-select-sm radius-8 text-xs" onchange="this.form.submit()">
-                    <option value="semua" <?= $filterBayar === 'semua' ? 'selected' : '' ?>>Semua Status Bayar</option>
-                    <option value="menunggu_konfirmasi" <?= $filterBayar === 'menunggu_konfirmasi' ? 'selected' : '' ?>>Menunggu Approval</option>
-                    <option value="lunas" <?= $filterBayar === 'lunas' ? 'selected' : '' ?>>Lunas / Disetujui</option>
-                    <option value="ditolak" <?= $filterBayar === 'ditolak' ? 'selected' : '' ?>>Pembayaran Ditolak</option>
-                    <option value="menunggu_pembayaran" <?= $filterBayar === 'menunggu_pembayaran' ? 'selected' : '' ?>>Belum Bayar</option>
-                </select>
-            </div>
-
-            <!-- Filter Status Booking -->
-            <div class="col-md-3">
-                <select name="status" class="form-select form-select-sm radius-8 text-xs" onchange="this.form.submit()">
-                    <option value="semua" <?= $filterBooking === 'semua' ? 'selected' : '' ?>>Semua Status Booking</option>
-                    <option value="menunggu_konfirmasi" <?= $filterBooking === 'menunggu_konfirmasi' ? 'selected' : '' ?>>Menunggu Konfirmasi</option>
-                    <option value="diterima" <?= $filterBooking === 'diterima' ? 'selected' : '' ?>>Jadwal Diterima</option>
-                    <option value="diproses" <?= $filterBooking === 'diproses' ? 'selected' : '' ?>>Sedang Dikerjakan</option>
-                    <option value="selesai" <?= $filterBooking === 'selesai' ? 'selected' : '' ?>>Selesai</option>
-                    <option value="dibatalkan" <?= $filterBooking === 'dibatalkan' ? 'selected' : '' ?>>Dibatalkan</option>
-                </select>
-            </div>
-
-            <div class="col-md-2 d-flex gap-2">
-                <button type="submit" class="btn btn-primary-600 btn-sm radius-8 text-xs w-100 fw-bold">Filter</button>
-                <a href="<?= site_url('admin/booking') ?>" class="btn btn-outline-neutral-700 btn-sm radius-8 text-xs" title="Reset"><iconify-icon icon="solar:restart-bold"></iconify-icon></a>
-            </div>
-        </form>
-    </div>
-
-    <!-- Table Body -->
-    <div class="card-body p-0">
-        <?php if (!empty($daftarBooking)): ?>
-            <div class="table-responsive">
-                <table class="table table-hover align-middle mb-0 text-xs">
-                    <thead class="bg-neutral-50 text-secondary-light text-xxs text-uppercase fw-bold">
-                        <tr>
-                            <th class="ps-24 py-12">Kode Booking</th>
-                            <th class="py-12">Pelanggan</th>
-                            <th class="py-12">Kendaraan</th>
-                            <th class="py-12">Jadwal Servis</th>
-                            <th class="py-12">Paket & Biaya</th>
-                            <th class="py-12">Bukti & Pembayaran</th>
-                            <th class="py-12">Status Booking</th>
-                            <th class="text-center pe-24 py-12">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($daftarBooking as $row): 
+    <div class="card-body p-20">
+        <div class="table-responsive">
+            <table class="table bordered-table align-middle text-sm mb-0" id="dataTable" data-page-length="10" style="width:100%;">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-center" style="width: 40px;">#</th>
+                        <th scope="col" style="width: 140px;">Kode Booking</th>
+                        <th scope="col">Pelanggan & Kontak</th>
+                        <th scope="col">Kendaraan & Nopol</th>
+                        <th scope="col">Jadwal Kedatangan</th>
+                        <th scope="col">Status Bayar & Struk</th>
+                        <th scope="col" class="text-center" style="width: 130px;">Status Booking</th>
+                        <th scope="col" class="text-center" style="width: 120px;">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $list = $daftarBooking ?? [];
+                    if (!empty($list)) :
+                        $no = 1;
+                        foreach ($list as $row) :
                             // Status Pembayaran
                             $stBayar = strtolower($row['status_pembayaran'] ?? 'menunggu_konfirmasi');
                             $badgeBayar = 'bg-warning-50 text-warning-700 border-warning-200';
@@ -171,33 +152,35 @@
 
                             if ($stBooking === 'diterima') {
                                 $badgeBooking = 'bg-primary-50 text-primary-700';
-                                $textBooking  = 'Diterima';
+                                $textBooking  = 'Jadwal Diterima';
                             } elseif ($stBooking === 'diproses') {
                                 $badgeBooking = 'bg-info-50 text-info-700';
                                 $textBooking  = 'Sedang Diproses';
                             } elseif ($stBooking === 'selesai') {
                                 $badgeBooking = 'bg-success-50 text-success-700';
-                                $textBooking  = 'Selesai';
+                                $textBooking  = 'Servis Selesai';
                             } elseif ($stBooking === 'dibatalkan') {
                                 $badgeBooking = 'bg-danger-50 text-danger-700';
-                                $textBooking  = 'Dibatalkan';
+                                $textBooking  = 'Dibatalkan / Kadaluarsa';
                             }
 
                             $hasBukti = !empty($row['bukti_pembayaran']) && file_exists(ROOTPATH . 'public/uploads/bukti_pembayaran/' . $row['bukti_pembayaran']);
                             $buktiUrl = $hasBukti ? base_url('uploads/bukti_pembayaran/' . $row['bukti_pembayaran']) : '';
 
-                            // Format WhatsApp link (e.g. 08123 -> 628123)
+                            // Format WhatsApp link
                             $phoneClean = preg_replace('/[^0-9]/', '', $row['no_hp']);
                             if (substr($phoneClean, 0, 1) === '0') {
                                 $phoneClean = '62' . substr($phoneClean, 1);
                             }
                             $waLink = "https://wa.me/{$phoneClean}?text=" . urlencode("Halo {$row['nama_pelanggan']}, kami dari Bengkel Salsa Motor mengonfirmasi booking servis Anda dengan kode {$row['kode_booking']}.");
-                        ?>
+                    ?>
                             <tr>
+                                <td class="text-center text-xs text-secondary-light"><?= $no++ ?></td>
+
                                 <!-- Kode Booking -->
-                                <td class="ps-24 fw-bold text-dark">
-                                    <span class="text-primary-600"><?= esc($row['kode_booking']) ?></span>
-                                    <small class="text-xxs text-secondary-light d-block"><?= date('d/m/Y H:i', strtotime($row['created_at'] ?? 'now')) ?></small>
+                                <td class="fw-bold text-dark">
+                                    <span class="badge bg-primary-focus text-primary-600 fw-bold text-xs"><?= esc($row['kode_booking']) ?></span>
+                                    <small class="text-xxs text-secondary-light d-block mt-1"><?= date('d/m/Y H:i', strtotime($row['created_at'] ?? 'now')) ?></small>
                                 </td>
 
                                 <!-- Pelanggan -->
@@ -219,12 +202,6 @@
                                 <td>
                                     <span class="fw-bold text-dark d-block"><?= date('d M Y', strtotime($row['tgl_booking'])) ?></span>
                                     <span class="text-xxs text-secondary-light fw-semibold">Pukul <?= date('H:i', strtotime($row['jam_booking'])) ?> WIB</span>
-                                </td>
-
-                                <!-- Paket & Biaya -->
-                                <td>
-                                    <span class="fw-bold text-dark d-block"><?= esc($row['jenis_servis']) ?></span>
-                                    <span class="text-xxs fw-bold text-primary-600">Rp <?= number_format($row['biaya'], 0, ',', '.') ?></span>
                                 </td>
 
                                 <!-- Bukti & Status Pembayaran -->
@@ -257,62 +234,63 @@
                                 </td>
 
                                 <!-- Status Booking -->
-                                <td>
+                                <td class="text-center">
                                     <span class="badge <?= $badgeBooking ?> radius-4 px-8 py-4 text-xxs fw-bold d-inline-block">
                                         <?= $textBooking ?>
                                     </span>
                                 </td>
 
                                 <!-- Actions -->
-                                <td class="text-center pe-24">
+                                <td class="text-center">
                                     <div class="d-flex align-items-center justify-content-center gap-1">
-                                        <!-- Tombol Approval Bukti Pembayaran -->
-                                        <?php if ($hasBukti): ?>
-                                            <button type="button" class="btn btn-outline-primary-600 btn-sm radius-6 px-8 py-4 text-xxs fw-bold btn-preview-bukti"
-                                                    data-id="<?= $row['id_booking'] ?>"
-                                                    data-kode="<?= esc($row['kode_booking']) ?>"
-                                                    data-pelanggan="<?= esc($row['nama_pelanggan']) ?>"
-                                                    data-motor="<?= esc($row['merkkendaraan']) ?> (<?= esc($row['nopol']) ?>)"
-                                                    data-layanan="<?= esc($row['jenis_servis']) ?>"
-                                                    data-biaya="Rp <?= number_format($row['biaya'], 0, ',', '.') ?>"
-                                                    data-metode="<?= esc($row['metode_pembayaran']) ?>"
-                                                    data-bukti="<?= $buktiUrl ?>"
-                                                    data-status-bayar="<?= $stBayar ?>"
-                                                    data-catatan="<?= esc($row['catatan_admin'] ?? '') ?>"
-                                                    title="Verifikasi Bukti Transfer">
-                                                <iconify-icon icon="solar:bill-check-bold" class="me-1 text-sm"></iconify-icon> Approval
-                                            </button>
-                                        <?php endif; ?>
+                                        <!-- Tombol Detail / Approval -->
+                                        <button type="button" class="w-28-px h-28-px bg-info-focus text-info-main rounded-circle d-inline-flex align-items-center justify-content-center hover-bg-info-main hover-text-white border-0 text-xs btn-preview-bukti"
+                                                data-id="<?= $row['id_booking'] ?>"
+                                                data-kode="<?= esc($row['kode_booking']) ?>"
+                                                data-pelanggan="<?= esc($row['nama_pelanggan']) ?>"
+                                                data-motor="<?= esc($row['merkkendaraan']) ?> (<?= esc($row['nopol']) ?>)"
+                                                data-layanan="<?= esc($row['jenis_servis']) ?>"
+                                                data-biaya="Rp <?= number_format($row['biaya'], 0, ',', '.') ?>"
+                                                data-metode="<?= esc($row['metode_pembayaran']) ?>"
+                                                data-bukti="<?= $buktiUrl ?>"
+                                                data-status-bayar="<?= $stBayar ?>"
+                                                data-catatan="<?= esc($row['catatan_admin'] ?? '') ?>"
+                                                title="Detail & Verifikasi Pembayaran">
+                                            <iconify-icon icon="solar:eye-bold-duotone"></iconify-icon>
+                                        </button>
+
+                                        <!-- Tombol Proses ke Work Order (Hijau) -->
+                                        <a href="<?= site_url('admin/transaksiservis/proses-booking/' . $row['id_booking']) ?>" 
+                                           class="w-28-px h-28-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center hover-bg-success-main hover-text-white border-0 text-xs" 
+                                           title="Proses ke Transaksi Servis (Work Order)">
+                                            <iconify-icon icon="lucide:wrench"></iconify-icon>
+                                        </a>
 
                                         <!-- Tombol Update Status Booking -->
-                                        <button type="button" class="btn btn-outline-neutral-700 btn-sm radius-6 px-8 py-4 text-xxs fw-bold btn-update-status"
+                                        <button type="button" class="w-28-px h-28-px bg-warning-focus text-warning-main rounded-circle d-inline-flex align-items-center justify-content-center hover-bg-warning-main hover-text-white border-0 text-xs btn-update-status"
                                                 data-id="<?= $row['id_booking'] ?>"
                                                 data-kode="<?= esc($row['kode_booking']) ?>"
                                                 data-status="<?= $stBooking ?>"
                                                 title="Ubah Status Booking">
-                                            <iconify-icon icon="solar:pen-new-square-bold"></iconify-icon>
+                                            <iconify-icon icon="lucide:edit"></iconify-icon>
                                         </button>
 
                                         <!-- Tombol Hapus -->
-                                        <a href="<?= site_url('admin/booking/hapus/' . $row['id_booking']) ?>" class="btn btn-outline-danger btn-sm radius-6 px-8 py-4 text-xxs" onclick="return confirm('Apakah Anda yakin ingin menghapus data booking ini?')" title="Hapus Data">
-                                            <iconify-icon icon="solar:trash-bin-minimalistic-bold"></iconify-icon>
-                                        </a>
+                                        <button type="button" onclick="confirmDeleteBooking('<?= $row['id_booking'] ?>', '<?= esc($row['kode_booking']) ?>')" 
+                                                class="w-28-px h-28-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center hover-bg-danger-main hover-text-white border-0 text-xs" 
+                                                title="Hapus Data Booking">
+                                            <iconify-icon icon="mingcute:close-circle-line"></iconify-icon>
+                                        </button>
                                     </div>
                                 </td>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
-        <?php else: ?>
-            <div class="text-center py-60 px-20">
-                <div class="w-64-px h-64-px rounded-circle bg-neutral-100 text-secondary-light d-inline-flex align-items-center justify-content-center mb-16">
-                    <iconify-icon icon="solar:calendar-bold-duotone" class="text-3xl"></iconify-icon>
-                </div>
-                <h6 class="fw-bold text-dark mb-4">Tidak Ada Data Booking</h6>
-                <p class="text-xs text-secondary-light mb-0">Belum ada pengajuan booking servis yang sesuai dengan filter pencarian Anda.</p>
-            </div>
-        <?php endif; ?>
+                    <?php
+                        endforeach;
+                    endif;
+                    ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -320,7 +298,7 @@
 <!-- MODAL VERIFIKASI & APPROVAL BUKTI TRANSFER ADMIN -->
 <!-- ========================================================================= -->
 <div class="modal fade" id="modalApprovalAdmin" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content radius-14 border-0 shadow-lg">
             <div class="modal-header border-bottom px-24 py-16">
                 <div>
@@ -333,8 +311,12 @@
                 <div class="row g-4 align-items-start">
                     <!-- Left: Preview Struk -->
                     <div class="col-md-6 text-center">
-                        <div class="p-8 bg-neutral-50 radius-10 border mb-2">
+                        <div class="p-8 bg-neutral-50 radius-10 border mb-2 min-h-200 d-flex align-items-center justify-content-center" id="buktiBoxContainer">
                             <img id="adminModalBuktiImg" src="" alt="Bukti Transfer" class="img-fluid rounded-8 shadow-sm" style="max-height: 380px; width: 100%; object-fit: contain;">
+                            <div id="adminNoBuktiText" class="text-secondary-light text-xs p-20 d-none">
+                                <iconify-icon icon="solar:camera-minimalistic-bold-duotone" class="text-4xl text-neutral-400 d-block mb-2 mx-auto"></iconify-icon>
+                                Belum ada bukti transfer diunggah pelanggan.
+                            </div>
                         </div>
                         <a href="#" id="adminModalBuktiLink" target="_blank" class="text-xxs text-primary-600 fw-bold d-inline-flex align-items-center gap-1 mt-1">
                             <iconify-icon icon="solar:maximize-square-bold"></iconify-icon> Buka Gambar Ukuran Penuh
@@ -363,7 +345,7 @@
                                 <span class="fw-bold text-dark" id="adminModalMetode">-</span>
                             </div>
                             <div class="pt-8 border-top d-flex justify-content-between align-items-center">
-                                <span class="text-xs fw-bold text-dark">Nominal Transfer:</span>
+                                <span class="text-xs fw-bold text-dark">DP Estimasi Booking:</span>
                                 <span class="text-sm fw-bold text-primary-600" id="adminModalBiaya">Rp 0</span>
                             </div>
                         </div>
@@ -384,6 +366,10 @@
                                 <iconify-icon icon="solar:check-circle-bold" class="text-base"></iconify-icon>
                                 Approve Pembayaran (Lunas & Terima Jadwal)
                             </button>
+                            <a href="#" id="btnProsesWO" class="btn btn-primary-600 radius-8 py-10 text-xs fw-bold d-flex align-items-center justify-content-center gap-2">
+                                <iconify-icon icon="lucide:wrench" class="text-base"></iconify-icon>
+                                Proses ke Transaksi Servis (Work Order)
+                            </a>
                             <button type="button" class="btn btn-outline-danger radius-8 py-10 text-xs fw-bold d-flex align-items-center justify-content-center gap-2" id="btnTolakAction">
                                 <iconify-icon icon="solar:close-circle-bold" class="text-base"></iconify-icon>
                                 Tolak Bukti Pembayaran
@@ -435,12 +421,31 @@
 
 <?= $this->section('script') ?>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    $(document).ready(function() {
+        if ($('#dataTable').length) {
+            new DataTable('#dataTable', {
+                language: {
+                    search: "Cari:",
+                    lengthMenu: "Tampilkan _MENU_ data",
+                    zeroRecords: "Tidak ada data booking servis yang ditemukan",
+                    info: "Menampilkan _START_ - _END_ dari _TOTAL_ booking",
+                    infoEmpty: "Menampilkan 0 booking",
+                    infoFiltered: "(disaring dari _MAX_ total booking)",
+                    paginate: {
+                        first: "«",
+                        last: "»",
+                        next: "›",
+                        previous: "‹"
+                    }
+                }
+            });
+        }
+
         let currentBookingId = null;
 
         // Trigger Modal Verifikasi & Approval
         const previewButtons = document.querySelectorAll(".btn-preview-bukti");
-        previewButtons.forEach(btn => {
+        previewButtons.forEach(function(btn) {
             btn.addEventListener("click", function() {
                 currentBookingId = this.getAttribute("data-id");
                 const kode = this.getAttribute("data-kode");
@@ -457,8 +462,24 @@
                 document.getElementById("adminModalLayanan").innerText = layanan;
                 document.getElementById("adminModalMetode").innerText = metode;
                 document.getElementById("adminModalBiaya").innerText = biaya;
-                document.getElementById("adminModalBuktiImg").src = bukti;
-                document.getElementById("adminModalBuktiLink").href = bukti;
+                document.getElementById("btnProsesWO").href = "<?= site_url('admin/transaksiservis/proses-booking/') ?>" + currentBookingId;
+
+                const imgEl = document.getElementById("adminModalBuktiImg");
+                const linkEl = document.getElementById("adminModalBuktiLink");
+                const noBuktiText = document.getElementById("adminNoBuktiText");
+
+                if (bukti && bukti !== '') {
+                    imgEl.src = bukti;
+                    imgEl.classList.remove('d-none');
+                    linkEl.href = bukti;
+                    linkEl.classList.remove('d-none');
+                    noBuktiText.classList.add('d-none');
+                } else {
+                    imgEl.src = '';
+                    imgEl.classList.add('d-none');
+                    linkEl.classList.add('d-none');
+                    noBuktiText.classList.remove('d-none');
+                }
 
                 // Reset tolak form
                 document.getElementById("formTolakContainer").classList.add("d-none");
@@ -473,9 +494,21 @@
         document.getElementById("btnApproveAction").addEventListener("click", function() {
             if (!currentBookingId) return;
 
-            if (confirm("Apakah Anda yakin ingin menyetujui pembayaran ini sebagai LUNAS dan menerima jadwal booking?")) {
-                window.location.href = "<?= site_url('admin/booking/approve/') ?>" + currentBookingId;
-            }
+            Swal.fire({
+                title: 'Setujui Pembayaran DP?',
+                text: 'Pembayaran akan disetujui sebagai LUNAS dan status jadwal booking berubah menjadi DITERIMA.',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#16a34a',
+                cancelButtonColor: '#6b7280',
+                confirmButtonText: 'Ya, Approve Pembayaran',
+                cancelButtonText: 'Batal',
+                reverseButtons: true
+            }).then(function(result) {
+                if (result.isConfirmed) {
+                    window.location.href = "<?= site_url('admin/booking/approve/') ?>" + currentBookingId;
+                }
+            });
         });
 
         // Buka Form Input Alasan Penolakan
@@ -494,11 +527,14 @@
         document.getElementById("btnKonfirmasiTolak").addEventListener("click", function() {
             const catatan = document.getElementById("inputCatatanTolak").value.trim();
             if (!catatan) {
-                alert("Silakan masukkan alasan penolakan bukti pembayaran.");
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Perhatian',
+                    text: 'Silakan masukkan alasan penolakan bukti pembayaran.'
+                });
                 return;
             }
 
-            // Buat form submit dinamis
             const form = document.createElement("form");
             form.method = "POST";
             form.action = "<?= site_url('admin/booking/tolak/') ?>" + currentBookingId;
@@ -521,13 +557,13 @@
 
         // Trigger Modal Update Status Booking
         const updateButtons = document.querySelectorAll(".btn-update-status");
-        updateButtons.forEach(btn => {
+        updateButtons.forEach(function(btn) {
             btn.addEventListener("click", function() {
                 const id = this.getAttribute("data-id");
                 const kode = this.getAttribute("data-kode");
                 const status = this.getAttribute("data-status");
 
-                document.getElementById("statusModalKodeText").innerText = "Booking: " + kode;
+                document.getElementById("statusModalKodeText").innerText = "Kode Booking: " + kode;
                 document.getElementById("selectStatusBooking").value = status;
                 document.getElementById("formUpdateStatusBooking").action = "<?= site_url('admin/booking/update-status/') ?>" + id;
 
@@ -535,5 +571,24 @@
             });
         });
     });
+
+    // Global SweetAlert function for delete booking
+    function confirmDeleteBooking(id, kode) {
+        Swal.fire({
+            title: 'Hapus Data Booking?',
+            text: 'Data booking "' + kode + '" akan dihapus permanen dari sistem.',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#dc2626',
+            cancelButtonColor: '#6b7280',
+            confirmButtonText: 'Ya, Hapus Data',
+            cancelButtonText: 'Batal',
+            reverseButtons: true
+        }).then(function(result) {
+            if (result.isConfirmed) {
+                window.location.href = "<?= site_url('admin/booking/hapus/') ?>" + id;
+            }
+        });
+    }
 </script>
 <?= $this->endSection() ?>

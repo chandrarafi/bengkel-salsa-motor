@@ -68,12 +68,57 @@ class TransaksiServis extends BaseController
         return view('page/content/form/transaksiservis/index', $data);
     }
 
+    /**
+     * Integrasi Booking Servis ke Transaksi Servis Baru (Work Order)
+     */
+    public function prosesBooking($id = null)
+    {
+        $bookingModel = new \App\Models\BookingModel();
+        $booking = $bookingModel->find($id);
+
+        if (!$booking) {
+            session()->setFlashdata('error', 'Data booking servis tidak ditemukan.');
+            return redirect()->to('/admin/booking');
+        }
+
+        // Update status booking menjadi 'diproses' (Sedang Pengerjaan Mekanik)
+        $bookingModel->update($id, [
+            'status_booking' => 'diproses',
+        ]);
+
+        return redirect()->to('/admin/transaksiservis/create?booking_id=' . $id);
+    }
+
     public function create()
     {
         $sessionId = $this->getSessionId();
 
         // Clear temp cart for fresh entry
         $this->tempTransaksiServisModel->where('session_id', $sessionId)->delete();
+
+        $bookingId = $this->request->getGet('booking_id');
+        $booking   = null;
+
+        if (!empty($bookingId)) {
+            $bookingModel = new \App\Models\BookingModel();
+            $booking      = $bookingModel->find($bookingId);
+
+            if ($booking) {
+                // Try auto-adding package service to temp cart if matches master service
+                $jenisServis = $booking['jenis_servis'] ?? '';
+                if ($jenisServis) {
+                    $matchedServis = $this->servisModel->like('jenis_servis', $jenisServis, 'both')->first();
+                    if ($matchedServis) {
+                        $this->tempTransaksiServisModel->insert([
+                            'session_id'    => $sessionId,
+                            'detserviskode' => $matchedServis['kodeservis'],
+                            'detbiaya'      => $matchedServis['biayaservis'],
+                            'dettotaljual'  => $matchedServis['biayaservis'],
+                        ]);
+                    }
+                }
+            }
+        }
 
         // Fetch users with level 'pelanggan'
         $pelangganList = $this->userModel->whereIn('level', ['pelanggan', 'Pelanggan'])
@@ -86,6 +131,7 @@ class TransaksiServis extends BaseController
             'servisList'    => $this->servisModel->orderBy('jenis_servis', 'ASC')->findAll(),
             'barangList'    => $this->barangModel->getBarangWithRelations(),
             'pelangganList' => $pelangganList,
+            'booking'       => $booking,
         ];
 
         return view('page/content/form/transaksiservis/create', $data);
@@ -282,6 +328,8 @@ class TransaksiServis extends BaseController
             }
         }
 
+        $dpBooking = (float)($this->request->getPost('dp_booking') ?? 0);
+
         $this->db->transStart();
 
         // 1. Insert header transaksi_servis
@@ -289,10 +337,11 @@ class TransaksiServis extends BaseController
             'faktur'         => $faktur,
             'tglfaktur'      => $tglfaktur,
             'nama_pelanggan' => $namaPelanggan,
-            'merkkendaraan' => $merkkendaraan,
+            'merkkendaraan'  => $merkkendaraan,
             'nopol'          => $nopol,
             'alasan'         => $alasan,
             'totalharga'     => $totalHarga,
+            'dp_booking'     => $dpBooking,
             'bayar'          => 0,
             'kembali'        => 0,
             'status'         => 'antri',
@@ -321,6 +370,17 @@ class TransaksiServis extends BaseController
 
         // 3. Clear temporary cart
         $this->tempTransaksiServisModel->where('session_id', $sessionId)->delete();
+
+        // 4. Update Booking status to selesai if integrated from online booking
+        $bookingId = $this->request->getPost('booking_id');
+        if (!empty($bookingId)) {
+            $bookingModel = new \App\Models\BookingModel();
+            $bookingModel->update($bookingId, [
+                'status_booking'    => 'selesai',
+                'status_pembayaran' => 'lunas',
+                'catatan_admin'     => 'Work Order servis diselesaikan via Faktur #' . $faktur,
+            ]);
+        }
 
         $this->db->transComplete();
 
@@ -399,6 +459,8 @@ class TransaksiServis extends BaseController
 
         $bayar      = (float)$this->request->getPost('bayar');
         $totalHarga = (float)$header['totalharga'];
+        $dpBooking  = (float)($header['dp_booking'] ?? 0);
+        $netTotal   = max(0, $totalHarga - $dpBooking);
 
         if (strtolower($header['status']) !== 'selesai') {
             return $this->response->setJSON([
@@ -407,14 +469,14 @@ class TransaksiServis extends BaseController
             ]);
         }
 
-        if ($bayar < $totalHarga) {
+        if ($bayar < $netTotal) {
             return $this->response->setJSON([
                 'status'  => false,
-                'message' => 'Uang pembayaran (Rp ' . number_format($bayar, 0, ',', '.') . ') kurang dari Total Biaya Servis (Rp ' . number_format($totalHarga, 0, ',', '.') . ').',
+                'message' => 'Uang pembayaran (Rp ' . number_format($bayar, 0, ',', '.') . ') kurang dari Sisa Tagihan Kasir (Rp ' . number_format($netTotal, 0, ',', '.') . ').',
             ]);
         }
 
-        $kembali = $bayar - $totalHarga;
+        $kembali = $bayar - $netTotal;
 
         $this->transaksiServisModel->update($faktur, [
             'status'  => 'selesai',

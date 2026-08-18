@@ -154,15 +154,31 @@
                 </h6>
             </div>
             <div class="card-body p-20">
-                <div class="d-flex align-items-center justify-content-between bg-neutral-50 p-16 radius-8 border mb-16">
-                    <span class="text-sm fw-bold text-neutral-800">Total Biaya Servis:</span>
-                    <span class="fw-bold text-neutral-900 text-xl" style="color: #0f172a !important;">Rp <?= number_format($header['totalharga'], 0, ',', '.') ?></span>
+                <?php 
+                    $dpBooking = (float)($header['dp_booking'] ?? 0);
+                    $netTotal  = max(0, (float)$header['totalharga'] - $dpBooking);
+                ?>
+                <div class="bg-neutral-50 p-16 radius-8 border mb-16">
+                    <div class="d-flex align-items-center justify-content-between mb-8">
+                        <span class="text-xs text-secondary-light">Total Biaya Servis & Sparepart:</span>
+                        <span class="fw-bold text-neutral-800 text-sm">Rp <?= number_format($header['totalharga'], 0, ',', '.') ?></span>
+                    </div>
+                    <?php if ($dpBooking > 0): ?>
+                        <div class="d-flex align-items-center justify-content-between mb-8 text-success-main">
+                            <span class="text-xs fw-semibold">Uang Muka (DP Online Terbayar):</span>
+                            <span class="fw-bold text-sm">- Rp <?= number_format($dpBooking, 0, ',', '.') ?></span>
+                        </div>
+                    <?php endif; ?>
+                    <div class="d-flex align-items-center justify-content-between border-top pt-8">
+                        <span class="text-sm fw-bold text-neutral-800">Sisa Tagihan Pelunasan:</span>
+                        <span class="fw-bold text-primary-600 text-xl">Rp <?= number_format($netTotal, 0, ',', '.') ?></span>
+                    </div>
                 </div>
 
                 <?php if ($isPaid): ?>
                     <div class="row g-3 mb-20">
                         <div class="col-6">
-                            <span class="text-xs text-secondary-light d-block">Uang Pembayaran:</span>
+                            <span class="text-xs text-secondary-light d-block">Uang Pembayaran Kasir:</span>
                             <span class="fw-bold text-success-main text-base">Rp <?= number_format($header['bayar'], 0, ',', '.') ?></span>
                         </div>
                         <div class="col-6">
@@ -286,6 +302,8 @@
 <?= $this->section('script') ?>
 <script>
     var pageTotalHarga = <?= (float)($header['totalharga'] ?? 0) ?>;
+    var pageDpBooking   = <?= (float)($header['dp_booking'] ?? 0) ?>;
+    var pageNetTotal    = Math.max(0, pageTotalHarga - pageDpBooking);
 
     $(document).ready(function() {
         $('#page_bayar').on('input', function() {
@@ -295,7 +313,7 @@
         $('.page-quick-btn').on('click', function() {
             var val = $(this).data('val');
             if (val === 'pas') {
-                $('#page_bayar').val(pageTotalHarga);
+                $('#page_bayar').val(pageNetTotal);
             } else {
                 $('#page_bayar').val(parseFloat(val));
             }
@@ -307,11 +325,11 @@
             var form = this;
             var bayarVal = parseFloat($('#page_bayar').val()) || 0;
 
-            if (bayarVal < pageTotalHarga) {
+            if (bayarVal < pageNetTotal) {
                 Swal.fire({
                     icon: 'warning',
                     title: 'Uang Bayar Kurang',
-                    text: 'Uang pembayaran (Rp ' + new Intl.NumberFormat('id-ID').format(bayarVal) + ') kurang dari total biaya servis (Rp ' + new Intl.NumberFormat('id-ID').format(pageTotalHarga) + ').'
+                    text: 'Uang pembayaran (Rp ' + new Intl.NumberFormat('id-ID').format(bayarVal) + ') kurang dari sisa tagihan pelunasan (Rp ' + new Intl.NumberFormat('id-ID').format(pageNetTotal) + ').'
                 });
                 return;
             }
@@ -409,7 +427,7 @@
 
     function calculatePageChange() {
         var bayarVal = parseFloat($('#page_bayar').val()) || 0;
-        var kembali = bayarVal - pageTotalHarga;
+        var kembali = bayarVal - pageNetTotal;
         if (kembali >= 0) {
             $('#page_display_kembali').css('color', '#16a34a').text('Rp ' + new Intl.NumberFormat('id-ID').format(kembali));
         } else {

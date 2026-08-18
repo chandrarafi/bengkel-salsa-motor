@@ -29,6 +29,9 @@ $routes->group('pelanggan', ['filter' => 'auth'], static function ($routes) {
     // Booking Servis
     $routes->get('booking', 'Pelanggan::booking');
     $routes->post('booking/simpan', 'Pelanggan::simpanBooking');
+    $routes->get('booking/pembayaran/(:num)', 'Pelanggan::pembayaranBooking/$1');
+    $routes->post('booking/proses-pembayaran', 'Pelanggan::prosesPembayaranBooking');
+    $routes->post('booking/expirate', 'Pelanggan::expirateBooking');
     $routes->get('riwayat-booking', 'Pelanggan::riwayatBooking');
     $routes->post('booking/upload-ulang', 'Pelanggan::uploadUlangBukti');
     $routes->get('booking/batal/(:num)', 'Pelanggan::batalBooking/$1');
@@ -43,6 +46,9 @@ $routes->get('riwayat-servis/cetak/(:segment)', 'Pelanggan::cetakNota/$1', ['fil
 
 $routes->get('booking', 'Pelanggan::booking', ['filter' => 'auth']);
 $routes->post('booking/simpan', 'Pelanggan::simpanBooking', ['filter' => 'auth']);
+$routes->get('booking/pembayaran/(:num)', 'Pelanggan::pembayaranBooking/$1', ['filter' => 'auth']);
+$routes->post('booking/proses-pembayaran', 'Pelanggan::prosesPembayaranBooking', ['filter' => 'auth']);
+$routes->post('booking/expirate', 'Pelanggan::expirateBooking', ['filter' => 'auth']);
 $routes->get('riwayat-booking', 'Pelanggan::riwayatBooking', ['filter' => 'auth']);
 
 // Admin Route Group (Admin only)
@@ -140,6 +146,7 @@ $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
     $routes->group('transaksiservis', static function ($routes) {
         $routes->get('/', 'TransaksiServis::index');
         $routes->get('create', 'TransaksiServis::create');
+        $routes->get('proses-booking/(:num)', 'TransaksiServis::prosesBooking/$1');
         $routes->post('store', 'TransaksiServis::store');
         $routes->get('edit/(:segment)', 'TransaksiServis::edit/$1');
         $routes->post('update/(:segment)', 'TransaksiServis::update/$1');

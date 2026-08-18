@@ -91,8 +91,34 @@
     </ul>
 </div>
 
+<?php if (!empty($booking)): ?>
+    <input type="hidden" name="booking_id" value="<?= $booking['id_booking'] ?>">
+    <div class="alert alert-success bg-success-50 border border-success-200 radius-10 p-16 mb-20 d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div class="d-flex align-items-center gap-3">
+            <div class="w-40-px h-40-px bg-success-600 text-white rounded-circle d-flex align-items-center justify-content-center text-xl flex-shrink-0">
+                <iconify-icon icon="lucide:wrench"></iconify-icon>
+            </div>
+            <div>
+                <h6 class="fw-bold text-success-700 mb-1 text-sm">Terintegrasi dari Booking Servis #<?= esc($booking['kode_booking']) ?></h6>
+                <span class="text-xs text-secondary-light">
+                    Pelanggan: <strong><?= esc($booking['nama_pelanggan']) ?></strong> | 
+                    Motor: <strong><?= esc($booking['merkkendaraan']) ?> (<?= esc($booking['nopol']) ?>)</strong> | 
+                    Paket: <strong><?= esc($booking['jenis_servis']) ?></strong>
+                </span>
+            </div>
+        </div>
+        <div class="text-end">
+            <span class="text-xxs text-secondary-light d-block">DP Estimasi Terbayar:</span>
+            <span class="badge bg-success-600 text-white fw-bold text-sm px-12 py-6 radius-6">Rp <?= number_format($booking['biaya'], 0, ',', '.') ?></span>
+        </div>
+    </div>
+<?php endif; ?>
+
 <form id="storeServisForm" action="<?= site_url('admin/transaksiservis/store') ?>" method="post">
     <?= csrf_field() ?>
+    <?php if (!empty($booking)): ?>
+        <input type="hidden" name="booking_id" value="<?= $booking['id_booking'] ?>">
+    <?php endif; ?>
 
     <div class="row g-4 mb-24">
         <!-- Informasi Transaksi & Kendaraan Card -->
@@ -118,7 +144,7 @@
                         <div class="col-12">
                             <label class="form-label text-xs fw-semibold text-neutral-700 mb-1">Nama Pelanggan / Pemilik</label>
                             <div class="input-group input-group-sm">
-                                <input type="text" name="nama_pelanggan" id="nama_pelanggan" class="form-control radius-start-8" placeholder="Nama Pelanggan Umum" value="Pelanggan Umum">
+                                <input type="text" name="nama_pelanggan" id="nama_pelanggan" class="form-control radius-start-8" placeholder="Nama Pelanggan Umum" value="<?= !empty($booking) ? esc($booking['nama_pelanggan']) : 'Pelanggan Umum' ?>">
                                 <button type="button" class="btn btn-primary-600 px-12 radius-end-8 text-xs d-flex align-items-center gap-1" data-bs-toggle="modal" data-bs-target="#cariPelangganModal">
                                     <iconify-icon icon="solar:users-group-two-rounded-outline"></iconify-icon> Cari Pelanggan
                                 </button>
@@ -130,19 +156,19 @@
 
                         <div class="col-md-6">
                             <label class="form-label text-xs fw-semibold text-neutral-700 mb-1">Merk / Tipe Kendaraan <span class="text-danger-600">*</span></label>
-                            <input type="text" name="merkkendaraan" id="merkkendaraan" class="form-control form-control-sm radius-8" placeholder="Contoh: Honda Vario 125" required>
+                            <input type="text" name="merkkendaraan" id="merkkendaraan" class="form-control form-control-sm radius-8" placeholder="Contoh: Honda Vario 125" value="<?= !empty($booking) ? esc($booking['merkkendaraan']) : '' ?>" required>
                             <div class="invalid-feedback" id="merkkendaraan_feedback">Merk/tipe kendaraan wajib diisi.</div>
                         </div>
 
                         <div class="col-md-6">
                             <label class="form-label text-xs fw-semibold text-neutral-700 mb-1">Nomor Polisi (Plat Motor) <span class="text-danger-600">*</span></label>
-                            <input type="text" name="nopol" id="nopol" class="form-control form-control-sm radius-8 font-mono text-uppercase" placeholder="Contoh: B 1234 ABC" required>
+                            <input type="text" name="nopol" id="nopol" class="form-control form-control-sm radius-8 font-mono text-uppercase" placeholder="Contoh: B 1234 ABC" value="<?= !empty($booking) ? esc($booking['nopol']) : '' ?>" required>
                             <div class="invalid-feedback" id="nopol_feedback">Nomor polisi wajib diisi.</div>
                         </div>
 
                         <div class="col-12">
                             <label class="form-label text-xs fw-semibold text-neutral-700 mb-1">Keluhan / Diagnosa Perbaikan</label>
-                            <textarea name="alasan" id="alasan" rows="6" class="form-control form-control-sm radius-8" style="min-height: 150px;" placeholder="Contoh: Tarikan mesin berat, ganti oli & lampu depan mati"></textarea>
+                            <textarea name="alasan" id="alasan" rows="6" class="form-control form-control-sm radius-8" style="min-height: 150px;" placeholder="Contoh: Tarikan mesin berat, ganti oli & lampu depan mati"><?= !empty($booking) ? 'Booking Online #' . esc($booking['kode_booking']) . ' - Paket: ' . esc($booking['jenis_servis']) . ' (DP Terbayar: Rp ' . number_format($booking['biaya'], 0, ',', '.') . ')' : '' ?></textarea>
                         </div>
                     </div>
                 </div>

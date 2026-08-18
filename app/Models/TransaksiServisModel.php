@@ -20,6 +20,7 @@ class TransaksiServisModel extends Model
         'nopol',
         'alasan',
         'totalharga',
+        'dp_booking',
         'bayar',
         'kembali',
         'status',

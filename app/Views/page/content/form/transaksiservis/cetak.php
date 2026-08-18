@@ -247,13 +247,27 @@
         </table>
 
         <!-- Totals -->
+        <?php 
+            $dpVal = (float)($header['dp_booking'] ?? 0);
+            $netVal = max(0, (float)$header['totalharga'] - $dpVal);
+        ?>
         <div class="totals-block">
-            <div class="totals-row grand-total">
-                <span>TOTAL BIAYA:</span>
+            <div class="totals-row">
+                <span>Subtotal Servis & Part:</span>
                 <span>Rp <?= number_format($header['totalharga'], 0, ',', '.') ?></span>
             </div>
+            <?php if ($dpVal > 0): ?>
+                <div class="totals-row" style="color: #16a34a; font-weight: bold;">
+                    <span>DP Online Terbayar:</span>
+                    <span>- Rp <?= number_format($dpVal, 0, ',', '.') ?></span>
+                </div>
+            <?php endif; ?>
+            <div class="totals-row grand-total">
+                <span>TOTAL PELUNASAN:</span>
+                <span>Rp <?= number_format($netVal, 0, ',', '.') ?></span>
+            </div>
             <div class="totals-row">
-                <span>Uang Bayar:</span>
+                <span>Uang Bayar Kasir:</span>
                 <span>Rp <?= number_format($header['bayar'], 0, ',', '.') ?></span>
             </div>
             <div class="totals-row">
