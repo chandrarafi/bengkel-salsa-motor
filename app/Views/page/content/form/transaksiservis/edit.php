@@ -425,12 +425,12 @@
                                             <?= esc($b['stok']) ?> <?= esc($b['nama_satuan'] ?? '') ?>
                                         </span>
                                     </td>
-                                    <td class="text-end fw-semibold text-xs">Rp <?= number_format(($b['harga'] ?? $b['harga_jual'] ?? 0), 0, ',', '.') ?></td>
+                                    <td class="text-end fw-semibold text-xs">Rp <?= number_format(($b['harga_jual'] ?? 0), 0, ',', '.') ?></td>
                                     <td class="text-center">
                                         <button type="button" class="btn btn-xs btn-primary-600 radius-4 px-12 py-4 btn-select-barang"
                                                 data-kode="<?= esc($b['kode']) ?>"
                                                 data-nama="<?= esc($b['nama_barng']) ?>"
-                                                data-hargajual="<?= (float)($b['harga'] ?? $b['harga_jual'] ?? 0) ?>"
+                                                data-hargajual="<?= (float)($b['harga_jual'] ?? 0) ?>"
                                                 data-stok="<?= (int)$b['stok'] ?>"
                                                 data-satuan="<?= esc($b['nama_satuan'] ?? '') ?>">
                                             Pilih

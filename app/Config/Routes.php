@@ -175,4 +175,20 @@ $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
         $routes->post('update-status/(:num)', 'Booking::updateStatus/$1');
         $routes->get('hapus/(:num)', 'Booking::hapus/$1');
     });
+
+    // Laporan Routes
+    $routes->group('laporan', static function ($routes) {
+        $routes->get('barang', 'Laporan::barang');
+        $routes->get('barang/cetak', 'Laporan::cetakBarang');
+        $routes->get('servis', 'Laporan::servis');
+        $routes->get('servis/cetak', 'Laporan::cetakServis');
+        $routes->get('barangmasuk', 'Laporan::barangMasuk');
+        $routes->get('barangmasuk/cetak', 'Laporan::cetakBarangMasuk');
+        $routes->get('penjualan', 'Laporan::penjualan');
+        $routes->get('penjualan/cetak', 'Laporan::cetakPenjualan');
+        $routes->get('booking', 'Laporan::booking');
+        $routes->get('booking/cetak', 'Laporan::cetakBooking');
+        $routes->get('transaksiservis', 'Laporan::transaksiServis');
+        $routes->get('transaksiservis/cetak', 'Laporan::cetakTransaksiServis');
+    });
 });

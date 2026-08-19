@@ -277,12 +277,12 @@
                                             <span class="badge bg-danger-focus text-danger-main px-8 py-3 rounded-pill text-xs fw-bold">Habis (0)</span>
                                         <?php endif; ?>
                                     </td>
-                                    <td class="text-end fw-bold text-xs text-success-main">Rp <?= number_format($brg['harga'], 0, ',', '.') ?></td>
+                                    <td class="text-end fw-bold text-xs text-success-main">Rp <?= number_format(($brg['harga_jual'] ?? 0), 0, ',', '.') ?></td>
                                     <td class="text-center">
                                         <button type="button" class="btn btn-sm btn-primary-600 radius-8 px-12 py-6 text-xs d-inline-flex align-items-center gap-1 select-barang-btn"
                                                 data-kode="<?= esc($brg['kode']) ?>"
                                                 data-nama="<?= esc($brg['nama_barng']) ?>"
-                                                data-harga="<?= esc($brg['harga']) ?>"
+                                                data-harga="<?= esc($brg['harga_jual'] ?? 0) ?>"
                                                 data-stok="<?= esc($brg['stok']) ?>">
                                             <iconify-icon icon="mingcute:check-line"></iconify-icon> Pilih
                                         </button>

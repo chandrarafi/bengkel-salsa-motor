@@ -279,8 +279,9 @@ class BarangMasuk extends BaseController
             if ($barang) {
                 $newStok = (int)$barang['stok'] + (int)$row['jumlah'];
                 $this->barangModel->update($row['detailbrgkode'], [
-                    'stok'  => $newStok,
-                    'harga' => $row['detailhargajual'],
+                    'stok'       => $newStok,
+                    'harga_beli' => $row['detailhargabeli'],
+                    'harga_jual' => $row['detailhargajual'],
                 ]);
             }
         }
@@ -389,8 +390,9 @@ class BarangMasuk extends BaseController
             if ($barang) {
                 $newStok = (int)$barang['stok'] + (int)$row['jumlah'];
                 $this->barangModel->update($row['detailbrgkode'], [
-                    'stok'  => $newStok,
-                    'harga' => $row['detailhargajual'],
+                    'stok'       => $newStok,
+                    'harga_beli' => $row['detailhargabeli'],
+                    'harga_jual' => $row['detailhargajual'],
                 ]);
             }
         }

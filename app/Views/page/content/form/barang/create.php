@@ -108,16 +108,28 @@
                             <div class="invalid-feedback <?= isset($errors['idsatuan']) ? 'd-block' : '' ?>" id="idsatuan_feedback"><?= esc($errors['idsatuan'] ?? 'Pilih satuan barang.') ?></div>
                         </div>
 
-                        <!-- Harga -->
+                        <!-- Harga Beli -->
                         <div class="col-md-6">
-                            <label class="form-label text-xs fw-semibold text-neutral-700 mb-1">Harga Barang (Rp) <span class="text-danger-600">*</span></label>
+                            <label class="form-label text-xs fw-semibold text-neutral-700 mb-1">Harga Beli (Rp) <span class="text-danger-600">*</span></label>
                             <div class="icon-field">
                                 <span class="icon">
                                     <iconify-icon icon="solar:tag-price-bold-duotone"></iconify-icon>
                                 </span>
-                                <input type="number" name="harga" id="harga" class="form-control form-control-sm radius-8 <?= isset($errors['harga']) ? 'is-invalid' : '' ?>" value="<?= old('harga') ?>" placeholder="Contoh: 55000" min="0" required>
+                                <input type="number" name="harga_beli" id="harga_beli" class="form-control form-control-sm radius-8 <?= isset($errors['harga_beli']) ? 'is-invalid' : '' ?>" value="<?= old('harga_beli') ?>" placeholder="Contoh: 45000" min="0" required>
                             </div>
-                            <div class="invalid-feedback <?= isset($errors['harga']) ? 'd-block' : '' ?>" id="harga_feedback"><?= esc($errors['harga'] ?? 'Harga barang wajib diisi.') ?></div>
+                            <div class="invalid-feedback <?= isset($errors['harga_beli']) ? 'd-block' : '' ?>" id="harga_beli_feedback"><?= esc($errors['harga_beli'] ?? 'Harga beli barang wajib diisi.') ?></div>
+                        </div>
+
+                        <!-- Harga Jual -->
+                        <div class="col-md-6">
+                            <label class="form-label text-xs fw-semibold text-neutral-700 mb-1">Harga Jual (Rp) <span class="text-danger-600">*</span></label>
+                            <div class="icon-field">
+                                <span class="icon">
+                                    <iconify-icon icon="solar:tag-price-bold-duotone"></iconify-icon>
+                                </span>
+                                <input type="number" name="harga_jual" id="harga_jual" class="form-control form-control-sm radius-8 <?= isset($errors['harga_jual']) ? 'is-invalid' : '' ?>" value="<?= old('harga_jual') ?>" placeholder="Contoh: 55000" min="0" required>
+                            </div>
+                            <div class="invalid-feedback <?= isset($errors['harga_jual']) ? 'd-block' : '' ?>" id="harga_jual_feedback"><?= esc($errors['harga_jual'] ?? 'Harga jual barang wajib diisi.') ?></div>
                         </div>
 
                         <!-- Stok -->

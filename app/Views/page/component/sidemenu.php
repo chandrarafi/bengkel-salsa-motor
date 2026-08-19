@@ -3,14 +3,26 @@ helper('url');
 $currentUri = uri_string();
 $requestUri = $_SERVER['REQUEST_URI'] ?? '';
 
-$isBarangMasukActive = (
+$isLaporanBarangMasukActive = (
+  strpos($currentUri, 'laporan/barangmasuk') !== false ||
+  strpos($requestUri, 'laporan/barangmasuk') !== false ||
+  url_is('admin/laporan/barangmasuk*')
+);
+
+$isBarangMasukActive = !$isLaporanBarangMasukActive && (
   strpos($currentUri, 'barangmasuk') !== false ||
   strpos($requestUri, 'barangmasuk') !== false ||
   url_is('admin/barangmasuk*') ||
   url_is('barangmasuk*')
 );
 
-$isBarangActive = !$isBarangMasukActive && (
+$isLaporanBarangActive = (
+  strpos($currentUri, 'laporan/barang') !== false ||
+  strpos($requestUri, 'laporan/barang') !== false ||
+  url_is('admin/laporan/barang*')
+);
+
+$isBarangActive = !$isBarangMasukActive && !$isLaporanBarangActive && (
   strpos($currentUri, 'admin/barang') !== false ||
   strpos($currentUri, 'barang/') !== false ||
   $currentUri === 'barang' ||
@@ -41,14 +53,26 @@ $isSatuanActive = (
   url_is('satuan*')
 );
 
-$isTransaksiServisActive = (
+$isLaporanTransaksiServisActive = (
+  strpos($currentUri, 'laporan/transaksiservis') !== false ||
+  strpos($requestUri, 'laporan/transaksiservis') !== false ||
+  url_is('admin/laporan/transaksiservis*')
+);
+
+$isTransaksiServisActive = !$isLaporanTransaksiServisActive && (
   strpos($currentUri, 'transaksiservis') !== false ||
   strpos($requestUri, 'transaksiservis') !== false ||
   url_is('admin/transaksiservis*') ||
   url_is('transaksiservis*')
 );
 
-$isServisActive = !$isTransaksiServisActive && (
+$isLaporanServisActive = (
+  strpos($currentUri, 'laporan/servis') !== false ||
+  strpos($requestUri, 'laporan/servis') !== false ||
+  url_is('admin/laporan/servis*')
+);
+
+$isServisActive = !$isTransaksiServisActive && !$isLaporanServisActive && (
   strpos($currentUri, 'servis') !== false ||
   strpos($requestUri, 'servis') !== false ||
   url_is('admin/servis*') ||
@@ -60,13 +84,25 @@ $isSettingBookingActive = (
   url_is('admin/booking/setting*')
 );
 
-$isBookingActive = !$isSettingBookingActive && (
+$isLaporanBookingActive = (
+  strpos($currentUri, 'laporan/booking') !== false ||
+  strpos($requestUri, 'laporan/booking') !== false ||
+  url_is('admin/laporan/booking*')
+);
+
+$isBookingActive = !$isSettingBookingActive && !$isLaporanBookingActive && (
   strpos($currentUri, 'admin/booking') !== false ||
   strpos($requestUri, 'admin/booking') !== false ||
   url_is('admin/booking*')
 );
 
-$isPenjualanActive = (
+$isLaporanPenjualanActive = (
+  strpos($currentUri, 'laporan/penjualan') !== false ||
+  strpos($requestUri, 'laporan/penjualan') !== false ||
+  url_is('admin/laporan/penjualan*')
+);
+
+$isPenjualanActive = !$isLaporanPenjualanActive && (
   strpos($currentUri, 'penjualan') !== false ||
   strpos($requestUri, 'penjualan') !== false ||
   url_is('admin/penjualan*') ||
@@ -178,6 +214,57 @@ $isAdminOrPimpinan = in_array($role, ['admin', 'pimpinan']) || session()->get('i
       <a href="<?= site_url('admin/transaksiservis') ?>" class="<?= $isTransaksiServisActive ? 'active-page' : '' ?>">
         <iconify-icon icon="solar:settings-minimalistic-bold-duotone" class="menu-icon"></iconify-icon>
         <span>Transaksi Servis</span>
+      </a>
+    </li>
+
+    <!-- GROUP 3: LAPORAN -->
+    <li class="sidebar-menu-group-title">Laporan</li>
+
+    <!-- Laporan Barang -->
+    <li class="mb-10 <?= $isLaporanBarangActive ? 'active active-page' : '' ?>">
+      <a href="<?= site_url('admin/laporan/barang') ?>" class="<?= $isLaporanBarangActive ? 'active-page' : '' ?>">
+        <iconify-icon icon="solar:document-text-bold-duotone" class="menu-icon"></iconify-icon>
+        <span>Laporan Barang</span>
+      </a>
+    </li>
+
+    <!-- Laporan Jenis Servis -->
+    <li class="mb-10 <?= $isLaporanServisActive ? 'active active-page' : '' ?>">
+      <a href="<?= site_url('admin/laporan/servis') ?>" class="<?= $isLaporanServisActive ? 'active-page' : '' ?>">
+        <iconify-icon icon="solar:settings-bold-duotone" class="menu-icon"></iconify-icon>
+        <span>Laporan Jenis Servis</span>
+      </a>
+    </li>
+
+    <!-- Laporan Barang Masuk -->
+    <li class="mb-10 <?= $isLaporanBarangMasukActive ? 'active active-page' : '' ?>">
+      <a href="<?= site_url('admin/laporan/barangmasuk') ?>" class="<?= $isLaporanBarangMasukActive ? 'active-page' : '' ?>">
+        <iconify-icon icon="solar:cart-large-minimalistic-bold-duotone" class="menu-icon"></iconify-icon>
+        <span>Laporan Barang Masuk</span>
+      </a>
+    </li>
+
+    <!-- Laporan Penjualan Barang -->
+    <li class="mb-10 <?= $isLaporanPenjualanActive ? 'active active-page' : '' ?>">
+      <a href="<?= site_url('admin/laporan/penjualan') ?>" class="<?= $isLaporanPenjualanActive ? 'active-page' : '' ?>">
+        <iconify-icon icon="solar:bag-smile-bold-duotone" class="menu-icon"></iconify-icon>
+        <span>Laporan Penjualan Barang</span>
+      </a>
+    </li>
+
+    <!-- Laporan Booking Servis -->
+    <li class="mb-10 <?= $isLaporanBookingActive ? 'active active-page' : '' ?>">
+      <a href="<?= site_url('admin/laporan/booking') ?>" class="<?= $isLaporanBookingActive ? 'active-page' : '' ?>">
+        <iconify-icon icon="solar:calendar-mark-bold-duotone" class="menu-icon"></iconify-icon>
+        <span>Laporan Booking Servis</span>
+      </a>
+    </li>
+
+    <!-- Laporan Transaksi Servis -->
+    <li class="mb-10 <?= $isLaporanTransaksiServisActive ? 'active active-page' : '' ?>">
+      <a href="<?= site_url('admin/laporan/transaksiservis') ?>" class="<?= $isLaporanTransaksiServisActive ? 'active-page' : '' ?>">
+        <iconify-icon icon="solar:settings-minimalistic-bold-duotone" class="menu-icon"></iconify-icon>
+        <span>Laporan Transaksi Servis</span>
       </a>
     </li>
 

@@ -81,7 +81,8 @@
                         <th scope="col">Nama Barang</th>
                         <th scope="col">Kategori</th>
                         <th scope="col">Satuan</th>
-                        <th scope="col">Harga</th>
+                        <th scope="col">Harga Beli</th>
+                        <th scope="col">Harga Jual</th>
                         <th scope="col" class="text-center">Stok</th>
                         <th scope="col" class="text-center" style="width: 90px;">Aksi</th>
                     </tr>
@@ -123,7 +124,10 @@
                                 </span>
                             </td>
                             <td>
-                                <span class="fw-bold text-neutral-800 text-xs">Rp <?= number_format($item['harga'], 0, ',', '.') ?></span>
+                                <span class="fw-semibold text-warning-main text-xs">Rp <?= number_format(($item['harga_beli'] ?? 0), 0, ',', '.') ?></span>
+                            </td>
+                            <td>
+                                <span class="fw-bold text-success-main text-xs">Rp <?= number_format(($item['harga_jual'] ?? 0), 0, ',', '.') ?></span>
                             </td>
                             <td class="text-center">
                                 <?php 
@@ -151,7 +155,7 @@
                     <?php endforeach; ?>
                     <?php else : ?>
                         <tr>
-                            <td colspan="9" class="text-center text-secondary-light py-4">Belum ada data barang & sparepart.</td>
+                            <td colspan="10" class="text-center text-secondary-light py-4">Belum ada data barang & sparepart.</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>

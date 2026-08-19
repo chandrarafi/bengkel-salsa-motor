@@ -247,7 +247,8 @@
                                 <th style="width: 130px;">Kategori</th>
                                 <th style="width: 90px;">Satuan</th>
                                 <th class="text-center" style="width: 80px;">Stok</th>
-                                <th class="text-end" style="width: 130px;">Harga Jual</th>
+                                <th class="text-end" style="width: 110px;">Harga Beli</th>
+                                <th class="text-end" style="width: 110px;">Harga Jual</th>
                                 <th class="text-center" style="width: 90px;">Aksi</th>
                             </tr>
                         </thead>
@@ -260,12 +261,14 @@
                                     <td><span class="text-xs text-secondary-light"><?= esc($brg['nama_kategori'] ?? '-') ?></span></td>
                                     <td><span class="text-xs text-secondary-light"><?= esc($brg['nama_satuan'] ?? '-') ?></span></td>
                                     <td class="text-center"><span class="badge bg-info-focus text-info-main px-8 py-3 rounded-pill text-xs fw-bold"><?= esc($brg['stok']) ?></span></td>
-                                    <td class="text-end fw-bold text-xs text-success-main">Rp <?= number_format($brg['harga'], 0, ',', '.') ?></td>
+                                    <td class="text-end fw-semibold text-xs text-warning-main">Rp <?= number_format(($brg['harga_beli'] ?? 0), 0, ',', '.') ?></td>
+                                    <td class="text-end fw-bold text-xs text-success-main">Rp <?= number_format(($brg['harga_jual'] ?? 0), 0, ',', '.') ?></td>
                                     <td class="text-center">
                                         <button type="button" class="btn btn-sm btn-primary-600 radius-8 px-12 py-6 text-xs d-inline-flex align-items-center gap-1 select-barang-btn"
                                                 data-kode="<?= esc($brg['kode']) ?>"
                                                 data-nama="<?= esc($brg['nama_barng']) ?>"
-                                                data-harga="<?= esc($brg['harga']) ?>"
+                                                data-hargabeli="<?= (float)($brg['harga_beli'] ?? 0) ?>"
+                                                data-hargajual="<?= (float)($brg['harga_jual'] ?? 0) ?>"
                                                 data-stok="<?= esc($brg['stok']) ?>">
                                             <iconify-icon icon="mingcute:check-line"></iconify-icon> Pilih
                                         </button>
@@ -317,13 +320,13 @@
         $(document).on('click', '.select-barang-btn', function() {
             var kode      = $(this).data('kode');
             var nama      = $(this).data('nama');
-            var hargaJual = parseFloat($(this).data('harga')) || 0;
-            var hargaBeli = Math.round(hargaJual * 0.8);
+            var hargaBeli = parseFloat($(this).data('hargabeli')) || 0;
+            var hargaJual = parseFloat($(this).data('hargajual')) || 0;
 
             $('#input_kode').val(kode);
             $('#input_nama_display').val('#' + kode + ' - ' + nama).removeClass('is-invalid');
-            $('#input_detailhargajual').val(hargaJual);
             $('#input_detailhargabeli').val(hargaBeli);
+            $('#input_detailhargajual').val(hargaJual);
             $('#input_jumlah').val(1);
 
             $('#cariBarangModal').modal('hide');

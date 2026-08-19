@@ -27,7 +27,11 @@ class CreateBarangTable extends Migration
                 'constraint' => 11,
                 'unsigned'   => true,
             ],
-            'harga' => [
+            'harga_beli' => [
+                'type'       => 'DOUBLE',
+                'default'    => 0,
+            ],
+            'harga_jual' => [
                 'type'       => 'DOUBLE',
                 'default'    => 0,
             ],

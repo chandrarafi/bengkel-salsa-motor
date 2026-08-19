@@ -27,8 +27,8 @@ class BarangMasukSeeder extends Seeder
 
         $qty1 = 10;
         $qty2 = 15;
-        $cost1 = $item1['harga'] * 0.8;
-        $cost2 = $item2['harga'] * 0.8;
+        $cost1 = $item1['harga_beli'] ?? 0;
+        $cost2 = $item2['harga_beli'] ?? 0;
 
         $sub1 = $cost1 * $qty1;
         $sub2 = $cost2 * $qty2;
@@ -49,7 +49,7 @@ class BarangMasukSeeder extends Seeder
             [
                 'detfaktur'       => $faktur1,
                 'detailbrgkode'   => $item1['kode'],
-                'detailhargajual' => $item1['harga'],
+                'detailhargajual' => $item1['harga_jual'] ?? 0,
                 'detailhargabeli' => $cost1,
                 'jumlah'          => $qty1,
                 'subtotal'        => $sub1,
@@ -57,7 +57,7 @@ class BarangMasukSeeder extends Seeder
             [
                 'detfaktur'       => $faktur1,
                 'detailbrgkode'   => $item2['kode'],
-                'detailhargajual' => $item2['harga'],
+                'detailhargajual' => $item2['harga_jual'] ?? 0,
                 'detailhargabeli' => $cost2,
                 'jumlah'          => $qty2,
                 'subtotal'        => $sub2,

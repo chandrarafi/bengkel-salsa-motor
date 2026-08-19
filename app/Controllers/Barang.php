@@ -51,7 +51,8 @@ class Barang extends BaseController
             'nama_barng' => 'required|min_length[3]|max_length[50]',
             'idkategori' => 'required|numeric',
             'idsatuan'   => 'required|numeric',
-            'harga'      => 'required|numeric|greater_than_equal_to[0]',
+            'harga_beli' => 'required|numeric|greater_than_equal_to[0]',
+            'harga_jual' => 'required|numeric|greater_than_equal_to[0]',
             'stok'       => 'required|integer|greater_than_equal_to[0]',
             'gambar'     => 'is_image[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png,image/webp]|max_size[gambar,2048]',
         ];
@@ -74,10 +75,15 @@ class Barang extends BaseController
             'idsatuan' => [
                 'required' => 'Pilih satuan barang.',
             ],
-            'harga' => [
-                'required'              => 'Harga barang wajib diisi.',
-                'numeric'               => 'Harga barang harus berupa angka.',
-                'greater_than_equal_to' => 'Harga barang tidak boleh bernilai negatif.',
+            'harga_beli' => [
+                'required'              => 'Harga beli barang wajib diisi.',
+                'numeric'               => 'Harga beli barang harus berupa angka.',
+                'greater_than_equal_to' => 'Harga beli barang tidak boleh bernilai negatif.',
+            ],
+            'harga_jual' => [
+                'required'              => 'Harga jual barang wajib diisi.',
+                'numeric'               => 'Harga jual barang harus berupa angka.',
+                'greater_than_equal_to' => 'Harga jual barang tidak boleh bernilai negatif.',
             ],
             'stok' => [
                 'required'              => 'Stok barang wajib diisi.',
@@ -121,7 +127,8 @@ class Barang extends BaseController
             'nama_barng' => trim($this->request->getPost('nama_barng')),
             'idkategori' => (int)$this->request->getPost('idkategori'),
             'idsatuan'   => (int)$this->request->getPost('idsatuan'),
-            'harga'      => (float)$this->request->getPost('harga'),
+            'harga_beli' => (float)$this->request->getPost('harga_beli'),
+            'harga_jual' => (float)$this->request->getPost('harga_jual'),
             'stok'       => (int)$this->request->getPost('stok'),
             'gambar'     => $namaGambar,
         ];
@@ -178,7 +185,8 @@ class Barang extends BaseController
             'nama_barng' => 'required|min_length[3]|max_length[50]',
             'idkategori' => 'required|numeric',
             'idsatuan'   => 'required|numeric',
-            'harga'      => 'required|numeric|greater_than_equal_to[0]',
+            'harga_beli' => 'required|numeric|greater_than_equal_to[0]',
+            'harga_jual' => 'required|numeric|greater_than_equal_to[0]',
             'stok'       => 'required|integer|greater_than_equal_to[0]',
             'gambar'     => 'is_image[gambar]|mime_in[gambar,image/jpg,image/jpeg,image/png,image/webp]|max_size[gambar,2048]',
         ];
@@ -195,10 +203,15 @@ class Barang extends BaseController
             'idsatuan' => [
                 'required' => 'Pilih satuan barang.',
             ],
-            'harga' => [
-                'required'              => 'Harga barang wajib diisi.',
-                'numeric'               => 'Harga barang harus berupa angka.',
-                'greater_than_equal_to' => 'Harga barang tidak boleh bernilai negatif.',
+            'harga_beli' => [
+                'required'              => 'Harga beli barang wajib diisi.',
+                'numeric'               => 'Harga beli barang harus berupa angka.',
+                'greater_than_equal_to' => 'Harga beli barang tidak boleh bernilai negatif.',
+            ],
+            'harga_jual' => [
+                'required'              => 'Harga jual barang wajib diisi.',
+                'numeric'               => 'Harga jual barang harus berupa angka.',
+                'greater_than_equal_to' => 'Harga jual barang tidak boleh bernilai negatif.',
             ],
             'stok' => [
                 'required'              => 'Stok barang wajib diisi.',
@@ -258,7 +271,8 @@ class Barang extends BaseController
             'nama_barng' => trim($this->request->getPost('nama_barng')),
             'idkategori' => (int)$this->request->getPost('idkategori'),
             'idsatuan'   => (int)$this->request->getPost('idsatuan'),
-            'harga'      => (float)$this->request->getPost('harga'),
+            'harga_beli' => (float)$this->request->getPost('harga_beli'),
+            'harga_jual' => (float)$this->request->getPost('harga_jual'),
             'stok'       => (int)$this->request->getPost('stok'),
             'gambar'     => $namaGambar,
         ];

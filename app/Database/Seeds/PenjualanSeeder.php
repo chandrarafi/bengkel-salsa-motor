@@ -28,8 +28,8 @@ class PenjualanSeeder extends Seeder
         $qty1 = 2;
         $qty2 = 1;
 
-        $price1 = $item1['harga'];
-        $price2 = $item2['harga'];
+        $price1 = $item1['harga_jual'] ?? 0;
+        $price2 = $item2['harga_jual'] ?? 0;
 
         $sub1 = $price1 * $qty1;
         $sub2 = $price2 * $qty2;
