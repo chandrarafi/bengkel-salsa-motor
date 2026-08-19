@@ -55,7 +55,12 @@ $isServisActive = !$isTransaksiServisActive && (
   url_is('servis*')
 );
 
-$isBookingActive = (
+$isSettingBookingActive = (
+  strpos($currentUri, 'admin/booking/setting') !== false ||
+  url_is('admin/booking/setting*')
+);
+
+$isBookingActive = !$isSettingBookingActive && (
   strpos($currentUri, 'admin/booking') !== false ||
   strpos($requestUri, 'admin/booking') !== false ||
   url_is('admin/booking*')
@@ -179,6 +184,14 @@ $isAdminOrPimpinan = in_array($role, ['admin', 'pimpinan']) || session()->get('i
 
     <!-- GROUP 3: PENGATURAN -->
     <li class="sidebar-menu-group-title">Pengaturan</li>
+
+    <!-- Pengaturan Booking -->
+    <li class="mb-10 <?= $isSettingBookingActive ? 'active active-page' : '' ?>">
+      <a href="<?= site_url('admin/booking/setting') ?>" class="<?= $isSettingBookingActive ? 'active-page' : '' ?>">
+        <iconify-icon icon="solar:calendar-settings-bold-duotone" class="menu-icon"></iconify-icon>
+        <span>Pengaturan Booking</span>
+      </a>
+    </li>
 
     <!-- Kelola User -->
     <li class="mb-10 <?= $isUsersActive ? 'active active-page' : '' ?>">

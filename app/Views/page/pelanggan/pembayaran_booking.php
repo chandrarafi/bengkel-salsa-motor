@@ -117,7 +117,7 @@
             <div class="d-flex align-items-center justify-content-between mb-3">
                 <span class="badge bg-warning-500 text-dark text-xxs fw-bold px-10 py-4 radius-6 d-inline-flex align-items-center gap-1">
                     <iconify-icon icon="solar:clock-circle-bold" class="text-xs"></iconify-icon>
-                    Batas Waktu Pembayaran 5 Menit
+                    Batas Waktu Pembayaran <?= $durasiMenit ?? 5 ?> Menit
                 </span>
                 <span class="text-xxs text-neutral-400">Kode: <b class="text-white"><?= esc($booking['kode_booking']) ?></b></span>
             </div>
@@ -125,7 +125,7 @@
             <?php if ($isExpired): ?>
                 <div class="text-center py-20">
                     <iconify-icon icon="solar:close-circle-bold-duotone" class="text-5xl text-danger-main mb-2"></iconify-icon>
-                    <h5 class="fw-bold text-white mb-1">Batas Waktu 5 Menit Telah Habis</h5>
+                    <h5 class="fw-bold text-white mb-1">Batas Waktu <?= $durasiMenit ?? 5 ?> Menit Telah Habis</h5>
                     <p class="text-xs text-neutral-400 mb-16">Pengajuan booking servis ini telah kadaluarsa secara otomatis.</p>
                     <a href="<?= site_url('booking') ?>" class="btn btn-brand btn-sm radius-8 px-20 py-8 text-xs fw-bold">
                         Buat Booking Servis Baru
@@ -144,7 +144,7 @@
                 <div class="d-flex align-items-center justify-content-between mb-3">
                     <div>
                         <span class="text-xxs text-neutral-400 d-block uppercase fw-bold">Sisa Waktu Anda:</span>
-                        <div class="countdown-timer-display mt-1" id="timerDisplay">05:00</div>
+                        <div class="countdown-timer-display mt-1" id="timerDisplay"><?= sprintf('%02d:%02d', floor($remainingSeconds / 60), $remainingSeconds % 60) ?></div>
                     </div>
                     <div class="text-end">
                         <span class="text-xxs text-neutral-400 d-block">DP Estimasi Booking:</span>
@@ -154,7 +154,7 @@
 
                 <!-- Progress Bar -->
                 <div class="bg-neutral-800 radius-4 overflow-hidden mb-2" style="height: 6px;">
-                    <div class="countdown-progress-bar" id="progressBar" style="width: 100%;"></div>
+                    <div class="countdown-progress-bar" id="progressBar" style="width: <?= max(0, min(100, ($remainingSeconds / ($maxSeconds ?? 300)) * 100)) ?>%;"></div>
                 </div>
                 <small class="text-xxs text-neutral-400 d-block text-center">*Selesaikan transfer sebelum waktu hitung mundur di atas menjadi 00:00.</small>
             <?php endif; ?>
@@ -221,7 +221,7 @@
                 <div class="p-12 radius-8 mt-16 bg-light border text-xs text-secondary-light d-flex align-items-start gap-2">
                     <iconify-icon icon="solar:info-circle-bold-duotone" class="text-lg text-primary-600 flex-shrink-0 mt-1"></iconify-icon>
                     <div>
-                        <span>Pembayaran online ini merupakan <b>DP / Uang Muka Estimasi Booking</b> sebesar <b>Rp <?= number_format($booking['biaya'], 0, ',', '.') ?></b>. Pelunasan sisa biaya servis & sparepart tambahan akan dihitung dan dilunasi di bengkel setelah pengerjaan selesai.</span>
+                        <span>Pembayaran online ini merupakan <b>Uang Muka / Deposit Booking (Rp <?= number_format($booking['biaya'], 0, ',', '.') ?>)</b>. Uang muka ini akan otomatis memotong total biaya servis & sparepart di bengkel. Jika total servis lebih besar Anda cukup bayar kekurangannya, dan jika berlebih sisa uang akan dikembalikan.</span>
                     </div>
                 </div>
             </div>
@@ -257,11 +257,11 @@
                         <span class="fw-bold text-dark"><?= date('d/m/Y', strtotime($booking['tgl_booking'])) ?> - Jam <?= date('H:i', strtotime($booking['jam_booking'])) ?> WIB</span>
                     </li>
                     <li class="list-group-item px-0 py-8 border-bottom">
-                        <span class="text-secondary-light d-block mb-1">Paket Layanan Servis:</span>
-                        <span class="fw-bold text-dark d-block"><?= esc($booking['jenis_servis']) ?></span>
+                        <span class="text-secondary-light d-block mb-1">Catatan Keluhan Motor:</span>
+                        <span class="fw-bold text-dark d-block"><?= esc($booking['keluhan'] ?: 'Pengecekan & Servis Berkala') ?></span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between px-0 py-10 bg-primary-50 px-12 radius-8 mt-8 border-0">
-                        <span class="fw-bold text-dark">DP Estimasi Booking:</span>
+                        <span class="fw-bold text-dark">Biaya Booking (DP):</span>
                         <span class="fw-extrabold text-brand" style="font-size: 15px; color: #ff5500;">Rp <?= number_format($booking['biaya'], 0, ',', '.') ?></span>
                     </li>
                 </ul>
@@ -385,7 +385,8 @@
         const timerDisplay = document.getElementById("timerDisplay");
         const progressBar = document.getElementById("progressBar");
         const idBooking = <?= (int)$booking['id_booking'] ?>;
-        const maxSeconds = 300; // 5 minutes = 300 seconds
+        const maxSeconds = <?= (int)($maxSeconds ?? 300) ?>;
+        const durasiMenit = <?= (int)($durasiMenit ?? 5) ?>;
 
         if (!isExpired && !isPaid && remainingSeconds > 0) {
             const timerInterval = setInterval(function() {
@@ -397,17 +398,24 @@
                     if (progressBar) progressBar.style.width = "0%";
 
                     // Trigger AJAX Expiration to Server
-                    fetch("<?= site_url('pelanggan/booking/expirate') ?>", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/x-www-form-urlencoded",
-                            "X-Requested-With": "XMLHttpRequest",
+                    $.ajax({
+                        url: "<?= site_url('booking/expirate') ?>",
+                        type: "POST",
+                        data: {
+                            id_booking: idBooking,
                             "<?= csrf_token() ?>": "<?= csrf_hash() ?>"
                         },
-                        body: "id_booking=" + idBooking
-                    }).finally(() => {
-                        alert("Waktu pembayaran 5 menit telah habis! Pesanan booking Anda dibatalkan secara otomatis.");
-                        window.location.reload();
+                        headers: { "X-Requested-With": "XMLHttpRequest" }
+                    }).always(function() {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Batas Waktu Habis!',
+                            text: 'Waktu pembayaran ' + durasiMenit + ' menit telah habis. Booking servis ini otomatis dibatalkan.',
+                            confirmButtonColor: '#ff5500',
+                            confirmButtonText: 'Oke'
+                        }).then(function() {
+                            window.location.reload();
+                        });
                     });
                 } else {
                     const mins = Math.floor(remainingSeconds / 60);

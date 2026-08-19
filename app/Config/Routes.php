@@ -28,6 +28,7 @@ $routes->group('pelanggan', ['filter' => 'auth'], static function ($routes) {
 
     // Booking Servis
     $routes->get('booking', 'Pelanggan::booking');
+    $routes->get('booking/check-slots', 'Pelanggan::checkSlots');
     $routes->post('booking/simpan', 'Pelanggan::simpanBooking');
     $routes->get('booking/pembayaran/(:num)', 'Pelanggan::pembayaranBooking/$1');
     $routes->post('booking/proses-pembayaran', 'Pelanggan::prosesPembayaranBooking');
@@ -45,6 +46,7 @@ $routes->get('riwayat-servis/detail/(:segment)', 'Pelanggan::detailServis/$1', [
 $routes->get('riwayat-servis/cetak/(:segment)', 'Pelanggan::cetakNota/$1', ['filter' => 'auth']);
 
 $routes->get('booking', 'Pelanggan::booking', ['filter' => 'auth']);
+$routes->get('booking/check-slots', 'Pelanggan::checkSlots', ['filter' => 'auth']);
 $routes->post('booking/simpan', 'Pelanggan::simpanBooking', ['filter' => 'auth']);
 $routes->get('booking/pembayaran/(:num)', 'Pelanggan::pembayaranBooking/$1', ['filter' => 'auth']);
 $routes->post('booking/proses-pembayaran', 'Pelanggan::prosesPembayaranBooking', ['filter' => 'auth']);
@@ -164,6 +166,8 @@ $routes->group('admin', ['filter' => 'admin'], static function ($routes) {
     // Kelola Booking Servis Online & Approval Pembayaran
     $routes->group('booking', static function ($routes) {
         $routes->get('/', 'Booking::index');
+        $routes->get('setting', 'Booking::setting');
+        $routes->post('setting/update', 'Booking::updateSetting');
         $routes->get('detail/(:num)', 'Booking::detail/$1');
         $routes->get('approve/(:num)', 'Booking::approvePembayaran/$1');
         $routes->post('approve/(:num)', 'Booking::approvePembayaran/$1');

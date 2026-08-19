@@ -93,6 +93,7 @@
 
 <?php if (!empty($booking)): ?>
     <input type="hidden" name="booking_id" value="<?= $booking['id_booking'] ?>">
+    <input type="hidden" name="dp_booking" value="<?= (float)$booking['biaya'] ?>">
     <div class="alert alert-success bg-success-50 border border-success-200 radius-10 p-16 mb-20 d-flex align-items-center justify-content-between flex-wrap gap-3">
         <div class="d-flex align-items-center gap-3">
             <div class="w-40-px h-40-px bg-success-600 text-white rounded-circle d-flex align-items-center justify-content-center text-xl flex-shrink-0">
@@ -103,12 +104,12 @@
                 <span class="text-xs text-secondary-light">
                     Pelanggan: <strong><?= esc($booking['nama_pelanggan']) ?></strong> | 
                     Motor: <strong><?= esc($booking['merkkendaraan']) ?> (<?= esc($booking['nopol']) ?>)</strong> | 
-                    Paket: <strong><?= esc($booking['jenis_servis']) ?></strong>
+                    Keluhan: <strong><?= esc($booking['keluhan'] ?: 'Pengecekan Servis') ?></strong>
                 </span>
             </div>
         </div>
         <div class="text-end">
-            <span class="text-xxs text-secondary-light d-block">DP Estimasi Terbayar:</span>
+            <span class="text-xxs text-secondary-light d-block">DP Booking Terbayar:</span>
             <span class="badge bg-success-600 text-white fw-bold text-sm px-12 py-6 radius-6">Rp <?= number_format($booking['biaya'], 0, ',', '.') ?></span>
         </div>
     </div>
@@ -118,6 +119,7 @@
     <?= csrf_field() ?>
     <?php if (!empty($booking)): ?>
         <input type="hidden" name="booking_id" value="<?= $booking['id_booking'] ?>">
+        <input type="hidden" name="dp_booking" value="<?= (float)$booking['biaya'] ?>">
     <?php endif; ?>
 
     <div class="row g-4 mb-24">
@@ -168,7 +170,7 @@
 
                         <div class="col-12">
                             <label class="form-label text-xs fw-semibold text-neutral-700 mb-1">Keluhan / Diagnosa Perbaikan</label>
-                            <textarea name="alasan" id="alasan" rows="6" class="form-control form-control-sm radius-8" style="min-height: 150px;" placeholder="Contoh: Tarikan mesin berat, ganti oli & lampu depan mati"><?= !empty($booking) ? 'Booking Online #' . esc($booking['kode_booking']) . ' - Paket: ' . esc($booking['jenis_servis']) . ' (DP Terbayar: Rp ' . number_format($booking['biaya'], 0, ',', '.') . ')' : '' ?></textarea>
+                            <textarea name="alasan" id="alasan" rows="6" class="form-control form-control-sm radius-8" style="min-height: 150px;" placeholder="Contoh: Tarikan mesin berat, ganti oli & lampu depan mati"><?= !empty($booking) ? 'Booking Online #' . esc($booking['kode_booking']) . ' - Keluhan: ' . esc($booking['keluhan']) . ' (DP Terbayar: Rp ' . number_format($booking['biaya'], 0, ',', '.') . ')' : '' ?></textarea>
                         </div>
                     </div>
                 </div>

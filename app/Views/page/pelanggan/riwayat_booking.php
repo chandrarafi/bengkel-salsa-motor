@@ -32,7 +32,7 @@
                             <th class="ps-24 py-12">Kode Booking</th>
                             <th class="py-12">Jadwal Servis</th>
                             <th class="py-12">Kendaraan</th>
-                            <th class="py-12">Paket & DP Estimasi</th>
+                            <th class="py-12">Keluhan & DP Booking</th>
                             <th class="py-12">Status Bayar</th>
                             <th class="py-12">Status Booking</th>
                             <th class="text-center pe-24 py-12">Aksi</th>
@@ -107,7 +107,7 @@
                                     <span class="badge bg-neutral-100 text-secondary-light text-xxs"><?= esc($row['nopol']) ?></span>
                                 </td>
                                 <td>
-                                    <span class="fw-bold text-dark d-block"><?= esc($row['jenis_servis']) ?></span>
+                                    <span class="fw-bold text-dark d-block text-xs" title="<?= esc($row['keluhan'] ?? '') ?>"><?= esc(!empty($row['keluhan']) ? (strlen($row['keluhan']) > 30 ? substr($row['keluhan'], 0, 30) . '...' : $row['keluhan']) : 'Pengecekan Servis') ?></span>
                                     <span class="text-xxs fw-bold" style="color: #ff5500;">Rp <?= number_format($row['biaya'], 0, ',', '.') ?> <small class="text-secondary-light fw-semibold">(DP)</small></span>
                                 </td>
                                 <td>

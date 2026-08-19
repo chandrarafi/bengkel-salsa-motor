@@ -26,6 +26,9 @@ class Booking extends BaseController
      */
     public function index()
     {
+        // Auto cancel any overdue bookings older than 5 minutes
+        $this->bookingModel->autoCancelExpiredBookings();
+
         $filterBayar   = $this->request->getGet('bayar');
         $filterBooking = $this->request->getGet('status');
         $search        = $this->request->getGet('q');
@@ -143,10 +146,11 @@ class Booking extends BaseController
 
         $this->bookingModel->update($id, [
             'status_pembayaran' => 'ditolak',
+            'status_booking'    => 'dibatalkan',
             'catatan_admin'     => $catatan,
         ]);
 
-        $msg = "Bukti pembayaran Booking #{$booking['kode_booking']} telah ditolak.";
+        $msg = "Bukti pembayaran Booking #{$booking['kode_booking']} telah ditolak dan jadwal booking dibatalkan (slot jam dibuka kembali).";
 
         if ($this->request->isAJAX()) {
             return $this->response->setJSON(['status' => true, 'message' => $msg]);
@@ -217,5 +221,74 @@ class Booking extends BaseController
 
         session()->setFlashdata('success', "Data Booking #{$booking['kode_booking']} berhasil dihapus.");
         return redirect()->to('/admin/booking');
+    }
+
+    /**
+     * Halaman Pengaturan / Setting Booking Servis
+     */
+    public function setting()
+    {
+        $settingModel = new \App\Models\SettingBookingModel();
+        $setting = $settingModel->getSettings();
+
+        $data = [
+            'title'   => 'Pengaturan Booking Servis',
+            'setting' => $setting,
+            'errors'  => session()->getFlashdata('errors') ?? [],
+        ];
+
+        return view('page/content/booking/setting', $data);
+    }
+
+    /**
+     * Simpan Perubahan Pengaturan Booking
+     */
+    public function updateSetting()
+    {
+        $rules = [
+            'durasi_pembayaran_menit' => 'required|is_natural_no_zero|greater_than_equal_to[1]|less_than_equal_to[180]',
+            'biaya_booking'           => 'required|numeric|greater_than_equal_to[0]',
+        ];
+
+        $messages = [
+            'durasi_pembayaran_menit' => [
+                'required'               => 'Durasi waktu pembayaran wajib diisi.',
+                'is_natural_no_zero'     => 'Durasi waktu pembayaran harus berupa angka lebih dari 0.',
+                'greater_than_equal_to'  => 'Durasi waktu pembayaran minimal 1 menit.',
+                'less_than_equal_to'     => 'Durasi waktu pembayaran maksimal 180 menit.',
+            ],
+            'biaya_booking' => [
+                'required'              => 'Nominal biaya booking / DP wajib diisi.',
+                'numeric'               => 'Biaya booking harus berupa angka.',
+                'greater_than_equal_to' => 'Biaya booking tidak boleh bernilai negatif.',
+            ],
+        ];
+
+        if (!$this->validate($rules, $messages)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        $settingModel = new \App\Models\SettingBookingModel();
+        $currentSetting = $settingModel->getSettings();
+
+        $slotsPost = $this->request->getPost('slot_kuota');
+        $cleanSlots = [];
+
+        foreach (\App\Models\SettingBookingModel::$defaultSlots as $jam => $defVal) {
+            $val = isset($slotsPost[$jam]) ? (int)$slotsPost[$jam] : $defVal;
+            $cleanSlots[$jam] = max(1, min(50, $val)); // Min 1, Max 50 slot
+        }
+
+        $durasi = (int)$this->request->getPost('durasi_pembayaran_menit');
+        $biaya  = (float)$this->request->getPost('biaya_booking');
+
+        $settingModel->update($currentSetting['id'], [
+            'durasi_pembayaran_menit' => $durasi,
+            'biaya_booking'           => $biaya,
+            'kuota_slot_json'         => json_encode($cleanSlots),
+        ]);
+
+        session()->setFlashdata('success', 'Pengaturan durasi pembayaran & kuota booking jam kedatangan berhasil disimpan!');
+        return redirect()->to('/admin/booking/setting');
     }
 }

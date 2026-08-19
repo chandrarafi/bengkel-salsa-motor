@@ -301,21 +301,48 @@ class Pelanggan extends BaseController
     /**
      * Halaman Formulir Booking Servis
      */
+    /**
+     * Halaman Formulir Booking Servis
+     */
+    /**
+     * Halaman Formulir Booking Servis
+     */
     public function booking()
     {
         $userId = session()->get('user_id');
         $user   = $userId ? $this->userModel->find($userId) : null;
-        
-        $daftarServis = $this->servisModel->orderBy('biaya', 'ASC')->findAll();
+
+        $settingModel = new \App\Models\SettingBookingModel();
+        $setting      = $settingModel->getSettings();
+        $todaySlots   = $settingModel->getSlotAvailability(date('Y-m-d'));
 
         $data = [
             'title'        => 'Booking Servis Motor Online - Bengkel Salsa Motor',
             'user'         => $user,
-            'daftarServis' => $daftarServis,
+            'setting'      => $setting,
+            'biayaBooking' => (float)$setting['biaya_booking'],
+            'durasiMenit'  => (int)$setting['durasi_pembayaran_menit'],
+            'todaySlots'   => $todaySlots,
             'errors'       => session()->getFlashdata('errors') ?? [],
         ];
 
         return view('page/pelanggan/booking', $data);
+    }
+
+    /**
+     * Endpoint AJAX untuk cek ketersediaan slot kuota pada tanggal tertentu
+     */
+    public function checkSlots()
+    {
+        $tanggal = $this->request->getGet('tanggal') ?: date('Y-m-d');
+        $settingModel = new \App\Models\SettingBookingModel();
+        $slots = $settingModel->getSlotAvailability($tanggal);
+
+        return $this->response->setJSON([
+            'status'  => true,
+            'tanggal' => $tanggal,
+            'slots'   => $slots,
+        ]);
     }
 
     /**
@@ -328,11 +355,10 @@ class Pelanggan extends BaseController
             'no_hp'             => 'required|min_length[8]|max_length[20]',
             'merkkendaraan'     => 'required|min_length[3]|max_length[100]',
             'nopol'             => 'required|min_length[3]|max_length[20]',
-            'kodeservis'        => 'required',
             'tgl_booking'       => 'required|valid_date',
             'jam_booking'       => 'required',
+            'keluhan'           => 'required|min_length[3]|max_length[500]',
             'metode_pembayaran' => 'required',
-            'bukti_pembayaran'  => 'permit_empty|is_image[bukti_pembayaran]|mime_in[bukti_pembayaran,image/jpg,image/jpeg,image/png,image/webp]|max_size[bukti_pembayaran,3072]',
         ];
 
         $messages = [
@@ -340,82 +366,58 @@ class Pelanggan extends BaseController
             'no_hp'          => ['required' => 'Nomor WhatsApp wajib diisi.'],
             'merkkendaraan'  => ['required' => 'Merk dan tipe motor wajib diisi.'],
             'nopol'          => ['required' => 'Nomor polisi kendaraan wajib diisi.'],
-            'kodeservis'     => ['required' => 'Pilih paket servis yang diinginkan.'],
             'tgl_booking'    => ['required' => 'Pilih tanggal jadwal servis.'],
             'jam_booking'    => ['required' => 'Pilih jam jadwal servis.'],
-            'bukti_pembayaran' => [
-                'is_image' => 'File bukti pembayaran harus berupa gambar.',
-                'mime_in'  => 'Format gambar bukti pembayaran harus JPG, JPEG, PNG, atau WEBP.',
-                'max_size' => 'Ukuran file bukti pembayaran maksimal 3MB.',
+            'keluhan'        => [
+                'required'   => 'Catatan keluhan / kebutuhan servis motor wajib diisi.',
+                'min_length' => 'Catatan keluhan minimal 3 karakter.',
             ],
+            'metode_pembayaran' => ['required' => 'Pilih rekening tujuan transfer.'],
         ];
 
         if (!$this->validate($rules, $messages)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
-        // Validasi jam kedatangan jika memilih tanggal hari ini
         $tglBooking = $this->request->getPost('tgl_booking');
         $jamBooking = $this->request->getPost('jam_booking');
-        $todayStr   = date('Y-m-d');
-        $nowTimeStr = date('H:i');
+        $jamClean   = substr(trim($jamBooking), 0, 5);
 
-        if ($tglBooking === $todayStr && $jamBooking <= $nowTimeStr) {
+        $settingModel = new \App\Models\SettingBookingModel();
+        $setting      = $settingModel->getSettings();
+        $slotInfo     = $settingModel->getSlotAvailability($tglBooking);
+
+        // Validasi kuota jam kedatangan
+        if (isset($slotInfo[$jamClean]) && !$slotInfo[$jamClean]['is_available']) {
+            if ($slotInfo[$jamClean]['is_past']) {
+                return redirect()->back()->withInput()->with('errors', [
+                    'jam_booking' => "Jam kedatangan ({$jamClean} WIB) sudah lewat untuk hari ini. Silakan pilih jam lain atau pilih tanggal besok."
+                ]);
+            }
             return redirect()->back()->withInput()->with('errors', [
-                'jam_booking' => 'Jam kedatangan (' . $jamBooking . ' WIB) sudah lewat untuk hari ini. Silakan pilih jam lain yang belum lewat atau pilih tanggal besok.'
+                'jam_booking' => "Mohon maaf, kuota booking pada jam {$jamClean} WIB sudah penuh (Maksimal {$slotInfo[$jamClean]['max_kuota']} kendaraan). Silakan pilih jam kedatangan lainnya."
             ]);
         }
 
-        // Ambil data paket servis (mendukung multi-select array atau string)
-        $kodeServisPost = $this->request->getPost('kodeservis');
-        if (is_array($kodeServisPost)) {
-            $kodeServisList = $kodeServisPost;
-        } else if (!empty($kodeServisPost)) {
-            $kodeServisList = explode(',', $kodeServisPost);
-        } else {
-            $kodeServisList = [];
-        }
-
-        $jenisServisArray = [];
-        $totalBiaya = 0;
-        $kodeServisClean = [];
-
-        foreach ($kodeServisList as $k) {
-            $k = trim($k);
-            if (empty($k)) continue;
-            $s = $this->servisModel->find($k);
-            if ($s) {
-                $kodeServisClean[] = $k;
-                $namaServis = $s['jenis_servis'] ?? $s['Jenis_servis'] ?? $k;
-                $biayaServis = (float)($s['biaya'] ?? $s['Biaya'] ?? 0);
-                $jenisServisArray[] = $namaServis;
-                $totalBiaya += $biayaServis;
-            }
-        }
-
-        if (empty($kodeServisClean)) {
-            return redirect()->back()->withInput()->with('errors', ['kodeservis' => 'Silakan pilih minimal 1 paket layanan servis.']);
-        }
-
-        $kodeServisFinal  = implode(', ', $kodeServisClean);
-        $jenisServisFinal = implode(' + ', $jenisServisArray);
-
         $userId = session()->get('user_id');
         $kodeBooking = $this->bookingModel->generateKodeBooking();
+        $keluhan = trim($this->request->getPost('keluhan'));
+        $biayaBooking = (float)$setting['biaya_booking'];
+        $durasiMenit  = (int)$setting['durasi_pembayaran_menit'];
 
         $dataInsert = [
             'kode_booking'      => $kodeBooking,
             'id_pelanggan'      => $userId ?? null,
-            'nama_pelanggan'    => $this->request->getPost('nama_pelanggan'),
-            'no_hp'             => $this->request->getPost('no_hp'),
-            'merkkendaraan'     => $this->request->getPost('merkkendaraan'),
+            'nama_pelanggan'    => trim($this->request->getPost('nama_pelanggan')),
+            'no_hp'             => trim($this->request->getPost('no_hp')),
+            'merkkendaraan'     => trim($this->request->getPost('merkkendaraan')),
             'nopol'             => strtoupper(trim($this->request->getPost('nopol'))),
-            'kodeservis'        => $kodeServisFinal,
-            'jenis_servis'      => $jenisServisFinal,
-            'biaya'             => $totalBiaya,
-            'tgl_booking'       => $this->request->getPost('tgl_booking'),
-            'jam_booking'       => $this->request->getPost('jam_booking'),
-            'keluhan'           => $this->request->getPost('keluhan'),
+            'kodeservis'        => 'BKG-' . ($biayaBooking / 1000) . 'K',
+            'jenis_servis'      => 'Booking Servis & Pengecekan',
+            'biaya'             => $biayaBooking,
+            'tgl_booking'       => $tglBooking,
+            'jam_booking'       => $jamBooking,
+            'keluhan'           => $keluhan,
             'metode_pembayaran' => $this->request->getPost('metode_pembayaran'),
             'bukti_pembayaran'  => null,
             'status_pembayaran' => 'menunggu_pembayaran',
@@ -425,12 +427,12 @@ class Pelanggan extends BaseController
         $this->bookingModel->insert($dataInsert);
         $idBooking = $this->bookingModel->getInsertID();
 
-        session()->setFlashdata('success', "Pengajuan booking disimpan! Silakan lakukan transfer & unggah bukti pembayaran dalam <b>5 menit</b>.");
+        session()->setFlashdata('success', "Pengajuan booking disimpan! Silakan lakukan transfer DP Rp " . number_format($biayaBooking, 0, ',', '.') . " & unggah bukti pembayaran dalam <b>{$durasiMenit} menit</b>.");
         return redirect()->to('/pelanggan/booking/pembayaran/' . $idBooking);
     }
 
     /**
-     * Halaman Pembayaran Booking (Hitung Mundur 5 Menit)
+     * Halaman Pembayaran Booking (Hitung Mundur Sesuai Pengaturan Admin)
      */
     public function pembayaranBooking($idBooking = null)
     {
@@ -447,17 +449,21 @@ class Pelanggan extends BaseController
             return redirect()->to('/riwayat-booking');
         }
 
-        // Hitung sisa waktu 5 menit (300 detik)
+        $settingModel = new \App\Models\SettingBookingModel();
+        $setting      = $settingModel->getSettings();
+        $durasiMenit  = (int)($setting['durasi_pembayaran_menit'] ?? 5);
+
+        // Hitung sisa waktu dinamis berdasarkan pengaturan
         $createdAt = strtotime($booking['created_at'] ?? 'now');
         $now       = time();
         $elapsed   = $now - $createdAt;
-        $maxTime   = 5 * 60; // 300 detik
+        $maxTime   = $durasiMenit * 60; // detik
         $remaining = $maxTime - $elapsed;
 
         if ($booking['status_pembayaran'] === 'menunggu_pembayaran' && $remaining <= 0 && $booking['status_booking'] !== 'dibatalkan') {
             $this->bookingModel->update($idBooking, [
                 'status_booking' => 'dibatalkan',
-                'catatan_admin'  => 'Batas waktu pembayaran 5 menit telah habis (Kadaluarsa).'
+                'catatan_admin'  => "Batas waktu pembayaran {$durasiMenit} menit telah habis (Kadaluarsa)."
             ]);
             $booking['status_booking'] = 'dibatalkan';
             $remaining = 0;
@@ -466,6 +472,8 @@ class Pelanggan extends BaseController
         $data = [
             'title'            => 'Pembayaran Booking Servis #' . $booking['kode_booking'],
             'booking'          => $booking,
+            'durasiMenit'      => $durasiMenit,
+            'maxSeconds'       => $maxTime,
             'remainingSeconds' => max(0, $remaining),
             'errors'           => session()->getFlashdata('errors') ?? [],
         ];

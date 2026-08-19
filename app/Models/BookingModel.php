@@ -67,10 +67,34 @@ class BookingModel extends Model
     }
 
     /**
+     * Otomatis membatalkan semua booking yang status_pembayaran masih 'menunggu_pembayaran'
+     * dan sudah lewat lebih dari 5 menit (300 detik) sejak dibuat.
+     */
+    public function autoCancelExpiredBookings(): int
+    {
+        $thresholdTime = date('Y-m-d H:i:s', time() - (5 * 60));
+
+        $builder = $this->builder();
+        $builder->where('status_pembayaran', 'menunggu_pembayaran')
+                ->where('status_booking !=', 'dibatalkan')
+                ->where('created_at <=', $thresholdTime);
+
+        $builder->update([
+            'status_booking' => 'dibatalkan',
+            'catatan_admin'  => 'Batas waktu pembayaran 5 menit telah habis (Kadaluarsa otomatis).'
+        ]);
+
+        return $this->db->affectedRows();
+    }
+
+    /**
      * Ambil riwayat booking milik pelanggan tertentu
      */
     public function getByPelanggan($userId = null, $userNama = null)
     {
+        // Cancel expired ones first
+        $this->autoCancelExpiredBookings();
+
         $builder = $this->builder();
         if ($userId) {
             $builder->groupStart()

@@ -59,17 +59,16 @@
 </style>
 
 <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-20">
-    <h6 class="fw-semibold mb-0 text-lg">Kelola Booking Servis Pelanggan</h6>
-    <ul class="d-flex align-items-center gap-2 text-sm">
-        <li class="fw-medium">
-            <a href="<?= site_url('dashboard') ?>" class="d-flex align-items-center gap-1 hover-text-primary text-secondary-light">
-                <iconify-icon icon="solar:home-smile-angle-outline" class="icon text-base"></iconify-icon>
-                Dashboard
-            </a>
-        </li>
-        <li class="text-secondary-light">-</li>
-        <li class="fw-medium text-secondary-light">Booking Servis</li>
-    </ul>
+    <div>
+        <h6 class="fw-semibold mb-0 text-lg">Kelola Booking Servis Pelanggan</h6>
+        <span class="text-xs text-secondary-light">Daftar reservasi jadwal servis online dan approval pembayaran DP</span>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+        <a href="<?= site_url('admin/booking/setting') ?>" class="btn btn-outline-primary-600 bg-white radius-8 px-14 py-8 text-xs fw-bold d-inline-flex align-items-center gap-2 border">
+            <iconify-icon icon="solar:calendar-settings-bold-duotone" class="text-base"></iconify-icon>
+            Pengaturan Booking & Kuota
+        </a>
+    </div>
 </div>
 
 <!-- Flash Alerts -->
@@ -214,7 +213,7 @@
                                                data-kode="<?= esc($row['kode_booking']) ?>"
                                                data-pelanggan="<?= esc($row['nama_pelanggan']) ?>"
                                                data-motor="<?= esc($row['merkkendaraan']) ?> (<?= esc($row['nopol']) ?>)"
-                                               data-layanan="<?= esc($row['jenis_servis']) ?>"
+                                               data-keluhan="<?= esc($row['keluhan'] ?? '') ?>"
                                                data-biaya="Rp <?= number_format($row['biaya'], 0, ',', '.') ?>"
                                                data-metode="<?= esc($row['metode_pembayaran']) ?>"
                                                data-bukti="<?= $buktiUrl ?>"
@@ -249,7 +248,7 @@
                                                 data-kode="<?= esc($row['kode_booking']) ?>"
                                                 data-pelanggan="<?= esc($row['nama_pelanggan']) ?>"
                                                 data-motor="<?= esc($row['merkkendaraan']) ?> (<?= esc($row['nopol']) ?>)"
-                                                data-layanan="<?= esc($row['jenis_servis']) ?>"
+                                                data-keluhan="<?= esc($row['keluhan'] ?? '') ?>"
                                                 data-biaya="Rp <?= number_format($row['biaya'], 0, ',', '.') ?>"
                                                 data-metode="<?= esc($row['metode_pembayaran']) ?>"
                                                 data-bukti="<?= $buktiUrl ?>"
@@ -337,17 +336,18 @@
                                 <span class="fw-bold text-dark" id="adminModalMotor">-</span>
                             </div>
                             <div class="mb-8">
-                                <span class="text-xxs text-secondary-light d-block">Paket Layanan Servis:</span>
-                                <span class="fw-bold text-dark" id="adminModalLayanan">-</span>
+                                <span class="text-xxs text-secondary-light d-block">Catatan Keluhan Motor:</span>
+                                <span class="fw-bold text-dark" id="adminModalKeluhan">-</span>
                             </div>
                             <div class="mb-8">
                                 <span class="text-xxs text-secondary-light d-block">Metode Pembayaran:</span>
                                 <span class="fw-bold text-dark" id="adminModalMetode">-</span>
                             </div>
                             <div class="pt-8 border-top d-flex justify-content-between align-items-center">
-                                <span class="text-xs fw-bold text-dark">DP Estimasi Booking:</span>
-                                <span class="text-sm fw-bold text-primary-600" id="adminModalBiaya">Rp 0</span>
+                                <span class="text-xs fw-bold text-dark">Biaya Booking (DP):</span>
+                                <span class="text-sm fw-bold text-primary-600" id="adminModalBiaya">Rp 50.000</span>
                             </div>
+                            <small class="text-xxs text-secondary-light d-block mt-1">*Otomatis memotong tagihan saat diproses ke Transaksi Servis (Work Order).</small>
                         </div>
 
                         <!-- Form Tolak Pembayaran (Input Catatan) -->
@@ -451,7 +451,7 @@
                 const kode = this.getAttribute("data-kode");
                 const pelanggan = this.getAttribute("data-pelanggan");
                 const motor = this.getAttribute("data-motor");
-                const layanan = this.getAttribute("data-layanan");
+                const keluhan = this.getAttribute("data-keluhan");
                 const biaya = this.getAttribute("data-biaya");
                 const metode = this.getAttribute("data-metode");
                 const bukti = this.getAttribute("data-bukti");
@@ -459,7 +459,7 @@
                 document.getElementById("adminModalKode").innerText = "Kode Booking: " + kode;
                 document.getElementById("adminModalPelanggan").innerText = pelanggan;
                 document.getElementById("adminModalMotor").innerText = motor;
-                document.getElementById("adminModalLayanan").innerText = layanan;
+                document.getElementById("adminModalKeluhan").innerText = keluhan ? keluhan : "Pengecekan Servis Berkala";
                 document.getElementById("adminModalMetode").innerText = metode;
                 document.getElementById("adminModalBiaya").innerText = biaya;
                 document.getElementById("btnProsesWO").href = "<?= site_url('admin/transaksiservis/proses-booking/') ?>" + currentBookingId;
