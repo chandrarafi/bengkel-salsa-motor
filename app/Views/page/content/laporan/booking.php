@@ -205,12 +205,7 @@
                                 ?>
                             </td>
                         </tr>
-                    <?php endforeach; ?>
-                    <?php else : ?>
-                        <tr>
-                            <td colspan="9" class="text-center text-secondary-light py-4">Tidak ada data booking servis yang ditemukan.</td>
-                        </tr>
-                    <?php endif; ?>
+                    <?php endforeach; endif; ?>
                 </tbody>
             </table>
         </div>
